@@ -1,0 +1,43 @@
+{
+  "people": [
+    "Belle, Patti",
+    "Bocchi, Paul",
+    "Brandstetter, Mike",
+    "Lindholm, Philip",
+    "Pearson, Ryan",
+    "Talbo, Ellen"
+  ],
+  "orgs": [
+    "ATIP",
+    "City of Kent",
+    "Concord Counsel",
+    "Facebook",
+    "LinkedIn",
+    "Pierce County",
+    "Pierce County Assessor-Treasurer Information Portal",
+    "Robinhood",
+    "Vanguard",
+    "Wells Fargo"
+  ],
+  "locations": [
+    "United States",
+    "Lakewood",
+    "Blvd SW",
+    "Washington",
+    "WA",
+    "Hawaii",
+    "Bocchi",
+    "Tacoma",
+    "Pierce County",
+    "Renton"
+  ],
+  "money": [
+    "#",
+    "### Bocchi",
+    "### Brandstetter",
+    "### Pearson",
+    "###",
+    "0-$29,999",
+    "### Belle"
+  ]
+}

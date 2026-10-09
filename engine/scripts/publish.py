@@ -1,0 +1,381 @@
+#!/usr/bin/env python3
+"""publish.py — the one command that takes a case from worktree to public.
+
+Contract: **pushing changes = publishing changes.** Every run:
+  1. syncs case worktree -> cases/<slug>/ in the monorepo worktree (rsync)
+  2. syncs engine (pipeline/, schema/, scripts/, config/) -> engine/
+  3. records dependency versions (tools/dep-versions.json)
+  4. rebuilds derived artifacts (engine pipeline --strict + case2hub)
+  5. MECE parity: regenerates the site README from the same data case2hub used
+  6. secret-scans the diff; never commits a match
+  7. commits everything to the monorepo, pushes main (triggers CI)
+  8. pushes the gh-pages orphans (source + site); CI deploys Pages on green
+
+Usage:
+  publish.py run [SLUG ...]           # publish all cases (or just SLUGs) + engine
+  publish.py sync-only SLUG ...       # mirror worktree -> monorepo, no git ops
+  publish.py selftest                 # full CI parity check, local
+
+Fingerprints: SHA256 of (engine tree @ build time, dep versions, input graph)
+recorded in site/artifact-manifest.json; CI recomputes and must match exactly.
+"""
+from __future__ import annotations
+
+import json
+import os
+import re
+import shutil
+import subprocess
+import sys
+from pathlib import Path
+
+HOME = Path.home()
+DOCS = HOME / "Documents" / "Investigations"
+REPOS = HOME / ".investigations" / "repos"
+MONOREPO_WORKTREE = DOCS / "investigations"
+GH_REMOTE = "https://github.com/moliver28/investigations.git"
+GHPAGES_REPO = "moliver28/moliver28.github.io"
+SECRET_PATTERNS = [
+    r"gh[pousr]_[A-Za-z0-9]{36,}",           # github tokens
+    r"AKIA[0-9A-Z]{16}",                       # aws
+    r"-----BEGIN [A-Z ]*PRIVATE KEY-----",     # pem keys
+    r"sk-(proj-)?[A-Za-z0-9]{20,}",            # openai-style
+    r"xox[baprs]-[A-Za-z0-9-]{10,}",           # slack
+    r"(?i)(api[_-]?key|secret|password)\s*[:=]\s*['\"]?[A-Za-z0-9_\-]{16,}",  # generic
+]
+
+
+def clean_env() -> dict:
+    """Scrub ambient PYTHON* vars — a stray PYTHONPATH silently redirects
+    imports to a different environment and breaks the engine (seen live)."""
+    env = {k: v for k, v in os.environ.items() if not k.startswith("PYTHON")}
+    env.setdefault("PATH", os.environ.get("PATH", ""))
+    return env
+
+
+def sh(cmd: list[str], cwd: Path | None = None, check: bool = True) -> str:
+    r = subprocess.run(cmd, cwd=str(cwd) if cwd else None,
+                       capture_output=True, text=True, env=clean_env())
+    if check and r.returncode != 0:
+        raise SystemExit(f"FAIL {' '.join(cmd)}\n{r.stdout}\n{r.stderr}")
+    return (r.stdout or "") + (r.stderr or "")
+
+
+def sync_worktree_to_cases(slug: str) -> None:
+    src = DOCS / slug
+    if not src.exists():
+        raise SystemExit(f"case worktree missing: {src}")
+    dst = MONOREPO_WORKTREE / "cases" / slug
+    dst.mkdir(parents=True, exist_ok=True)
+    exclude = [
+        ".git", ".DS_Store", "__pycache__", "*.pyc", "cache", "tmp",
+        ".venv", "node_modules", "*.sqlite", "*.sqlite-shm", "*.sqlite-wal",
+        "verification_evidence.db*",
+    ]
+    args = ["rsync", "-a", "--delete"]
+    for e in exclude:
+        args += ["--exclude", e]
+    args += [f"{src}/", f"{dst}/"]
+    sh(args)
+    # mirror .gitignore contents (case decides what's tracked)
+    gi = src / ".gitignore"
+    if gi.exists():
+        (dst / ".gitignore").write_text(gi.read_text())
+
+
+def sync_engine() -> None:
+    dst = MONOREPO_WORKTREE / "engine"
+    dst.mkdir(parents=True, exist_ok=True)
+    for sub in ["pipeline", "schema", "scripts", "config"]:
+        (dst / sub).mkdir(parents=True, exist_ok=True)
+        sh(["rsync", "-a", "--delete",
+            "--exclude", "__pycache__", "--exclude", ".git", "--exclude", ".DS_Store",
+            "--exclude", "*.pyc",
+            f"{DOCS / '2608-journalism-system' / sub}/", f"{dst / sub}/"])
+    shutil.copy2(DOCS / "2608-journalism-system" / "README.md", dst / "README.md")
+
+
+def git_head_sha(cwd: Path) -> str:
+    import hashlib
+    # sha256 of the engine tree (files, not mtimes) — the "engine version"
+    h = hashlib.sha256()
+    for p in sorted(dsts := [p for p in cwd.rglob("*") if p.is_file() and ".git" not in p.parts and "__pycache__" not in p.parts and p.suffix != ".pyc"]):
+        h.update(str(p.relative_to(cwd)).encode())
+        h.update(p.read_bytes())
+    return h.hexdigest()
+
+
+def record_deps(engine_dir: Path) -> dict:
+    venv_py = str(HOME / ".hermes" / "hermes-agent" / "venv" / "bin" / "python3")
+    r = subprocess.run([venv_py, "-c",
+              "import importlib.metadata as im, sys;"
+              "print(im.version('networkx'), im.version('numpy'),"
+              "im.version('markdown'), im.version('jsonschema'),"
+              "sys.version.split()[0])"],
+             capture_output=True, text=True, env=clean_env())
+    if r.returncode != 0:
+        raise SystemExit(f"dep inventory failed: {r.stderr}")
+    parts = r.stdout.strip().split("\n")[-1].split()
+    deps = {
+        "networkx": parts[0], "numpy": parts[1], "markdown": parts[2],
+        "jsonschema": parts[3], "python": parts[4],
+    }
+    (engine_dir / "dep-versions.json").write_text(json.dumps(deps, indent=2) + "\n")
+    return deps
+
+
+SECRET_RES = [re.compile(p) for p in SECRET_PATTERNS]
+
+
+def scan_for_secrets(paths: list[Path]) -> list[str]:
+    files: list[Path] = []
+    for p in paths:
+        if p.is_file():
+            files.append(p)
+        elif p.is_dir():
+            files.extend(
+                q for q in p.rglob("*")
+                if q.is_file() and q.stat().st_size <= 20_000_000
+                and "__pycache__" not in q.parts and ".git" not in q.parts)
+    hits = []
+    for p in files:
+        try:
+            t = p.read_text(encoding="utf-8", errors="ignore")
+        except Exception:
+            continue
+        for rx in SECRET_RES:
+            m = rx.search(t)
+            if m:
+                frag = t[max(0, m.start() - 30):m.end() + 10].replace("\n", " ")
+                hits.append(f"{p.name}: …{frag}…")
+    return hits
+
+
+def case_paths(slug: str) -> dict:
+    case_dir = MONOREPO_WORKTREE / "cases" / slug
+    site_json = case_dir / "site.json"
+    if not site_json.exists():
+        return {}
+    cfg = json.loads(site_json.read_text())
+    paths = cfg.get("paths", {})
+    return {
+        "graph": str(case_dir / paths.get("graph", "evidence/graph.json")),
+        "output": str(case_dir / paths.get("output", "evidence/network.html")),
+        "site_json": str(site_json),
+    }
+
+
+def run_pipeline(slug: str) -> tuple[bool, str]:
+    """Engine pipeline (validate/build/verify --strict) + case bundle gates.
+    Cases without site.json are dossier-style: no engine render required."""
+    cp = case_paths(slug)
+    if not cp:
+        return True, "dossier-style (no site.json, no render)"
+    engine_dir = MONOREPO_WORKTREE / "engine"
+    venv_py = str(HOME / ".hermes" / "hermes-agent" / "venv" / "bin" / "python3")
+    r = subprocess.run(
+        [venv_py, "-m", "pipeline.run", cp["site_json"], "--strict"],
+        cwd=str(engine_dir), capture_output=True, text=True, env=clean_env())
+    if r.returncode != 0:
+        return False, r.stdout + r.stderr
+    log = r.stdout + r.stderr
+    # case-local bundle gate (entity network UI) — run if present
+    bundle = DOCS / slug / "scripts" / "build_entity_bundle.py"
+    if bundle.exists():
+        rb = subprocess.run([venv_py, "scripts/build_entity_bundle.py"],
+                            cwd=str(DOCS / slug), capture_output=True, text=True,
+                            env=clean_env())
+        log += rb.stdout + rb.stderr
+        if rb.returncode != 0:
+            return False, log
+        suite = DOCS / slug / "scripts" / "verify_ui.py"
+        if suite.exists():
+            rs = subprocess.run([venv_py, "scripts/verify_ui.py"],
+                                cwd=str(DOCS / slug), capture_output=True, text=True,
+                                env=clean_env())
+            log += rs.stdout + rs.stderr
+            if rs.returncode != 0:
+                return False, log
+    return True, log
+
+
+def build_hub(engine_dir: Path) -> dict:
+    venv_py = str(HOME / ".hermes" / "hermes-agent" / "venv" / "bin" / "python3")
+    r = subprocess.run([venv_py, str(engine_dir / "scripts" / "case2hub.py"), "build",
+                        str(MONOREPO_WORKTREE)], capture_output=True, text=True,
+                       env=clean_env())
+    if r.returncode != 0 or "built" not in r.stdout:
+        raise SystemExit(f"case2hub build failed: {r.stdout}{r.stderr}")
+    print(r.stdout.strip())
+
+
+def mece_readme(engine_dir: Path) -> None:
+    """Regenerate the PUBLISHED site README from the same data case2hub used —
+    guaranteeing index ↔ README ↔ registry MECE parity by construction."""
+    venv_py = str(HOME / ".hermes" / "hermes-agent" / "venv" / "bin" / "python3")
+    inner = '''
+import sys
+sys.path.insert(0, sys.argv[1])
+import case2hub, json
+from pathlib import Path
+repo = Path(sys.argv[2])
+rows = case2hub.collect_rows(repo)
+reg = json.loads((repo / 'site' / 'registry.json').read_text())
+lines = [
+    '# Published Investigations',
+    '',
+    'Live site: https://moliver28.github.io/investigations/',
+    '',
+    '| Case | ID | Status | Updated |',
+    '|---|---|---|---|',
+]
+for row in sorted(rows, key=lambda x: x['case_id']):
+    lines.append("| [__TITLE__](https://moliver28.github.io/investigations/cards/__SLUG__.html) | __CID__ | __STATUS__ | __UPDATED__ |"
+        .replace("__TITLE__", row['title'].replace("|", "/"))
+        .replace("__SLUG__", row['slug'])
+        .replace("__CID__", row['case_id'])
+        .replace("__STATUS__", row['status'])
+        .replace("__UPDATED__", row['last_updated'][:10]))
+lines += ['', 'Registry records __NREG__ cases total; __NPUB__ published.', '']
+text = chr(10).join(lines)
+text = text.replace("__NREG__", str(len(reg['cases']))).replace("__NPUB__", str(len(rows)))
+(repo / 'README.md').write_text(text)
+print('README:', len(rows), 'published /', len(reg['cases']), 'registered')
+'''
+    r = subprocess.run([venv_py, "-c", inner,
+                        str(engine_dir / "scripts"), str(MONOREPO_WORKTREE)],
+                       capture_output=True, text=True, env=clean_env())
+    if r.returncode != 0:
+        raise SystemExit(r.stderr)
+    print(r.stdout.strip())
+
+
+def fingerprint(engine_dir: Path) -> None:
+    out = MONOREPO_WORKTREE / "site" / "artifact-manifest.json"
+    entries = json.loads(out.read_text()) if out.exists() else {}
+    case_manifest = {}
+    for slug in sorted(os.listdir(MONOREPO_WORKTREE / "cases")):
+        cp = case_paths(slug)
+        if not cp:
+            continue
+        import hashlib
+        graph_sha = hashlib.sha256(Path(cp["graph"]).read_bytes()).hexdigest()
+        out_html = Path(cp["output"])
+        item = {
+            "engine_sha": git_head_sha(engine_dir),
+            "deps_sha": hashlib.sha256((engine_dir / "dep-versions.json").read_bytes()).hexdigest(),
+            "graph_sha": graph_sha,
+            "output_sha": hashlib.sha256(out_html.read_bytes()).hexdigest() if out_html.exists() else None,
+        }
+        case_manifest[slug] = item
+    manifest = {
+        "engine_sha": git_head_sha(engine_dir),
+        "case_manifest": case_manifest,
+        "hub_generator": "case2hub.py",
+    }
+    out.write_text(json.dumps(manifest, indent=2, sort_keys=True) + "\n")
+    print(f"manifest: {len(case_manifest)} rendered cases recorded")
+
+
+def secret_gate() -> None:
+    changed = sh(["git", "status", "--porcelain"], cwd=MONOREPO_WORKTREE)
+    paths = []
+    for line in changed.splitlines():
+        p = line[3:].strip().strip('"')
+        if not p:
+            continue
+        paths.append(MONOREPO_WORKTREE / p.split(" -> ")[-1])
+    paths.append(MONOREPO_WORKTREE / "cases")
+    hits = scan_for_secrets(paths)
+    if hits:
+        for h in hits[:20]:
+            print("SECRET MATCH", h)
+        raise SystemExit("publish blocked: secret-pattern match in changed files. "
+                         "Fix the file, re-run. NEVER bypass this gate.")
+
+
+def selftest(engine_dir: Path) -> int:
+    ok = True
+    r = subprocess.run([str(HOME / ".hermes" / "hermes-agent" / "venv" / "bin" / "python3"),
+                        str(engine_dir / "scripts" / "case2hub.py"), "selftest",
+                        str(MONOREPO_WORKTREE)], capture_output=True, text=True,
+                        env=clean_env())
+    print(r.stdout + r.stderr)
+    ok &= r.returncode == 0
+    return 0 if ok else 1
+
+
+def push_all(slugs: list[str], message: str) -> None:
+    sh(["git", "add", "-A"], cwd=MONOREPO_WORKTREE)
+    sh(["git", "commit", "-m", message], cwd=MONOREPO_WORKTREE, check=False)
+    if os.environ.get("PUBLISH_DRY_RUN"):
+        print("PUBLISH_DRY_RUN: skipping pushes")
+        return
+    sh(["git", "push", "origin", "main"], cwd=MONOREPO_WORKTREE)
+    # NOTE: no gh-pages branch — CI deploys Pages from an artifact (actions/deploy-pages)
+    # AFTER parity passes, so a red build can never publish.
+
+
+def discover_case_slugs() -> list[str]:
+    """Every investigation worktree under DOCS except the engine repo itself.
+    A case = a git worktree dir containing its own canonical <slug>.md or site.json."""
+    out = []
+    engine_slug = "2608-journalism-system"
+    for d in sorted(DOCS.iterdir()):
+        if not d.is_dir() or d.name == engine_slug or d.name.startswith("."):
+            continue
+        if (d / f"{d.name}.md").exists() or (d / "site.json").exists():
+            out.append(d.name)
+    return out
+
+
+def main(argv: list[str]) -> int:
+    MONOREPO_WORKTREE.mkdir(parents=True, exist_ok=True)
+    if not (MONOREPO_WORKTREE / ".git").exists():
+        raise SystemExit(f"{MONOREPO_WORKTREE} is not a git repo — init it first")
+    cmd = argv[0] if argv else "run"
+    engine_dir = MONOREPO_WORKTREE / "engine"
+
+    if cmd == "sync-only":
+        for slug in argv[1:]:
+            sync_worktree_to_cases(slug)
+            print(f"synced {slug}")
+        sync_engine()
+        return 0
+
+    if cmd == "selftest":
+        return selftest(engine_dir)
+
+    if cmd != "run":
+        print(__doc__)
+        return 2
+
+    # ---- run ----
+    sync_engine()
+    (MONOREPO_WORKTREE / "cases").mkdir(parents=True, exist_ok=True)
+    slugs = argv[1:] or discover_case_slugs()
+    existing = [s for s in slugs if (DOCS / s).exists()]
+    for slug in existing:
+        sync_worktree_to_cases(slug)
+        ok, log = run_pipeline(slug)
+        tail = log.strip().splitlines()[-6:] if log.strip() else []
+        print(f"[{slug}] pipeline: {'OK' if ok else 'FAIL'}")
+        for line in tail or [  ""]:
+            print("   ", line)
+        if not ok:
+            raise SystemExit(f"pipeline failed for {slug} — publish aborted (nothing pushed)")
+    build_hub(engine_dir)
+    mece_readme(engine_dir)
+    record_deps(engine_dir)
+    fingerprint(engine_dir)
+    secret_gate()
+    message = "publish: engine" + (f" + {', '.join(existing)}" if existing else "") + \
+              " — " + subprocess.run(["date", "+%Y-%m-%dT%H:%M%z"],
+                                     capture_output=True, text=True).stdout.strip()
+    push_all(existing, message)
+    print("pushed main. CI will parity-check, rebuild, compare manifests, and deploy Pages on green.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

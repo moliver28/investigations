@@ -1,0 +1,155 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  verify-and-publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install pinned deps
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install jsonschema==4.* markdown==3.* networkx==2.* numpy==2.*
+
+      - name: Rebuild site from source (validate → build → verify)
+        run: |
+          python -m pipeline.run cases/2608-pierce-leadership/site.json --strict
+
+      - name: Re-derive hub artifacts and enforce MECE parity
+        run: |
+          python engine/scripts/case2hub.py selftest .
+
+      - name: README ↔ index ↔ registry MECE parity
+        run: |
+          python - <<'PY'
+          import json, re
+          from pathlib import Path
+          repo = Path('.')
+          registry = json.loads((repo/'site/registry.json').read_text())
+          approved = {c['slug'] for c in registry['cases'] if c['approved']}
+          # index parity
+          index = (repo/'site/index.html').read_text()
+          for slug in approved:
+              assert f'cards/{slug}.html' in index, f'{slug} missing from index'
+          for slug in {p.stem for p in (repo/'site/cards').glob('*.html')}:
+              assert slug in approved, f'card {slug} published but not approved'
+          assert len(registry['cases']) == len({c['case_id'] for c in registry['cases']}), 'duplicate case_id in registry'
+          # README parity: README table must match approved set exactly
+          readme = (repo/'README.md').read_text()
+          readme_slugs = set(re.findall(r'/cards/([\w-]+)\.html', readme))
+          assert readme_slugs == approved, f'README published set mismatch: {readme_slugs ^ approved}'
+          print(f'MECE parity ok: {len(approved)} published / {len(registry["cases"])} registered')
+          PY
+
+      - name: Artifact parity (engine + deps + graph fingerprints)
+        run: |
+          python - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+          eng = hashlib.sha256()
+          for p in sorted(Path('engine').rglob('*')):
+              if p.is_file() and '__pycache__' not in p.parts:
+                  eng.update(str(p.relative_to('engine')).encode()); eng.update(p.read_bytes())
+          mf = json.loads(Path('site/artifact-manifest.json').read_text())
+          assert mf['engine_sha'] == eng.hexdigest(), 'engine fingerprint drift — data was not built with this engine'
+          deps = sha('engine/dep-versions.json')
+          for slug, item in mf['case_manifest'].items():
+              gp = Path(f'cases/{slug}') / json.loads(
+                  (Path(f'cases/{slug}/site.json')).read_text())['paths']['graph']
+              assert item['graph_sha'] == sha(gp), f'{slug}: graph changed since publish'
+              out = Path(f'cases/{slug}') / json.loads(
+                  (Path(f'cases/{slug}/site.json')).read_text())['paths']['output']
+              assert item['output_sha'] == sha(out), f'{slug}: output != recorded publish'
+              assert item['deps_sha'] == deps, f'{slug}: dep versions changed since publish'
+          print('artifact parity ok:', len(mf['case_manifest']), 'rendered cases')
+          PY
+
+      - name: Secret scan published artifacts
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          pat = re.compile('|'.join([
+              r'gh[pousr]_[A-Za-z0-9]{36,}', r'AKIA[0-9A-Z]{16}',
+              r'-----BEGIN [A-Z ]*PRIVATE KEY-----', r'sk-(proj-)?[A-Za-z0-9]{20,}',
+              r'xox[baprs]-[A-Za-z0-9-]{10,}',
+              r'(?i)(api[_-]?key|secret|password)\s*[:=]\s*["\']?[A-Za-z0-9_\-]{16,}']))
+          hits = []
+          for p in list(Path('site').rglob('*')) + list(Path('cases').rglob('*')):
+              if p.is_file() and p.stat().st_size < 20_000_000 and '__pycache__' not in p.parts:
+                  try: t = p.read_text(errors='ignore')
+                  except Exception: continue
+                  if pat.search(t): hits.append(str(p))
+          assert not hits, f'SECRETS IN PUBLISHED FILES: {hits}'
+          print('secret scan clean')
+          PY
+
+      - name: Fail if unapproved case is rendered
+        run: |
+          python - <<'PY'
+          import yaml, json
+          from pathlib import Path
+          reg = json.loads(Path('site/registry.json').read_text())
+          for c in reg['cases']:
+              if not c['approved']:
+                  # no rendered output may exist for an unapproved case
+                  assert not (Path('site/cards')/f"{c['slug']}.html").exists(), \
+                      f"UNAPPROVED {c['slug']} has a published card"
+          print('approval gate ok')
+          PY
+          rm -f /tmp/yaml-unused
+
+      - name: Assemble Pages artifact (site only — never raw graphs)
+        run: |
+          mkdir -p /tmp/pages/site/assets
+          cp -R site/* /tmp/pages/site/
+          # approved interactive bundles (pre-built locally, only approved cases)
+          python - <<'PY'
+          import json, shutil
+          from pathlib import Path
+          reg = json.loads(Path('site/registry.json').read_text())
+          for c in reg['cases']:
+              if not c['approved']: continue
+              src = Path(f'cases/{c["slug"]}/evidence/network')
+              if src.exists():
+                  dst = Path('/tmp/pages/site/assets/network')/c['slug']
+                  shutil.copytree(src, dst, ignore=shutil.ignore_patterns('.DS_Store'))
+          print('bundles copied')
+          PY
+          touch /tmp/pages/site/.nojekyll
+          echo '<!-- deployed by ci -->' > /tmp/pages/site/deploy-stamp.html
+
+      - name: Upload Pages artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pages
+          path: /tmp/pages
+          retention-days: 1
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

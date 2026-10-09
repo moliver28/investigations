@@ -1,0 +1,19 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+
+# Sensitive — never commit private data
+private/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

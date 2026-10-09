@@ -1,0 +1,817 @@
+{
+ "ryan-mello": {
+  "headline": "Writes the county budget, runs the departments, and can veto almost anything the Council passes. A veto override needs 5 of 7 votes, and the Council splits 4 to 3.",
+  "counter": "A defender would say his 51-49 win gives him no mandate, the Council controls the purse, and his transit board seats are advisory. Under that view the county's real power sits in institutions that outlast any officeholder: the Chamber, the Tribe, the base, the hospital systems.",
+  "confidence": "High"
+ },
+ "chamber": {
+  "headline": "The county's main business lobby. It trains candidates through the Candidate Academy, publishes voter guides, and seats the leaders of Boeing, the Port, MultiCare, and PSE on its board.",
+  "counter": "The Chamber does not name the Academy's graduates, so the pipeline claim rests on a pattern, not a roster.",
+  "confidence": "Medium"
+ },
+ "county-council": {
+  "headline": "The county's law-making body: seven members, a 4 to 3 split, and control of the $3.5 billion budget, zoning, land use, and appointments.",
+  "counter": "Power is shared: an override needs 5 of 7 votes, so a 4 to 3 majority cannot always deliver, and the Executive holds the veto.",
+  "confidence": "High"
+ },
+ "puyallup-tribe": {
+  "headline": "A sovereign nation whose reservation overlaps Tacoma and the county. Federal recognition, casino gaming, and land-into-trust authority give it powers local governments cannot override.",
+  "counter": "Sovereignty cuts both ways: tribal records are not subject to public-records law, so parts of the Tribe's finances stay unverifiable from outside.",
+  "confidence": "Medium"
+ },
+ "jblm": {
+  "headline": "The largest employer in the county and a federal installation: about $12.1 billion in combined regional impact, 57,000-plus direct jobs, and immunity from local regulation.",
+  "counter": "The base answers to the Pentagon, not the county. Local officials can partner with JBLM, never direct it.",
+  "confidence": "Medium"
+ },
+ "multicare": {
+  "headline": "The largest private employer in the county: 22,789 employees, 9 hospitals, and more than $5 billion in yearly revenue.",
+  "counter": "A defender calls it a nonprofit delivering essential care under a legally granted tax exemption. The counterpoint: about 96 percent of its revenue comes from government health programs, so the public already funds the system.",
+  "confidence": "High"
+ },
+ "keith-swank": {
+  "headline": "The elected sheriff. He runs policing for about 425,000 residents of unincorporated Pierce County, runs the county jail, and leads a large sworn force.",
+  "counter": "His budget comes from the Council every cycle, and voters can replace him at the next election.",
+  "confidence": "Medium"
+ },
+ "mary-robnett": {
+  "headline": "The county prosecutor. In a county of about 900,000 people she decides which felony cases to charge, plea, or drop, with a $20 million office behind her.",
+  "counter": "Charging power is checked by courts and by elections. She is not running in 2026, so the office changes hands soon.",
+  "confidence": "Medium"
+ },
+ "port-tacoma": {
+  "headline": "A city-sized public corporation: five elected commissioners run container terminals and industrial land, and co-manage the Northwest Seaport Alliance with Seattle.",
+  "counter": "The Port's fortunes depend on shipping markets and the alliance with Seattle, and its commissioners answer to countywide voters.",
+  "confidence": "High"
+ },
+ "vmfh": {
+  "headline": "The Catholic-affiliated hospital system in Pierce County: 10 hospitals including St. Joseph in Tacoma, 18,000-plus employees, and $304 million in yearly community benefits.",
+  "counter": "A defender would call it a nonprofit on a religious health mission. The counter: ultimate control sits with CommonSpirit in Chicago, and Catholic directives shape care decisions locally.",
+  "confidence": "Medium"
+ },
+ "tom-pierson": {
+  "headline": "Holds two power jobs at once: interim CEO of the Chamber of Commerce and acting director of the county's economic development department.",
+  "counter": "Both roles are temporary and appointed, so the power is borrowed and time-limited.",
+  "confidence": "Medium"
+ },
+ "nathe-lawver": {
+  "headline": "The labor-civic interlock: secretary-treasurer of the county labor council, board chair of United Way, and a member of the foundation and economic development boards.",
+  "counter": "Sitting on both labor and nonprofit boards means he can face both sides of a funding or endorsement question. The defense: the seats are voluntary and disclosed.",
+  "confidence": "High"
+ },
+ "dona-ponepinto": {
+  "headline": "The most cross-networked nonprofit leader on the map: runs United Way and holds seven or more board seats across health, arts, college, and workforce bodies.",
+  "counter": "Most seats are unpaid and separate. The counter is concentration: one person helps steer the region's charity, its community college, and Medicaid-linked boards at the same time.",
+  "confidence": "High"
+ },
+ "john-wiborg": {
+  "headline": "Owns a private industrial company, Stellar Industrial Supply, and chairs the board of MultiCare, the county's largest private employer.",
+  "counter": "Private company finances limit what can be verified, and the board seat is standard civic service. The interlock itself is the documented fact.",
+  "confidence": "High"
+ },
+ "pierce-dem": {
+  "headline": "The county Democratic Party: endorsements, campaign training, and a precinct network that link the unions and donors behind the 4 to 3 Council majority.",
+  "counter": "Party nodes inflate connection: many of the party's graph edges are just members who share a party label.",
+  "confidence": "Medium"
+ },
+ "anders-ibsen": {
+  "headline": "Mayor of Tacoma. He can veto a $4.7 billion city budget and picks the city manager and the police chief.",
+  "counter": "Tacoma uses a council-manager government, so the manager runs the city day to day and the Council confirms the top hires.",
+  "confidence": "Medium"
+ },
+ "superior-court": {
+  "headline": "The county's trial court: 23 elected judges and 10 commissioners hear every felony, large civil case, and family dispute in Pierce County.",
+  "counter": "Its budget comes from the Council, its judges stand for election, and appeals go to Division II.",
+  "confidence": "High"
+ },
+ "pierce-transit": {
+  "headline": "Runs the county's buses and paratransit on a $367 million budget, funded by a voter-approved sales tax and governed by a 10-member elected board.",
+  "counter": "With 7.8 million rides a year against a county of 900,000, the car still dominates, and the proposed tax increase faces voters.",
+  "confidence": "High"
+ },
+ "pierce-gop": {
+  "headline": "The county Republican Party: it endorses, funds, and trains candidates and channels donor money, even while Democrats hold most county offices.",
+  "counter": "This is a party doing standard party work, and its reach is capped by the county's Democratic lean.",
+  "confidence": "Medium"
+ },
+ "tacoma-city-council": {
+  "headline": "Governs the county's largest city and economic core: nine members adopt a $4.7 billion budget, set land use, and confirm top appointments.",
+  "counter": "Under the council-manager system, the hired manager runs daily operations, which limits the Council's direct control.",
+  "confidence": "High"
+ },
+ "news-tribune": {
+  "headline": "The county's only daily newspaper, owned by a New Jersey hedge fund. Its agenda power persists even as circulation and staff shrink.",
+  "counter": "Out-of-state ownership and repeated layoffs point to weakening watchdog capacity, not growing power.",
+  "confidence": "Medium"
+ },
+ "weyerhaeuser": {
+  "headline": "One of the largest private landowners in the county and the country's biggest timber company, with historical federal land grants and campaign donations to local officials.",
+  "counter": "Pierce County-specific land holdings and board overlaps are not fully verified, and its $2,000 donation to the prosecutor is legal and modest.",
+  "confidence": "Medium"
+ },
+ "john-mccarthy": {
+  "headline": "A rare triple resume: longshoreman, 22-year Superior Court judge, and elected Port of Tacoma commissioner.",
+  "counter": "Port commissioner is a part-time job with modest pay, and the port's business is conducted in public.",
+  "confidence": "High"
+ },
+ "bill-sterud": {
+  "headline": "Chairman of the Puyallup Tribal Council on and off since the 1970s, and a negotiator of the land claims settlement that reshaped the Tribe's wealth.",
+  "counter": "Tribal officials' personal finances are not public, and sovereignty limits outside verification.",
+  "confidence": "Medium"
+ },
+ "rosie-ayala": {
+  "headline": "Councilmember for the district that covers downtown Tacoma, Hilltop, and the South End, seated on transit and foundation boards that move money through it.",
+  "counter": "Her board seats are standard Council assignments, not personal power grabs.",
+  "confidence": "Medium"
+ },
+ "gtcf": {
+  "headline": "The region's largest community foundation: about $185.7 million in assets and a board that seats labor leaders, elected officials, and college leadership.",
+  "counter": "Grants are small relative to assets and priorities are set in public filings. The counter is the overlap: one board touches donors, grantees, and county decisions.",
+  "confidence": "High"
+ },
+ "pa-office": {
+  "headline": "The only office that can file felony charges anywhere in the county: 263 positions and an $88.6 million proposed budget, led by an elected prosecutor.",
+  "counter": "Charging is checked by courts, defense counsel, and elections, and federal and state prosecutors take their own cases.",
+  "confidence": "High"
+ },
+ "pclc": {
+  "headline": "Labor's political hub: 114 affiliated unions, 44,000-plus members, endorsements, and PAC money in county races.",
+  "counter": "Its PAC totals ran $24,000 to $46,000 in recent cycles, small beside independent expenditure campaigns, and member counts overstate active political participation.",
+  "confidence": "Medium"
+ },
+ "ltg-mcfarlane": {
+  "headline": "Commands about 45,000 military and civilian personnel at Joint Base Lewis-McChord, the West Coast's largest Army base.",
+  "counter": "Command is temporary by design: he serves at the Pentagon's direction and rotates out.",
+  "confidence": "High"
+ },
+ "tacoma-schools": {
+  "headline": "The largest school district in the county: 28,272 students, 69 schools, and a $30 million shortfall for 2025-26.",
+  "counter": "The next budget cycle is about cuts, which will test how far the district's reach extends.",
+  "confidence": "High"
+ },
+ "amy-cruver": {
+  "headline": "One of seven Council votes from the fast-growing east county, with a 15-year apprenticeship under state Sen. Jim McCune behind her.",
+  "counter": "Her power is shared, not solo: one vote, no veto, and a district that competes for the same budget everyone else does.",
+  "confidence": "Medium"
+ },
+ "jani-hitchen": {
+  "headline": "Chairs the County Council and the Board of Health, two of the top seats in county government.",
+  "counter": "A 4 to 3 majority is one defection from gridlock, and a veto override takes five votes.",
+  "confidence": "Medium"
+ },
+ "kelly-chambers": {
+  "headline": "Lost the 2024 Executive race but stays in the power graph: the county GOP's top-funded candidate and now a federal small-business administrator.",
+  "counter": "She holds no county office today. Her map presence is donor network and campaign history, not current authority.",
+  "confidence": "Medium"
+ },
+ "miles-sand-gravel": {
+  "headline": "A fifth-generation concrete and gravel supplier that donates to council candidates of both parties and works land-use decisions its industry depends on.",
+  "counter": "The donations are modest and within legal limits, and no quid pro quo has been documented.",
+  "confidence": "Medium"
+ },
+ "tcc": {
+  "headline": "A public community college with about 9,900 students and an $84 million budget, governed by a governor-appointed board.",
+  "counter": "Most of its revenue follows state formulas, so local discretion is limited.",
+  "confidence": "Medium"
+ },
+ "candidate-academy": {
+  "headline": "The Chamber's candidate-training program, the source of the 'Chamber candidate' label in county races. It does not disclose its graduates.",
+  "counter": "It is a one-day primer, not proof of coordination. The undisclosed alumni list is the open question.",
+  "confidence": "Medium"
+ },
+ "knkx": {
+  "headline": "The region's independent public-radio newsroom: a nonprofit owned by Pacific Public Media and funded mostly by listeners.",
+  "counter": "Listener funding answers to audience taste, and sponsorship dollars can create softer pressures than advertisers ever did.",
+  "confidence": "Medium"
+ },
+ "paul-herrera": {
+  "headline": "Council vice chair, public safety committee chair, and a former Puyallup Tribe police sergeant, voting in a 4 to 3 chamber.",
+  "counter": "Council power is shared: one vote, committee influence, and no veto.",
+  "confidence": "Medium-High"
+ },
+ "edb": {
+  "headline": "The county's convening platform for economic development: 40-plus institutional leaders meet under one board that includes Boeing, Amazon, MultiCare, and the Port.",
+  "counter": "The EDB holds no statutory, taxing, or regulatory power. Rivals share its board table, which is both its strength and its conflict.",
+  "confidence": "Medium"
+ },
+ "uw-tacoma": {
+  "headline": "The county's public university campus: 5,059 students, a $100 million-plus operation, and 52 percent first-generation enrollment.",
+  "counter": "A branch campus reports to UW in Seattle, so its autonomy is bounded.",
+  "confidence": "Medium-High"
+ },
+ "rush-development": {
+  "headline": "The building arm of The Rush Companies: $1.2 billion in assets and thousands of apartments, working land-use approvals it depends on.",
+  "counter": "Its map ties are donations and chamber membership, legal and routine for a developer.",
+  "confidence": "Medium"
+ },
+ "tpchd": {
+  "headline": "The county's sole public health agency: a $102.9 million two-year budget and rules covering food, septic, disease, and family health for about 952,000 residents.",
+  "counter": "The board kept a workplace-conduct probe partly closed, which is the accountability question on this page.",
+  "confidence": "High"
+ },
+ "twina-nobles": {
+  "headline": "State senator for the 28th District and chair of the higher-education committee, holding office in two education worlds at once.",
+  "counter": "A defense would flag her dual office-holding as a structural conflict; the roles are at different levels of government.",
+  "confidence": "High"
+ },
+ "adam-smith": {
+  "headline": "The ranking Democrat on the House Armed Services Committee: he shapes Pentagon spending that lands at Joint Base Lewis-McChord.",
+  "counter": "Defense-industry donations create a structural appearance of conflict, and he represents a district with the base in it.",
+  "confidence": "High"
+ },
+ "southport": {
+  "headline": "A national affordable-housing developer whose Tacoma office works the low-income-housing tax credit niche and county-subsidized projects like Cedar Flats.",
+  "counter": "The niche depends on federal tax-credit rules, so its power is conditional on a program it does not control.",
+  "confidence": "Medium"
+ },
+ "tucci-sons": {
+  "headline": "A third-generation heavy-highway contractor: state and federal road contracts, two asphalt plants, and donations to county candidates.",
+  "confidence": "Medium",
+  "counter": "Road-building power follows the contracts: WSDOT and federal awards set the pipeline, and the donations are small and legal."
+ },
+ "lincoln-park": {
+  "headline": "The holding company of Bill Driscoll, a Tacoma operator whose roles run through real estate, venture capital, and the PotlatchDeltic public-company board.",
+  "counter": "Its documented public links are thin: a chamber membership and a donation, while the rest of the network is private.",
+  "confidence": "Medium"
+ },
+ "nall-capital": {
+  "headline": "A private holding company whose principal, Scott Nall, built a telecom-infrastructure business and leads youth-sports and school-district civic networks.",
+  "counter": "Low confidence by design: the profile itself flags limited verification of the combined roles.",
+  "confidence": "Low"
+ },
+ "ssmcp": {
+  "headline": "A 50-plus member intergovernmental coalition that coordinates between Joint Base Lewis-McChord and the cities, counties, and tribes around it.",
+  "counter": "It convenes and coordinates but holds no regulatory or spending power of its own.",
+  "confidence": "High"
+ },
+ "bob-ferguson": {
+  "headline": "The Governor of Washington: he picks judges, including for Pierce County Superior Court, and writes the state budget plan.",
+  "counter": "His county margin was about 8,000 votes, judicial picks face later elections, and the legislature writes the final budget.",
+  "confidence": "High"
+ },
+ "jake-fey": {
+  "headline": "Chairs the state House Transportation Committee, the seat that steers billions in transportation money, including the $16.9 billion Move Ahead Washington package.",
+  "counter": "Committee chair power runs through a chamber where the majority sets the agenda, and the Senate must agree.",
+  "confidence": "Medium"
+ },
+ "central-pierce-fire": {
+  "headline": "One of the county's largest fire districts: a budget over $100 million and a 2026 merger with Graham and Orting Valley that widened its footprint.",
+  "counter": "Its money comes from voter-approved levies and a benefit charge, so growth depends on the ballot.",
+  "confidence": "Medium"
+ },
+ "andrew-strobel": {
+  "headline": "A connector in three worlds: tribal affairs adviser to the County Executive, 15 years as the Puyallup Tribe's planning director, and a college trustee.",
+  "counter": "His power is borrowed and at-will; it depends on Mello staying in office.",
+  "confidence": "Medium"
+ },
+ "hhfpac": {
+  "headline": "The hospital industry's political money arm: a PAC run by the state hospital association, active in legislative and Supreme Court races, with $579,000 on hand at the close of 2024.",
+  "counter": "Its spending is legal and disclosed; an open PDC case for reporting violations is the part that draws scrutiny.",
+  "confidence": "Medium"
+ },
+ "sound-transit": {
+  "headline": "The three-county transit authority: a $3.3 billion budget, a $34.5 billion funding gap on its expansion plan, and a board where Ryan Mello is vice chair.",
+  "counter": "The $34.5 billion shortfall on the ST3 plan is the open question: the agency's next moves depend on money it does not have.",
+  "confidence": "High"
+ },
+ "wa-realtors-pac": {
+  "headline": "One of the state's top-spending PACs: about $1 million in a cycle that funds pro-Realtor candidates of both parties.",
+  "counter": "Its spending is legal and disclosed; the concern is scale, not secrecy.",
+  "confidence": "Medium"
+ },
+ "pse": {
+  "headline": "The state's largest utility: a regulated monopoly serving more than 1.2 million electric customers, about 425,000 of them in Pierce County.",
+  "counter": "Regulated monopoly means the state utilities commission sets its rates and the legislature sets its rules.",
+  "confidence": "High"
+ },
+ "gth-gov": {
+  "headline": "One of the state's leading lobbying firms, headquartered in Tacoma: 60-plus clients across cities, ports, and corporations.",
+  "counter": "Lobbying is disclosed under state law; the firm's power is access, and access is hard to measure.",
+  "confidence": "High"
+ },
+ "yasmin-trudeau": {
+  "headline": "State senator for the most populous district in the county, holding seats on capital budget, law and justice, and housing.",
+  "counter": "She is one of 49 senators; committee vice chairs influence but do not control the agenda.",
+  "confidence": "High"
+ },
+ "steve-conway": {
+  "headline": "The longest-serving Pierce County legislator: 33 years in Olympia, Senate president pro tempore, and deep union ties.",
+  "counter": "He is retiring at the end of 2026, so the seat's influence resets.",
+  "confidence": "High"
+ },
+ "laurie-jinkins": {
+  "headline": "Speaker of the state House: she controls which bills reach the floor and assigns all 98 members to committees, while representing Tacoma's core district.",
+  "counter": "The majority caucus sets the agenda together, and the Senate must agree before anything becomes law.",
+  "confidence": "High"
+ },
+ "melanie-morgan": {
+  "headline": "State House vice chair for housing and a sponsor of the CROWN Act, the Juneteenth holiday, and a $200 million community reinvestment account.",
+  "counter": "Committee vice chair power is narrow: housing and equity bills, not chamber-wide control.",
+  "confidence": "High"
+ },
+ "maria-cantwell": {
+  "headline": "Washington's junior U.S. senator and the top Democrat on the Commerce Committee, overseeing transportation, trade, and fisheries money.",
+  "counter": "A ranking member sets minority priorities but does not control what the Senate floor takes up.",
+  "confidence": "High"
+ },
+ "patty-murray": {
+  "headline": "Washington's senior senator and vice chair of Appropriations, with hundreds of millions in directed spending and federal money flowing to the county.",
+  "counter": "Directed spending runs through committee votes and the full Senate, and it is now reported under disclosure rules.",
+  "confidence": "High"
+ },
+ "emily-randall": {
+  "headline": "Holds the U.S. House seat covering much of Tacoma and the Olympic Peninsula, as a first-term member with two committee seats.",
+  "counter": "As a freshman in the minority-margin House she has limited leverage beyond committee votes and constituent services.",
+  "confidence": "High"
+ },
+ "marilyn-strickland": {
+  "headline": "U.S. representative for the district covering part of Pierce County, a former Tacoma mayor, and a former chamber CEO.",
+  "counter": "One of 435 House members, and her district is split across two counties, so local leverage is shared.",
+  "confidence": "High"
+ },
+ "wsha": {
+  "headline": "The hospital industry's state trade group: it lobbies, runs the HHFPAC political committee, and its board chair runs MultiCare.",
+  "counter": "Trade-group advocacy is disclosed and legal; the direct power is over members, not patients or the public.",
+  "confidence": "High"
+ },
+ "bethel-schools": {
+  "headline": "One of the county's largest school districts: about 21,500 students across 200 square miles and a $164 million budget.",
+  "counter": "Budget and boundaries are set by an elected board under state formulas, so local discretion is limited.",
+  "confidence": "High"
+ },
+ "jason-thompson": {
+  "headline": "Sits on the MultiCare board, the county's largest private employer, while holding a senior job at a $401 billion asset manager.",
+  "counter": "The board seat is unpaid, and the public record shows the roles, not any resulting decisions.",
+  "confidence": "Medium"
+ },
+ "teamsters": {
+  "headline": "The largest Teamsters local in Washington: 19,500 members, including thousands of corrections officers, with PACs that endorse county candidates.",
+  "counter": "Its 19,500 members are a small share of Washington workers, and endorsements often back Democrats who would win anyway.",
+  "confidence": "High"
+ },
+ "tacoma-housing-auth": {
+  "headline": "Runs public housing and federal vouchers in Tacoma, and partners in redevelopment like the Salishan project.",
+  "counter": "Its money follows federal rules, and its board is appointed by the mayor, not elected.",
+  "confidence": "Medium"
+ },
+ "chris-gildon": {
+  "headline": "State senator for the 25th District and Senate Republicans' lead on the operating budget, from Puyallup's suburbs to the plateau.",
+  "counter": "As minority budget lead he negotiates but does not set the final numbers.",
+  "confidence": "High"
+ },
+ "phil-fortunato": {
+  "headline": "State senator for a district spanning southeast King and northeast Pierce County, and a small-business owner with two statewide runs behind him.",
+  "counter": "Both statewide runs ended in defeat, and his district is split across two counties.",
+  "confidence": "High"
+ },
+ "drew-stokesbary": {
+  "headline": "The most powerful House Republican in Olympia: House minority leader since 2023, with a law practice and a legal-advocacy organization beside the seat.",
+  "counter": "He leads a minority caucus in a state where Democrats hold supermajorities, so his power is to slow, not to pass.",
+  "confidence": "High"
+ },
+ "michael-shaw": {
+  "headline": "Pierce County's paid lobbyist in Olympia since 1999, running his own firm with public and private clients.",
+  "counter": "One lobbyist among many: the county's agenda is set by the Council he serves.",
+  "confidence": "Medium"
+ },
+ "ilwu23": {
+  "headline": "Controls the supply of longshore labor at the Port of Tacoma: without Local 23, cargo does not move. About 1,500 members with outsized leverage on automation.",
+  "counter": "The 2024 fight over terminal automation may be defensive, and coastwise contracts set the real terms.",
+  "confidence": "Medium-High"
+ },
+ "tacoma-public-utilities": {
+  "headline": "The city-owned electric, water, and rail utility serving about 187,000 customers, including the military base, on a multi-hundred-million-dollar budget.",
+  "counter": "Its rates and budgets run through an appointed board and the City Council, and its service area stops at city limits.",
+  "confidence": "Medium-High"
+ },
+ "boeing": {
+  "headline": "Pierce County's only major Boeing factory: a 500-acre site in Frederickson with about 1,500 jobs, sitting inside Boeing's supply chain.",
+  "counter": "The plant is one node of a global company, and its workforce has shrunk through strike and layoff cycles.",
+  "confidence": "Medium"
+ },
+ "mcclatchy": {
+  "headline": "The parent company of The News Tribune, owned by a New Jersey hedge fund since 2020, with repeated layoffs and shrinking revenue.",
+  "counter": "Its declining resources are the counterpoint: ownership is the tie, but capacity to set the agenda is falling.",
+  "confidence": "Medium-High"
+ },
+ "metro-parks": {
+  "headline": "Runs the county's largest urban park system: about 2,900 acres, the Point Defiance Zoo and Aquarium, and a roughly $213 million biennial budget.",
+  "counter": "It is facing operating deficits in 2025-26, which constrains what it can do.",
+  "confidence": "Medium-High"
+ },
+ "plu": {
+  "headline": "The private university in Parkland: a landowner, employer, and workforce partner whose president sits on a node of the community-foundation board.",
+  "counter": "A mid-sized private university in a crowded higher-ed market, dependent on tuition and enrollment.",
+  "confidence": "Medium"
+ },
+ "university-place-schools": {
+  "headline": "A school district whose board includes a sitting state senator, giving it a direct line into higher-education and K-12 committees in the Legislature.",
+  "counter": "The shared role is public and elected, and district power is still bounded to its own taxes and campus decisions.",
+  "confidence": "Medium"
+ },
+ "bruce-dammeier": {
+  "headline": "The Republican who held the Executive office before Mello: he ran the county's budget and departments from 2017 to 2024.",
+  "counter": "He left office in January 2025, so his map presence is history, not current authority.",
+  "confidence": "Medium"
+ },
+ "columbia-bank": {
+  "headline": "A regional bank with a direct tie to the Weyerhaeuser family at its board chair and overlaps with the chamber and community foundation.",
+  "counter": "The bank now operates under the Umpqua brand after a merger, and its local footprint is shared with rivals.",
+  "confidence": "Medium-High"
+ },
+ "russell-invest": {
+  "headline": "The global asset manager created by the Russell family, connecting a Tacoma-founded fortune to a corporate director who also sits on the MultiCare board.",
+  "counter": "Ownership passed out of the family long ago; the current tie is a director role, not control.",
+  "confidence": "Medium"
+ },
+ "wellfound": {
+  "headline": "The only freestanding adult psychiatric hospital in the county: 120 beds, opened in 2019 as a joint venture of the two big hospital systems.",
+  "counter": "Its joint-venture structure means the two systems that send it patients also control its beds, which is exactly the conflict to watch.",
+  "confidence": "Medium"
+ },
+ "united-way": {
+  "headline": "The county's main private fundraiser and regranter: it convenes the social-service sector and runs the ALICE study on working-poor households.",
+  "counter": "Its CEO and board chair both sit elsewhere on this map, so the interlocks are structural, not hidden.",
+  "confidence": "High"
+ },
+ "foss-family": {
+  "headline": "The founding maritime family whose name is on the waterway, now living on through a company sold to Saltchuk in 1987.",
+  "counter": "The operating company is no longer family-owned; the family's current power is legacy and property, which the graph shows.",
+  "confidence": "Medium"
+ },
+ "dave-morell": {
+  "headline": "Council vice chair for District 1 and a former state legislator, seated on the economic development board.",
+  "counter": "A single vote in a 4 to 3 chamber, and his district's growth agenda competes with the rest of the county's.",
+  "confidence": "High"
+ },
+ "bryan-yambe": {
+  "headline": "Appointed District 5 councilmember and former Fife deputy mayor, the first Asian-American county councilor in modern county politics.",
+  "counter": "He holds an appointed seat and faces election to keep it.",
+  "confidence": "High"
+ },
+ "robyn-denson": {
+  "headline": "Chair of the Council's rules and operations committee, the procedural seat that controls what the Council takes up.",
+  "counter": "Procedural power is real but indirect, and the seat depends on the majority that hands it out.",
+  "confidence": "Medium"
+ },
+ "district-court": {
+  "headline": "The county's limited-jurisdiction court: eight elected judges handling misdemeanors, small claims, and the first stage of felony cases.",
+  "counter": "A limited court by design: its budget and jurisdiction are set from outside.",
+  "confidence": "Medium"
+ },
+ "linda-farmer": {
+  "headline": "The county's elected auditor and election administrator: she runs voting for 600,000 registered voters on a $28 million budget.",
+  "counter": "The office is administrative, and election disputes answer to state law and courts.",
+  "confidence": "Medium"
+ },
+ "marty-campbell": {
+  "headline": "The county's assessor-treasurer: the office that sets property-tax values and collection for the whole county.",
+  "counter": "He left the Council for a seat with narrower policy discretion.",
+  "confidence": "Medium"
+ },
+ "deb-krishnadasan": {
+  "headline": "State senator appointed for the 26th District, the seat that connects the Peninsula's governance to the county Council that helped appoint her.",
+  "counter": "An appointed freshman senator in a chamber of 49.",
+  "confidence": "Medium"
+ },
+ "dale-sowell": {
+  "headline": "MultiCare board director since 2001 and a retired timber-company finance chief.",
+  "counter": "A long-tenured unpaid board seat, significant for continuity but not for control.",
+  "confidence": "Medium"
+ },
+ "russell-family": {
+  "headline": "A Gig Harbor foundation funded by the Russell fortune: about $77 million in assets, with most money in impact-aligned investments.",
+  "counter": "Its grant capacity is modest relative to its assets, and its influence is philanthropic, not regulatory.",
+  "confidence": "High"
+ },
+ "east-pierce-fire": {
+  "headline": "One of the county's two largest career fire districts: 115,000-plus residents across 153 square miles and a roughly $58 million operating budget.",
+  "counter": "Its revenue comes from voter-approved levies and service contracts.",
+  "confidence": "High"
+ },
+ "federal-district-court": {
+  "headline": "The only federal trial court with jurisdiction over Pierce County: seven active judgeships and a Tacoma courthouse.",
+  "counter": "Federal courts decide cases, not policy; their power is judicial, not political.",
+  "confidence": "High"
+ },
+ "together-pierce": {
+  "headline": "The independent-spending group behind Mello's 2024 win: about $294,000 spent with a weight-7 tie to the Executive on the graph.",
+  "counter": "Low confidence on the record: the group's identity and funders are not confirmed by primary sources, and 'independent' is the legal label, not a verified fact.",
+  "confidence": "Low"
+ },
+ "nash-cascadia": {
+  "headline": "The developer of the 4,756-acre Tehaleh community on the county's growth boundary, with donation money flowing to both parties.",
+  "counter": "Its power is contingent on its land-use agreement and on county growth decisions it does not control.",
+  "confidence": "Medium"
+ },
+ "lois-bernstein": {
+  "headline": "A 25-year MultiCare executive who went on to a governor-appointed college trustee seat.",
+  "counter": "She retired in 2023, so her operational power has ended; the board seat remains.",
+  "confidence": "Mixed"
+ },
+ "kristina-walker": {
+  "headline": "A Tacoma council member who chairs the transit commission and sits on the regional transit board.",
+  "counter": "Her transit roles are shared across a ten-member commission, and the city runs a council-manager government.",
+  "confidence": "Mixed"
+ },
+ "wea-pac": {
+  "headline": "The teachers' union political committee: six-figure spending in state races, with about 63 percent of member money reported flowing to Democrats.",
+  "counter": "The partisan tilt comes from an external analysis, and union endorsements track membership interests.",
+  "confidence": "Mixed"
+ },
+ "bill-robertson": {
+  "headline": "Runs MultiCare, the county's largest private employer, and chaired the state hospital association board.",
+  "counter": "He retires at the end of 2026, and a nonprofit CEO answers to a board.",
+  "confidence": "Mixed"
+ },
+ "hdcc": {
+  "headline": "The state House Democrats' campaign committee: it funds the candidates whose wins produced the county's 4 to 3 Council majority.",
+  "counter": "Campaign committees spend through disclosure rules, and voters still decide the races.",
+  "confidence": "Medium"
+ },
+ "commonspirit": {
+  "headline": "The Chicago-based parent of the county's Catholic hospital system: 137 hospitals across 21 states and the ultimate owner of VMFH.",
+  "counter": "It is headquartered out of state and out of scope of county politics; its Pierce County influence runs through its subsidiary.",
+  "confidence": "Medium-High"
+ },
+ "west-pierce-fire": {
+  "headline": "A fire district serving Lakewood and University Place with about a $72.8 million budget and voter-approved taxing power.",
+  "counter": "Its power is bounded to its fire district and depends on levies.",
+  "confidence": "High"
+ },
+ "kim-schrier": {
+  "headline": "The U.S. House member whose district includes eastern Pierce County, seated on the Energy and Commerce Committee.",
+  "counter": "Her district is mostly outside the county, so her county-specific leverage is partial.",
+  "confidence": "High"
+ },
+ "pierce-county-library": {
+  "headline": "A junior taxing library district serving about 680,000 residents across 20 branches, funded by property taxes.",
+  "counter": "Its board is appointed by the County Executive, and its revenue depends on voter-approved levies.",
+  "confidence": "High"
+ },
+ "flood-control-zone": {
+  "headline": "The countywide flood-control district: a property-tax levy raising about $18.9 million a year, chaired in the current cycle by a Council member.",
+  "counter": "State law caps its levy rate, and its grants must go through the Council's budget.",
+  "confidence": "Medium"
+ },
+ "sumner-bonney-lake": {
+  "headline": "A school district serving about 10,000 students on a roughly $136.5 million general-fund budget, with levies covering about 16 percent.",
+  "counter": "State formulas and the local ballot set its money, so discretion is narrow.",
+  "confidence": "High"
+ },
+ "gig-harbor-fire": {
+  "headline": "A fire district covering the Gig Harbor and Key Peninsula area: 54 square miles, five staffed stations, and 123 uniformed firefighters.",
+  "counter": "Funded by levies and a voter-approved bond, with a service area of about 53,000 people.",
+  "confidence": "Medium"
+ },
+ "tacoma-weekly": {
+  "headline": "A free weekly paper covering county government and politics, named in state campaign-finance actions.",
+  "counter": "With about 10,000 copies a week, its reach is a fraction of the daily's.",
+  "confidence": "Medium"
+ },
+ "healthy-bay": {
+  "headline": "The county's environmental watchdog on Commencement Bay: it runs pollution patrols and carries its own staff attorney for legal action.",
+  "counter": "A six-person nonprofit with about $801,000 in revenue, punching up against the port and timber industries.",
+  "confidence": "Medium"
+ },
+ "jt-wilcox": {
+  "headline": "A former House minority leader now sitting on the Port of Tacoma commission, tying a farm-business family to the port economy.",
+  "counter": "He holds one of five port seats, and his leadership role in the House is over.",
+  "confidence": "Medium"
+ },
+ "puyallup-schools": {
+  "headline": "The second-largest district outside Tacoma: about 23,110 students, a roughly $418 million operating budget, and a new superintendent arriving in 2026.",
+  "counter": "Budget, enrollment, and state formulas constrain it like every district.",
+  "confidence": "Medium"
+ },
+ "diann-puls": {
+  "headline": "An unpaid director with votes across several boards inside the county's Catholic hospital network, after decades at Weyerhaeuser.",
+  "counter": "Director seats are unpaid and shared, and the network answers to CommonSpirit in Chicago.",
+  "confidence": "Medium"
+ },
+ "florence-chang": {
+  "headline": "MultiCare's president, next in line for the CEO seat, with a trustee appointment at the technical college.",
+  "counter": "She will inherit the same board and the same nonprofit constraints when she takes the top job.",
+  "confidence": "High"
+ },
+ "amazon": {
+  "headline": "A fulfillment and robotics operation in Sumner, sitting on the chamber and economic-development boards, with hundreds of local logistics jobs.",
+  "counter": "Warehouse jobs are real but the company's decisions follow national logistics, not local politics.",
+  "confidence": "Medium"
+ },
+ "master-builders": {
+  "headline": "The residential builders' trade group, giving through its housing PAC to county council candidates.",
+  "counter": "Trade-group donations through a PAC are disclosed and legal; the amounts are small.",
+  "confidence": "Medium"
+ },
+ "catholic-archdiocese": {
+  "headline": "The Roman Catholic archdiocese covering western Washington, sponsor of the county's Catholic hospital system and its schools and parishes.",
+  "counter": "Church power is moral and institutional; its health-system influence runs through a corporate chain it does not control day to day.",
+  "confidence": "Medium"
+ },
+ "uli-chi": {
+  "headline": "Board chair of the county's Catholic hospital system, a faith-based governance veteran.",
+  "counter": "A ceremonial-sounding but real seat: chairs the board, not the operation.",
+  "confidence": "Medium"
+ },
+ "chatham-am": {
+  "headline": "The New Jersey hedge fund that owns the county's daily paper: it controls the newsroom budget and cut its staff repeatedly.",
+  "counter": "Ownership shapes resources, not individual stories, and other outlets still cover the county.",
+  "confidence": "Medium"
+ },
+ "tim-reynon": {
+  "headline": "Sits in three places at once: the Puyallup Tribal Council, the governor's office of Indian affairs, and a career of tribal legal and HR work.",
+  "counter": "His state role is appointed and the tribal seat is sovereign; both can end on someone else's timetable.",
+  "confidence": "Medium"
+ },
+ "erika-tucci": {
+  "headline": "Runs the Cheney Foundation, one of the county's legacy grantmakers, and chairs a state service commission.",
+  "counter": "Foundation money is modest relative to other funders, and grants follow donor intent set decades ago.",
+  "confidence": "High"
+ },
+ "lin-zhou": {
+  "headline": "President of Bates Technical College, the county's public technical college, and the first woman and first Chinese immigrant in the role.",
+  "counter": "A college president answers to a state board and follows enrollment-driven funding.",
+  "confidence": "High"
+ },
+ "cheney-foundation": {
+  "headline": "A Tacoma family foundation endowed in 1971, granting across eight categories and tied into the chamber's civic network.",
+  "counter": "Its endowment and grants are small next to the community foundation's.",
+  "confidence": "High"
+ },
+ "bates-tech": {
+  "headline": "A public technical college founded in 1940, operating the county's PBS station alongside its workforce programs.",
+  "counter": "Its scale and funding run through state formulas like every college.",
+  "confidence": "Mixed"
+ },
+ "eric-johnson": {
+  "headline": "The hired executive who runs the Port of Tacoma day to day, and an alumnus of the state ports association.",
+  "counter": "He serves at the commissioners' pleasure and implements their direction.",
+  "confidence": "High"
+ },
+ "nwsa": {
+  "headline": "The joint Seattle-Tacoma marine cargo authority: it runs the container terminals that anchor the county's logistics economy.",
+  "counter": "It is a two-city partnership, so Tacoma's share of decisions is shared.",
+  "confidence": "High"
+ },
+ "dick-marzano": {
+  "headline": "The longest-serving port commissioner in the county: 30-plus years on the commission and a former longshore local president.",
+  "counter": "One of five elected seats, answerable to countywide voters.",
+  "confidence": "High"
+ },
+ "chyna-willman": {
+  "headline": "The Chamber of Commerce board chair for 2025-26, a small-business owner leading the board while the chamber searches for a CEO.",
+  "counter": "The seat is annual and voluntary; the chair does not run day-to-day chamber operations.",
+  "confidence": "High"
+ },
+ "south-sound-biz": {
+  "headline": "The South Sound's monthly business magazine, covering Pierce and four neighboring counties.",
+  "counter": "A small publication whose economic model depends on the business community it covers.",
+  "confidence": "High"
+ },
+ "premier-media": {
+  "headline": "A Tacoma magazine publisher with multiple titles across Puget Sound, including the region's business monthlies.",
+  "counter": "Magazine reach is narrow compared to daily news and broadcast.",
+  "confidence": "High"
+ },
+ "julie-manas": {
+  "headline": "Chief executive of the county's largest hospital network since January 2026.",
+  "counter": "She is an executive hired by a national parent, with authority bounded by CommonSpirit.",
+  "confidence": "Medium"
+ },
+ "pierce-county-econ-dev": {
+  "headline": "The county department that runs business loans, tourism money, and the arts program, staffed on an acting basis by the chamber's CEO.",
+  "counter": "It is an executive-branch department; its powers run through budgets the Council approves.",
+  "confidence": "Medium"
+ },
+ "josh-garcia": {
+  "headline": "Superintendent of the county's largest school district, overseeing about 28,000 students and a large budget.",
+  "counter": "The elected board hires him and sets policy; state formulas set most of his money.",
+  "confidence": "High"
+ },
+ "sheila-lange": {
+  "headline": "Chancellor of the county's public university campus and chair of the community foundation's board.",
+  "counter": "A branch-campus leader reports to the main university and serves the foundation without a vote of ownership.",
+  "confidence": "High"
+ },
+ "deanna-keller": {
+  "headline": "Port commissioner and Marine Corps veteran, one of five elected seats on the county's port commission.",
+  "counter": "One of five votes, and the port's biggest decisions run through the Seattle alliance.",
+  "confidence": "High"
+ },
+ "kristin-ang": {
+  "headline": "Port commissioner, a Filipino-American attorney and the first person of color elected to the commission, endorsed historically by the Puyallup Tribe.",
+  "counter": "One of five seats; her influence is real but shared and time-limited.",
+  "confidence": "Medium"
+ },
+ "clover-park-schools": {
+  "headline": "The school district serving Lakewood and the base-adjacent communities: about 12,395 students and a listed $12.6 million in budget reductions.",
+  "counter": "A district under financial pressure, dependent on state formulas and levies.",
+  "confidence": "Medium"
+ },
+ "pmba": {
+  "headline": "A business coalition of 28-plus companies raising about $145,000 a year to support the military base's retention efforts.",
+  "counter": "Its revenue has run under $100,000 in recent filings, so its scale is modest.",
+  "confidence": "Medium"
+ },
+ "court-appeals": {
+  "headline": "The intermediate appeals court based in Tacoma, reviewing Superior Court decisions from thirteen counties including this one.",
+  "counter": "An appellate court decides cases; its judges are appointed and elected under state rules.",
+  "confidence": "Medium"
+ },
+ "stanley-rumbaugh": {
+  "headline": "A Superior Court judge of 13-plus years and the court's presiding judge elect, with a career of jury trials behind the bench.",
+  "counter": "Judges are bound by law and appellate review, and elections can end a tenure.",
+  "confidence": "High"
+ },
+ "saltchuk": {
+  "headline": "The Seattle holding company that owns the Foss maritime companies, linking the county's port economy to a private family empire.",
+  "counter": "A regional parent whose local operations answer to corporate leadership in Seattle.",
+  "confidence": "Medium"
+ },
+ "mike-griffus": {
+  "headline": "Runs the county's transit agency day to day: buses, paratransit, and vanpools across 292 square miles.",
+  "counter": "A hired CEO implementing an elected board's direction.",
+  "confidence": "High"
+ },
+ "alice-phillips": {
+  "headline": "President of the county labor council: she runs the endorsement process that unions use in close primaries.",
+  "counter": "The council's money is modest and member counts overstate political participation.",
+  "confidence": "High"
+ },
+ "allan-belton": {
+  "headline": "President of the county's private university, running an institution embedded in Parkland's civic and workforce networks.",
+  "counter": "A university president answers to a board of regents and tuition markets.",
+  "confidence": "High"
+ },
+ "banner-bank": {
+  "headline": "A regional bank whose local leadership has chaired the chamber board, tying banking to the county's civic network.",
+  "counter": "A mid-sized regional bank competing with larger institutions for the same business.",
+  "confidence": "High"
+ },
+ "kathi-littmann": {
+  "headline": "Runs the region's community foundation and holds a seat on the university's board, with plans to step down by 2027.",
+  "counter": "Her influence is institutional and philanthropic; the foundation's grants are modest relative to its assets.",
+  "confidence": "High"
+ },
+ "korey-strozier": {
+  "headline": "Presides over the school board of the county's largest district, with a career that began inside its schools.",
+  "counter": "A school board president holds one of five votes and follows state rules.",
+  "confidence": "High"
+ },
+ "ivan-harrell": {
+  "headline": "Leads the community college in the county's urban core since 2018, with national community-college service.",
+  "counter": "A college president implements a governor-appointed board's direction.",
+  "confidence": "High"
+ },
+ "john-clancy": {
+  "headline": "Chairs the board of a major fire district, one of five elected commissioners of a taxing district.",
+  "counter": "A volunteer chair of one of many county districts, with narrow jurisdiction.",
+  "confidence": "Mixed"
+ },
+ "museum-of-glass": {
+  "headline": "A museum founded by the Russell family on the restored Thea Foss waterway, a cultural anchor receiving public funding.",
+  "counter": "A civic and cultural institution with an operating model dependent on philanthropy and tourism.",
+  "confidence": "High"
+ },
+ "tacoma-pd-union": {
+  "headline": "The union local for Tacoma police officers, bargaining contracts and giving money to local campaigns.",
+  "counter": "Its political spending is small and disclosed, and the city bargains through its elected leaders.",
+  "confidence": "High"
+ },
+ "green-diamond": {
+  "headline": "One of the country's largest private timberland owners, with thousands of acres across Pierce and Thurston counties.",
+  "counter": "Its ties to the map are indirect: a former executive on a hospital board and land within the county.",
+  "confidence": "High"
+ },
+ "stephanie-pedersen": {
+  "headline": "Editor of the county's only daily paper, also overseeing three other McClatchy papers in the state.",
+  "counter": "Editing one shrinking newsroom, with resources set by out-of-state ownership.",
+  "confidence": "High"
+ },
+ "matt-mauer": {
+  "headline": "President of the park board that runs the county's largest park system and its zoo, aquarium, and marina.",
+  "counter": "One of five elected commissioners, and the district is facing operating deficits.",
+  "confidence": "High"
+ },
+ "tacoma-art-museum": {
+  "headline": "The largest art museum in the county, holding $58.6 million in net assets, with its board president also leading United Way.",
+  "counter": "A cultural institution whose board interlocks are civic, not governmental.",
+  "confidence": "High"
+ },
+ "jim-kastama": {
+  "headline": "Mayor and councilmember in Puyallup after 12 years in the state Senate, touching the same developers and donors as the Puyallup River Road corridor.",
+  "counter": "He is one vote on a city council with a narrow footprint.",
+  "confidence": "Medium"
+ },
+ "subaru-puyallup": {
+  "headline": "A family-owned car dealership on Puyallup's River Road and a documented donor to Republicans, including Kelly Chambers.",
+  "counter": "A small business making legal contributions; its map role is one donation and a land corridor.",
+  "confidence": "Medium"
+ },
+ "toyota-puyallup": {
+  "headline": "A second-generation family Toyota dealership on the same Puyallup corridor and a documented donor to Kelly Chambers.",
+  "counter": "Its political role is a $1,000 contribution; the rest is a commercial footprint.",
+  "confidence": "High"
+ }
+}

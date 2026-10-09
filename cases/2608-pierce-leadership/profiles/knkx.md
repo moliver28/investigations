@@ -1,0 +1,85 @@
+<!-- entity-profile:v1 organization -->
+# KNKX — Deep Profile
+**Case:** INV-2026-002 · **Profile:** `profiles/knkx.md`
+**Entity ID:** `knkx` · **Type:** organization · **Domain:** media
+**Tier:** tier2 · **Rank:** 37/163 · **Composite power:** 0.052
+**Graph description:** Independent NPR-member public radio station (88.5 FM) serving Tacoma/Seattle/Western Washington; jazz, blues, and NPR news; owned by Pacific Public Media (501(c)(3))
+**Known facts:** Licensed to Tacoma, WA at 88.5 MHz; owned by Pacific Public Media (EIN 81-1095651, 501(c)(3)); became independent Aug 2016 after community campaign to save station from PLU sale to UW; 12 radio signals "from coast to Cascades"; hundreds of thousands of weekly listeners; FY2023 revenue ~$10.8M (99% contributions); $593K CPB funding (~6% of budget)
+**Status:** ✅ researched — 2026-09-19 — tier2-chunk3
+**Sources:** 8/5 (minimum for tier2)
+
+---
+
+## 0. Why this person or group is on the map
+- **Why included — holds office + has standing.** KNKX is on the map because it is the main independent public radio station for Pierce County and the larger Seattle-Tacoma area. It meets the "holds office" test as an NPR member station and the only independent news source for many places in Western Washington. It also meets the "standing" test, since it is a well-known source of local news and jazz/blues music. The station covers Pierce County government, the health department, and the County Council (source #7). The map edges to the Chamber, County Council, TPCHD, and News Tribune show its media coverage spans many power areas.
+- **Adjacent but NOT included:** KUOW-FM (the Seattle NPR station; was once in line to buy KPLU/KNKX — a peer NPR station but based in Seattle, so left out). Jazz24 (a KNKX subchannel/HD2 stream — part of KNKX, not a separate governance body). Pacific Lutheran University (former owner as KPLU from 1966 to 2016 — a historical owner, left out).
+
+## 1. Who they are
+- **Legal name:** Pacific Public Media. This is the legal name on the IRS Form 990 (EIN 81-1095651, source #4). It does business as KNKX Public Radio / 88.5 KNKX. The governing board is called "Friends of 88.5-FM" (sources #1, #2).
+- **Type:** 501(c)(3) charitable organization (sources #4, #5). NTEE code A34 (Arts, Culture & Humanities — radio producers and broadcasters, source #5). Tax-exempt since March 2016 (source #4). Donations are tax-deductible (source #5).
+- **EIN / registration:** 81-1095651 (sources #4, #5). IRS ruling date: March 2016 (source #5). State of legal domicile: Washington (source #5).
+- **Parent / subsidiaries:** No parent. KNKX is an independent nonprofit. It runs Jazz24 as a subchannel (HD2) and a YouTube channel (source #1). No subsidiaries found.
+- **Ownership chain:** Pacific Public Media (501(c)(3)) → KNKX (88.5 FM) + Jazz24 (HD2/streaming) + KNKX YouTube channel. No layers in between.
+- **Governing law:** Washington State nonprofit corporation law. IRS 501(c)(3). FCC licensing (Facility ID 51199, source #3). The FCC public file is at publicfiles.fcc.gov/fm-profile/KNKX (source #3).
+
+## 3. Where their power comes from
+- **Source of power:** KNKX has **cultural influence power**. It is a media organization that shapes public discussion through its news coverage and programming. It does not have legal power, market share in a business sense, or veto power. Its power is the power to choose which stories to cover, which voices to amplify, and how to frame local issues. The station calls itself "an ambassador for jazz and blues, and a vital source of high-quality NPR and Northwest news" (source #1). It is "the only independent news source for many communities" in Western Washington (source #5).
+- **Why power crosses the media domain:** KNKX runs 12 radio signals "from the coast to the Cascades" (source #1). It also streams on mobile apps and smart speakers (source #1). It reaches "hundreds of thousands of listeners every week" (source #1). Jazz24 has "hundreds of thousands of listeners every month" in 150+ countries (source #1). KNKX has "millions of views on its YouTube channel" (source #1). This reach gives it power to set the local agenda.
+- **Key facts:**
+  - **Ownership chain (parent company)?** No corporate parent. Independent 501(c)(3) since August 2016, when Friends of 88.5 FM bought the station from Pacific Lutheran University for $7 million raised from about 20,000 supporters (source #3). Before that, it was KPLU-FM, owned by PLU from 1966 to 2016 (source #3).
+  - **Reach (listeners and pageviews)?** "Hundreds of thousands of listeners every week" on broadcast (source #1). Jazz24: "hundreds of thousands of listeners every month" in 150+ countries (source #1). YouTube: "millions of views" (source #1). UNVERIFIED: exact Arbitron or Nielsen ratings or specific Pierce County listenership numbers.
+  - **Editorial stance and investigative record?** KNKX carries NPR programs (All Things Considered, Morning Edition, Wait Wait Don't Tell Me, Fresh Air; source #3) and produces local news. It has a "Public Media Code of Integrity" (source #2). It tags and covers Pierce County issues (source #7: knkx.org/tags/pierce-county). The station says it is independent of political or commercial pressure (source #5). UNVERIFIED: specific investigative stories KNKX has produced on Pierce County power structures.
+
+## 3. Where their power comes from
+| Indicator | Finding | Evidence (source #) |
+|-----------|---------|---------------------|
+| Who benefits | Listeners get free news and jazz/blues. Local businesses and nonprofits get sponsorship opportunities (14% of budget from sponsorship, source #5). The community gets Emergency Alert System integration (source #5). Staff and managers get jobs (total compensation $3.6M in FY2023, source #6). | #1, #5, #6 |
+| Who sits | Board of Directors: Claire Spain-Remy MD (Chair), Stephen Tan (Secretary), David Veterane (Treasurer), Kenneth Aramaki, Liz Banse, Marlys Erickson, Pamela Hiatt, Matt Miller, Keith Seinfeld, Jacqueline Tabor (source #8). President & General Manager: David Fischer ($39,702 reported pay, source #6). News Director: Jennifer Wing. Assistant News Director: Amy Jeffries (source #6). | #6, #8 |
+| Who governs | The Friends of 88.5-FM Board of Directors runs KNKX. They handle "fiscal oversight, FCC compliance and policy decisions" (source #8). The Community Advisory Council gives feedback on programs. It meets quarterly and is open to the public (source #2). | #2, #8 |
+| Who wins | KNKX won a lawsuit against former owner PLU over bequests (source #3, Current.org, 2018). The station successfully became independent in 2016 through a $7 million community campaign (source #3). These wins preserved the station's independence. | #3 |
+
+## 5. How they touch government
+- **CPB funding:** KNKX gets $593,000 a year from the Corporation for Public Broadcasting (CPB). That is about 6% of its annual budget (source #5). CPB is a private nonprofit authorized by Congress in 1967. It is funded by an annual congressional appropriation (source #5). This is KNKX's only direct government funding stream found.
+- **Lobbying:** UNVERIFIED — no L-2 lobbyist registrations found for Pacific Public Media. As a 501(c)(3), lobbying is limited by IRS rules.
+- **Contracts and grants:** UNVERIFIED — no government contracts or grants found beyond CPB funding. The station's 990 (source #4) shows 99% of revenue comes from contributions, not government grants.
+- **Campaign donations:** None. 501(c)(3) organizations cannot make political campaign donations.
+- **Regulatory interactions:** FCC licensing (Facility ID 51199, source #3). FCC public file is kept up to date (source #3). The station runs 12 broadcast signals, including translators (source #3). Each signal needs FCC authorization.
+- **Emergency Alert System:** KNKX is part of the Emergency Alert System. The station is "critical to Washington residents in a crisis" (source #5). This is a quasi-governmental role.
+
+## 6. Other seats they hold
+- **Tacoma-Pierce County Health Dept (`tpchd`):** KNKX covers TPCHD. The station has a "Pierce County" tag page (source #7) that includes coverage of "Tacoma-Pierce County Health Department offices in Tacoma" (source #7). Map edge: `covered_by`, weight 2.
+- **Chamber of Commerce (`chamber`):** KNKX covers Chamber-related economic news. Map edge: `covers`, weight 2. UNVERIFIED: any board or partnership overlaps between KNKX and the Chamber.
+- **Pierce County Council (`county-council`):** KNKX covers County Council proceedings and elections. Map edge: `covers`, weight 2. UNVERIFIED: any specific reporter assignments for Council coverage.
+- **News Tribune (`news-tribune`):** Peer newsroom. Map edge: `peer_newsroom`, weight 2. Both serve the Tacoma-Pierce County media market.
+- **Board overlaps:** KNKX board members (source #8) — UNVERIFIED for cross-domain board overlaps (whether any KNKX board members also sit on Chamber, Economic Development Board (EDB), or health system boards). David Fischer (President & GM) is the only paid board member ($39,702, source #6).
+- **Puyallup Tribe:** UNVERIFIED — no direct board overlap found, even though KNKX covers Pierce County issues including tribal matters.
+
+## 9. Who they are connected to
+Graph connections (from `evidence/29-power-graph-v2.json`):
+
+| Connected entity | Relationship | Weight |
+|---|---|---|
+| Tacoma-Pierce County Health Dept (`tpchd`) | covered_by | 2 |
+| Chamber of Commerce (`chamber`) | covers | 2 |
+| Pierce County Council (`county-council`) | covers | 2 |
+| News Tribune (`news-tribune`) | peer_newsroom | 2 |
+
+**Network analysis:** KNKX is a four-edge node with all weight-2 edges. This reflects its role as a media organization that covers (and is covered by) many power areas without deep ties into any single one. The edges to the Chamber, County Council, and TPCHD are coverage edges — KNKX reports on these entities but does not run or fund them. The peer_newsroom edge to the News Tribune reflects shared market presence. KNKX's rank 37/163 (composite 0.052) reflects its cultural-influence power: it shapes public talk but has no direct decision-making authority. The uniform weight-2 edges correctly signal that KNKX's media power is broad (covering many areas) but shallow (no governance board overlaps). The station's independence — no corporate parent, no university tie, 79% listener-funded (source #5) — sets it apart from commercially-owned media and gives it editorial freedom. It also keeps it from having deeper network power.
+
+## 1. Who they are
+| # | Claim | Source | URL | Type (primary/secondary) | Reliability |
+|---|-------|--------|-----|--------------------------|-------------|
+| 1 | KNKX is an independent public radio station; 12 radio signals "from the coast to the Cascades"; hundreds of thousands of weekly listeners; Jazz24 in 150+ countries; millions of YouTube views; became independent Aug 2016 changing name from KPLU to KNKX; "Connects" meaning; delivers jazz, blues and NPR news | KNKX — official About page | https://www.knkx.org/about | primary | 0.9 |
+| 2 | KNKX governed by Board of Directors ("Friends of 88.5-FM"); Community Advisory Council meets quarterly, open to public; financial reports and Public Media Code of Integrity available; coverage map listed | KNKX — official About page (governance section) | https://www.knkx.org/about | primary | 0.9 |
+| 3 | KNKX (88.5 MHz) licensed to Tacoma, WA; NPR member; owned by Pacific Public Media; studios in Seattle (Madore Building) and Tacoma (C.N. Gardner Building, 930 Broadway); 68,000 watts ERP from West Tiger Mountain; first aired Nov 16, 1966 as KPLU-FM; PLU announced sale to UW Nov 2015; community raised $7M from ~20,000 supporters; became KNKX Aug 30, 2016; FCC Facility ID 51199; translators listed | Wikipedia — KNKX article (citing FCC, Olympian, station announcements) | https://en.wikipedia.org/wiki/KNKX | secondary | 0.7 |
+| 4 | Pacific Public Media: EIN 81-1095651; 501(c)(3); tax-exempt since March 2016; Tacoma, WA; IRS Form 990 filings from 2016 onward; FY2023 revenue $10,757,716, expenses $10,054,007, net assets $16,876,308; 99.4% of revenue from contributions ($10,689,758) | ProPublica Nonprofit Explorer — Pacific Public Media 990 filings | https://projects.propublica.org/nonprofits/organizations/811095651 | primary | 0.95 |
+| 5 | KNKX receives $593,000 from CPB (~6% of annual budget); 79% of funding from listeners; 14% from local business/nonprofit sponsorship; CPB authorized by Congress 1967; KNKX is "only independent news source for many communities"; integrated into Emergency Alert System; Tax ID 81-1095651; legal name Pacific Public Media; address 930 Broadway, Tacoma, WA 98402 | KNKX — official FAQ on funding (Feb 2025) + Support page | https://www.knkx.org/2025-02-25/frequently-asked-questions-about-funding-for-knkx ; https://www.knkx.org/support | primary | 0.9 |
+| 6 | KNKX key personnel: David Fischer (President & GM, $39,702 comp), Sarah McAtee (Director-Development, $121,458), Carol Handley (Senior Director, $108,930); Jennifer Wing (News Director), Amy Jeffries (Assistant News Director); FY2025 revenue $9,829,663, expenses $9,929,252, net assets $16,723,224; total assets $22,167,734; total liabilities $5,444,510; compensation 36% of expenses ($3.6M) | CauseIQ — KNKX/Pacific Public Media profile (from IRS 990) | https://www.causeiq.com/organizations/knkx,811095651 | primary | 0.9 |
+| 7 | KNKX has a "Pierce County" tag page covering local issues including Tacoma-Pierce County Health Department; station delivers jazz, blues and NPR news from Seattle and Tacoma studios | KNKX — Pierce County tag page | https://www.knkx.org/tags/pierce-county | primary | 0.8 |
+| 8 | KNKX Board of Directors: Claire Spain-Remy MD (Chair), Stephen Tan (Secretary), David Veterane (Treasurer), Kenneth Aramaki, Liz Banse, Marlys Erickson, David Fischer (President & GM), Pamela Hiatt, Matt Miller, Keith Seinfeld, Jacqueline Tabor; Friends of 88.5-FM responsible for governance including fiscal oversight, FCC compliance, policy decisions | KNKX — official Board of Directors page | https://www.knkx.org/board-of-directors | primary | 0.9 |
+
+## 1. Who they are
+- **Verdict:** KNKX runs an independent public radio platform reaching hundreds of thousands of weekly listeners across Western Washington, with about $10 million in annual revenue (99% contribution-funded, source #4). Its power is **cultural and informational** — it shapes public talk through news coverage and programming choices, but it has no legal, regulatory, or spending power. The station's independence from commercial, university, and political ownership (won through a $7 million community campaign in 2016, source #3) gives it rare editorial freedom. But this independence also means it does not have the structural board overlaps (corporate owners, shared board seats) that would give it deeper network power. Its $593K CPB dependency (6% of budget, source #5) is a federal funding weak spot.
+- **Conflicts-of-interest flags (defense-attorney counter-argument):** (1) KNKX's 79% listener funding model (source #5) could create audience-capture bias. Programming choices may favor what listeners want over hard-hitting accountability journalism. (2) The 14% sponsorship revenue from "local businesses and nonprofits" (source #5) could cause tension with critical coverage of sponsors. (3) Board members' outside ties (UNVERIFIED) could create coverage conflicts. **Defense counter:** (1) The station's stated editorial values stress independence from "political or commercial pressure" (source #5), and its Public Media Code of Integrity (source #2) provides an ethics framework. (2) NPR sponsorship is legally different from advertising and has content restrictions. (3) No specific coverage controversies were found in this research pass.
+- **Analysis of alternatives:** The opposing reading is that KNKX is a niche jazz station with limited news impact in Pierce County. Its main listenership is in the Seattle metro, and the News Tribune is the dominant local news source in Pierce County. Under this view, the weight-2 coverage edges overstate KNKX's local influence. But KNKX is the only NPR member station based in Tacoma (source #3) and clearly covers Pierce County issues (source #7), giving it agenda power that commercial outlets lack. Its independence from corporate owners also gives it credibility that chain-owned newspapers have lost.
+- **Confidence:** Medium. KNKX's who they are legally, financial structure, governance, and reach claims are well-documented by primary sources (IRS 990 via ProPublica, reliability 0.95; KNKX's own website, reliability 0.9). However, specific Pierce County listenership numbers, investigative reporting output, and board member cross-affiliations are UNVERIFIED. The cultural-influence power assessment is structural rather than empirically demonstrated through content analysis.

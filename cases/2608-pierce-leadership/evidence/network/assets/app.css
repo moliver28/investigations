@@ -1,0 +1,302 @@
+/* Pierce County Power Network — UI v3 stylesheet (Task 3.1)
+   Calm, accessible, industry-standard. 8pt grid, 1.25 type scale, WCAG AA.
+   Contrast gates: text pairs >=4.5:1 (WCAG 1.4.3); non-text fills/rings/edges
+   >=3:1 (WCAG 1.4.11). Money token is split accordingly. */
+
+:root {
+  /* 8-pt spacing scale */
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px;
+  --s5: 24px; --s6: 32px; --s7: 48px;
+  /* 1.25 type scale */
+  --t0: 13px; --t1: 16px; --t2: 20px; --t3: 25px; --t4: 31px; --t5: 39px;
+  /* surfaces + ink */
+  --bg: #FAFAFA; --ink: #1B1B1B; --ink-soft: #444444; --hairline: #DDDDDD;
+  --appbar-bg: #1B1B1B; --appbar-ink: #FAFAFA; --card: #FFFFFF;
+  /* money token split: #B8860B fails AA as text (3.12:1); #8A6A0A passes (4.85:1) */
+  --money-graphic: #B8860B;   /* rings, $ dots, edges, chip accents (non-text) */
+  --money-text: #8A6A0A;      /* money-colored TEXT on light backgrounds */
+  --gold-bright: #E8C547;     /* on the DARK appbar only */
+  /* class colors */
+  --c-money: #B8860B; --c-influence: #0B6E6E; --c-governance: #37474F;
+  --c-legal: #6a1b9a; --c-business: #b84a00; --c-media: #5d4037;
+  --c-community: #1e7d32; --c-other: #666666;
+  /* domain colors (v2's WCAG-verified six) */
+  --d-government: #1f77b4; --d-economic: #b84a00; --d-institutional: #1e7d32;
+  --d-political: #b71c1c; --d-legal: #6a1b9a; --d-media: #5d4037;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-size: var(--t1); line-height: 1.6; color: var(--ink); background: var(--bg);
+  font-family: ui-sans-serif, -apple-system, "Segoe UI", sans-serif;
+}
+button, input { font: inherit; color: inherit; }
+:is(button, input, [tabindex], a, tr[tabindex]):focus-visible {
+  outline: 3px solid var(--money-graphic); outline-offset: 2px;
+}
+
+/* Skip link: the first focusable element ("Skip to entity list") */
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 100;
+  background: var(--appbar-bg); color: var(--appbar-ink); padding: var(--s2) var(--s4);
+}
+.skip-link:focus { left: var(--s2); top: 60px; }
+
+/* App bar: 56px, thesis pinned, always visible */
+.appbar {
+  position: fixed; top: 0; left: 0; right: 0; height: 56px; z-index: 20;
+  background: var(--appbar-bg); color: var(--appbar-ink);
+  display: flex; align-items: center; gap: var(--s4); padding: 0 var(--s5);
+}
+.appbar-title { font-size: var(--t1); font-weight: 700; white-space: nowrap; }
+.appbar-thesis {
+  flex: 1; font-size: var(--t0); color: #CCCCCC; min-width: 0;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.appbar-thesis .gold { color: var(--gold-bright); font-weight: 700; }
+/* Narrow viewports (WCAG 1.4.10): brand + thesis + button share 320px without
+   horizontal scroll — every element truncates instead of overflowing. */
+@media (max-width: 600px) {
+  .appbar { gap: var(--s2); padding: 0 var(--s3); }
+  .appbar-title { font-size: var(--t0); min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .method-btn { flex-shrink: 0; white-space: nowrap; }
+}
+
+/* Split shell: map | directory; 16px gap = the verified pixel budget
+   (1280 viewport: map 844 + gap 16 + directory 420) */
+.shell { display: flex; gap: 16px; height: calc(100vh - 56px); margin-top: 56px; }
+#map-pane { flex: 1 1 auto; min-width: 520px; position: relative; background: var(--bg); overflow: hidden; }
+#directory {
+  width: 420px; flex: 0 0 420px; background: var(--card);
+  border-left: 1px solid var(--hairline); display: flex; flex-direction: column; height: 100%;
+}
+@media (max-width: 1439px) { #map-pane { min-width: 0; } }
+@media (max-width: 1023px) {
+  .shell { flex-direction: column; height: auto; }
+  #map-pane { height: 60vh; min-height: 420px; }
+  #directory { width: 100%; flex: none; border-left: 0; border-top: 1px solid var(--hairline); }
+}
+
+/* Map pane */
+#svg-host { position: absolute; inset: 0; }
+#svg-host svg { width: 100%; height: 100%; display: block; }
+.map-toolbar {
+  position: absolute; top: var(--s4); left: var(--s4); z-index: 5;
+  display: flex; gap: var(--s2); flex-wrap: wrap;
+}
+.map-legend {
+  position: absolute; bottom: var(--s4); left: var(--s4); z-index: 5;
+  background: rgba(255, 255, 255, 0.95); border: 1px solid var(--hairline);
+  border-radius: 6px; padding: var(--s2) var(--s3);
+  font-size: var(--t0); display: flex; flex-wrap: wrap; gap: var(--s3);
+}
+.map-legend .key { display: inline-flex; align-items: center; gap: 6px; }
+
+/* The map is role=img + text alternative; nodes are POINTER-ONLY (review F3):
+   no tabindex on nodes - the directory is the keyboard path (163 rows). */
+.node { cursor: pointer; }
+.edge { stroke: #C8C8C8; }
+.edge.money-edge { stroke: var(--money-graphic); }
+.ring { pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .node { transition: opacity 0.15s; }
+  .edge { transition: opacity 0.15s, stroke 0.15s; }
+}
+
+/* Labels: HTML overlays at fixed px - dark ink + white halo.
+   Clickable: a label opens ITS OWN entity (previously pointer-events:none let
+   clicks fall through to whatever node sat beneath — the misclick trap). */
+.label {
+  position: absolute; font-size: var(--t0); font-weight: 700; color: #1A1A1A;
+  text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+  white-space: nowrap; cursor: pointer; transform: translate(-50%, -50%);
+}
+.label[hidden] { display: none; }
+
+/* Directory (single control row; no class chips - review F2) */
+.dir-controls {
+  padding: var(--s3); display: flex; flex-direction: column; gap: var(--s2);
+  border-bottom: 1px solid var(--hairline); background: var(--card);
+}
+#dir-search { width: 100%; padding: var(--s2) var(--s3); border: 1px solid #767676; border-radius: 6px; }
+.chip-row { display: flex; flex-wrap: wrap; gap: var(--s1); }
+.chip {
+  border: 1px solid #767676; background: var(--card); border-radius: 999px;
+  padding: var(--s1) var(--s3); font-size: var(--t0); cursor: pointer; min-height: 24px;
+}
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--appbar-ink); border-color: var(--ink); }
+
+#dir-table { width: 100%; border-collapse: collapse; font-size: var(--t0); }
+/* Directory list scrolls in its own container so the map pane never scrolls away;
+   the container also implements the WCAG 1.4.10 data-table exception at 320px. */
+.table-scroll { flex: 1 1 auto; min-height: 0; overflow-y: auto; overflow-x: auto; }
+#dir-table th {
+  position: sticky; top: 0; background: #EFEFEF; text-align: left; cursor: pointer;
+  padding: var(--s2) var(--s3); border-bottom: 2px solid var(--hairline);
+  z-index: 2; font-size: 13px;
+}
+th.sortable { position: relative; }
+/* Sortable header label is a real button: keyboard-operable (WCAG 2.1.1) */
+.th-btn {
+  background: none; border: 0; padding: 0; margin: 0; font: inherit;
+  font-weight: 700; color: inherit; cursor: pointer; text-align: left;
+}
+#dir-table th[aria-sort="ascending"]::after { content: " ascending"; }
+#dir-table th[aria-sort="indicator"]::after { content: ""; }
+th.sortable:hover { background: #E5E5E5; }
+#dir-table td { padding: var(--s2) var(--s3); border-bottom: 1px solid var(--hairline); }
+#dir-table tbody tr { cursor: pointer; }
+#dir-table tbody tr:hover { background: #F0F0F0; }
+#dir-table tbody tr[tabindex="0"]:focus-visible { outline: 3px solid var(--money-graphic); outline-offset: -3px; }
+
+/* Tier band: TEXT first (1.4.1) - dark label on card, no color-only coding */
+.tier-pill {
+  display: inline-block; padding: 0 8px; border-radius: 999px;
+  font-size: 13px; font-weight: 700; line-height: 22px; min-height: 24px;
+  color: var(--ink); border: 1px solid var(--ink); background: var(--card);
+}
+
+/* Money: gold $ dot in the name cell (graphic token, 3.12:1 >= 3:1) */
+.fund-dot {
+  display: inline-block; width: 16px; height: 16px; border-radius: 50%;
+  background: var(--money-graphic); color: #FFFFFF; font-size: 11px; font-weight: 700;
+  text-align: center; line-height: 16px; margin-left: 6px;
+}
+
+/* Mission strip: quiet, in the directory header; Dismiss (not "skip").
+   Visibility is controlled by the [hidden] attribute from app.js — do NOT
+   set display:none here (it can never be overridden by the hidden toggle). */
+#mission-strip:not([hidden]) {
+  display: block;
+  padding: var(--s2) var(--s3); font-size: var(--t0);
+  background: #F4F0E4; border-bottom: 1px solid var(--hairline);
+}
+#mission-strip .dismiss-btn {
+  margin-left: auto; background: none; border: 0; cursor: pointer;
+  text-decoration: underline; font-size: var(--t0); color: var(--ink);
+}
+
+/* Entity page: full takeover; split view stays untouched beneath.
+   Wide layout (industry standard): grid [TOC rail | prose 68ch | meta rail]
+   — page canvas uses the screen, prose stays capped for readability. */
+#entity-view {
+  position: fixed; inset: 0; z-index: 30; overflow-y: auto;
+  background: var(--bg); padding: 132px var(--s5) var(--s7);  /* 68 appbar + back-btn row + gap */
+}
+#entity-view[hidden] { display: none; }
+.entity-layout { max-width: 1280px; margin: 0 auto; }
+.entity-header { margin: 0 0 var(--s4); }
+@media (min-width: 1100px) {
+  .entity-grid { display: grid; grid-template-columns: 220px minmax(0, 960px); justify-content: center; gap: var(--s6); }
+  .entity-grid .section-nav { position: static; float: none; margin: 0; max-height: none; max-width: none; }
+  .entity-grid .section-nav-inner { position: sticky; top: 132px; max-height: calc(100vh - 156px); overflow-y: auto; }
+  .entity-main .entity-body { margin-left: 0; margin-right: auto; }
+}
+@media (max-width: 1099px) {
+  .entity-grid { display: block; }
+  .entity-grid .section-nav { position: static; float: none; max-height: none; }
+  .entity-grid .section-nav-inner { position: static; max-height: none; overflow: visible; }
+}
+.entity-header h1 { font-size: var(--t4); margin: var(--s4) 0 var(--s2); }
+.entity-header h1:focus { outline: none; }
+.entity-meta { display: flex; flex-wrap: wrap; gap: var(--s2); font-size: var(--t0); align-items: center; }
+.domain-chip { padding: var(--s1) var(--s3); border-radius: 999px; border: 1px solid var(--ink); }
+.method-btn {
+  background: var(--appbar-bg); color: var(--appbar-ink); border: 0; border-radius: 4px;
+  padding: var(--s1) var(--s3); font-size: var(--t0); cursor: pointer;
+}
+.back-btn {
+  position: fixed; top: 68px; left: var(--s5); z-index: 40;
+  background: var(--appbar-bg); color: var(--appbar-ink); border: 0; border-radius: 6px;
+  padding: var(--s2) var(--s4); cursor: pointer;
+}
+.ego-host { max-width: 72ch; margin: var(--s4) auto; min-height: 300px; }
+.ego-host svg { width: 100%; height: auto; }
+.ego-cards { max-width: 72ch; margin: var(--s4) auto; display: flex; flex-direction: column; gap: var(--s2); }
+.ego-card {
+  background: var(--card); border: 1px solid var(--hairline); border-radius: 6px;
+  padding: var(--s3) var(--s4);
+}
+.entity-body {
+  max-width: 72ch; margin: var(--s4) auto; background: var(--card);
+  padding: var(--s5); border: 1px solid var(--hairline); border-radius: 8px;
+}
+.entity-body h2 { font-size: var(--t2); margin: var(--s6) 0 var(--s2); scroll-margin-top: 80px; }
+.entity-body h3 { font-size: var(--t1); }
+.entity-body table { border-collapse: collapse; width: 100%; font-size: var(--t0); }
+.entity-body :is(th, td) { border: 1px solid var(--hairline); padding: var(--s1) var(--s2); }
+.entity-body a { color: var(--d-government); }
+.money-callout {
+  border: 2px solid var(--money-graphic); border-radius: 6px; background: #FFFFFF;
+  padding: var(--s3) var(--s4); margin: 0 0 var(--s4);
+}
+.money-callout .figure { font-weight: 700; color: var(--money-text); }
+
+/* Exec summary card: the verdict owns the first screen (review rule #3).
+   Inverse-surface card so it reads as THE summary, not another paragraph. */
+.exec-summary {
+  max-width: 72ch; margin: 0 0 var(--s4); background: var(--appbar-bg);
+  color: var(--appbar-ink); border-radius: 8px; padding: var(--s4) var(--s5);
+}
+.exec-summary .exec-verdict { display: flex; align-items: baseline; gap: var(--s3); margin-bottom: var(--s2); }
+.exec-summary .exec-kicker {
+  font-size: var(--t0); font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--gold-bright);
+}
+.exec-summary .exec-conf { font-size: var(--t0); color: #CCCCCC; margin-left: auto; }
+.exec-summary .exec-headline { margin: 0; font-size: var(--t2); line-height: 1.45; font-weight: 600; }
+.exec-summary .exec-counter { margin-top: var(--s3); font-size: var(--t0); }
+.exec-summary .exec-counter summary { cursor: pointer; color: #CCCCCC; text-decoration: underline; }
+.exec-summary .exec-counter p { margin: var(--s2) 0 0; line-height: 1.6; color: #E5E5E5; }
+
+/* Rank numerals burned into the biggest map bubbles (review rule #2) */
+.node-rank {
+  font-size: 13px; font-weight: 700; fill: #FFFFFF;
+  pointer-events: none; paint-order: stroke; stroke: rgba(0, 0, 0, 0.25); stroke-width: 2px;
+}
+
+/* Relationship labels ON the ego spokes (review rule #1: "can't see
+   relationships"): verbatim rel at the line midpoint, white halo for
+   legibility over crossing lines, gold ink for money-class edges. */
+.edge-label {
+  font-size: 10px; font-weight: 600; fill: #444444; pointer-events: none;
+  paint-order: stroke; stroke: #FFFFFF; stroke-width: 3px; stroke-linejoin: round;
+}
+.edge-label.money-edge-label { fill: var(--money-text); }
+.source-note { font-size: var(--t0); color: var(--ink-soft); }
+
+.section-nav {
+  position: sticky; top: 68px; float: right; margin: 0 0 var(--s4) var(--s4);
+  max-width: 240px; max-height: calc(100vh - 92px); overflow-y: auto;
+  font-size: var(--t0); background: var(--card); border: 1px solid var(--hairline);
+  border-radius: 6px; padding: var(--s2);
+}
+.section-nav a { display: block; padding: 2px 6px; border-radius: 4px; color: var(--ink); text-decoration: none; }
+.section-nav a:hover { background: #F0F0F0; }
+
+/* Method & Sources: native dialog (focus trap, Esc, focus return) */
+dialog#method-modal {
+  width: min(720px, 92vw); max-height: 84vh; padding: 0; border: 0; border-radius: 8px;
+  background: var(--card); color: var(--ink);
+}
+dialog#method-modal::backdrop { background: rgba(0, 0, 0, 0.55); }
+.method-wrap { padding: var(--s5); overflow-y: auto; max-height: 84vh; }
+.method-wrap h2 { margin-top: 0; font-size: var(--t2); }
+.method-wrap h3 { font-size: var(--t1); }
+.method-wrap table { border-collapse: collapse; width: 100%; font-size: var(--t0); }
+.method-wrap :is(th, td) { border: 1px solid var(--hairline); padding: 4px 8px; }
+.method-wrap code { background: #F0F0F0; padding: 1px 5px; border-radius: 4px; }
+.method-close { float: right; }
+
+/* Hidden-but-announced live region for sort changes */
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* Directory table claims the WCAG 1.4.10 data-table exception below ~480px
+   (container-level horizontal scroll permitted for data tables). */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}

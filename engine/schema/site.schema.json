@@ -1,0 +1,154 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://hermes.investigations/schema/site.schema.json",
+  "title": "Investigation Site Config",
+  "description": "Single source of truth for every presentation decision the HTML build makes. No node ids, counts, colors, acronyms, or copy may be hard-coded in the builder — they live here and are validated before build.",
+  "type": "object",
+  "required": ["case", "paths", "domains", "relationship_classes"],
+  "properties": {
+    "case": {
+      "type": "object",
+      "required": ["id", "title", "thesis"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "thesis": { "type": "string" },
+        "about_body": { "type": "string", "description": "May use {node_count} and {edge_count} placeholders — substituted at build time, never hard-coded." },
+        "appbar_label": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "paths": {
+      "type": "object",
+      "required": ["graph", "profiles", "output"],
+      "properties": {
+        "graph": { "type": "string" },
+        "profiles": { "type": "string" },
+        "output": { "type": "string" }
+      },
+      "additionalProperties": true
+    },
+    "domains": {
+      "type": "object",
+      "description": "Key = domain enum value; each carries color + shape + display label (dual-coding).",
+      "patternProperties": {
+        "^(government|economic|institutional|political|legal|media)$": {
+          "type": "object",
+          "required": ["color", "shape", "label"],
+          "properties": {
+            "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+            "shape": { "enum": ["square", "circle", "triangle", "diamond", "hexagon", "pentagon"] },
+            "label": { "type": "string" }
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "relationship_classes": {
+      "type": "object",
+      "required": ["money", "influence", "interlock", "structural"],
+      "properties": {
+        "money": { "type": "array", "items": { "type": "string" } },
+        "influence": { "type": "array", "items": { "type": "string" } },
+        "interlock": { "type": "array", "items": { "type": "string" } },
+        "structural": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": true,
+      "description": "Every relationship type MUST be in exactly one of these four classes. The validator errors on any relationship in NONE of them, so the taxonomy can never silently fall through to 'structural'."
+    },
+    "sections": {
+      "type": "object",
+      "description": "Template section-number → plain-English title (traceability + readability).",
+      "additionalProperties": { "type": "string" }
+    },
+    "acronyms": {
+      "type": "array",
+      "items": {
+        "type": "array",
+        "items": { "type": "string" },
+        "minItems": 2,
+        "maxItems": 2
+      }
+    },
+    "power": {
+      "type": "object",
+      "description": "Composite-power tuning: veto bonuses + hub caps, keyed by node id. Optional.",
+      "properties": {
+        "veto_bonus": { "type": "object", "additionalProperties": { "type": "number" } },
+        "hub_caps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id"],
+            "properties": {
+              "id": { "type": "string" },
+              "cap": { "type": "number" },
+              "below": { "type": "string", "description": "Optional: cap below this node's score minus a delta." },
+              "delta": { "type": "number" }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "extra_money_nodes": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Nodes that receive public money even though no money-class edge is in the graph yet. Validator errors on any id not present in the graph."
+    },
+    "render": {
+      "type": "object",
+      "description": "Layout / sizing knobs. Optional.",
+      "properties": {
+        "canvas_w": { "type": "number" },
+        "canvas_h": { "type": "number" },
+        "pad": { "type": "number" },
+        "r_min": { "type": "number" },
+        "r_max": { "type": "number" },
+        "org_scale": { "type": "number" },
+        "label_threshold": { "type": "number" },
+        "top_labels_persistent": { "type": "integer" },
+        "layout_seed": { "type": "integer" },
+        "detail_fullscreen": { "type": "boolean", "description": "When true, clicking an entity opens a full-screen detail view (entity becomes the main focus of the page) instead of a side drawer. Default false (side drawer)." },
+        "detail_max_width": { "type": "number", "description": "Max content width (px) of the full-screen detail view, centered for readability (default 960)." }
+      },
+      "additionalProperties": true
+    },
+    "theme": {
+      "type": "object",
+      "description": "Readability + visual tokens. Every color, font size, and panel width the page uses. Change these in site.json (NOT in the builder) to make the page easier to read.",
+      "properties": {
+        "colors": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "accent": { "type": "string", "description": "Gold accent — money rings, 'Follow the money', loop diagram (default #B8860B)." },
+            "highlight": { "type": "string", "description": "Bright gold highlight — begin button, focus ring, 'Top 10' (default #E8C547)." },
+            "page_bg": { "type": "string", "description": "Page/canvas background (default #fafafa)." },
+            "surface": { "type": "string", "description": "Panel/appbar surface color (default #FAFAFA)." },
+            "ink": { "type": "string", "description": "Dark UI chrome text (default #1B1B1B)." },
+            "text": { "type": "string", "description": "Body prose color (default #1a1a1a)." },
+            "border": { "type": "string", "description": "Card/panel borders (default #E0E0E0)." },
+            "money_chip_bg": { "type": "string", "description": "Money chip / guide-fact background (default #FFF8E1)." },
+            "muted": { "type": "string", "description": "Muted/brown secondary text (default #5D4037)." },
+            "link": { "type": "string", "description": "Profile link color (default #0B6E6E)." }
+          }
+        },
+        "label_font_px": { "type": "number", "description": "Node label overlay font size (default 22)." },
+        "profile_body_px": { "type": "number", "description": "Profile prose font size in the drawer — the main 'easier to read' knob (default 12.5)." },
+        "profile_table_px": { "type": "number", "description": "Profile sources-table font size (default 11.5)." },
+        "profile_h2_px": { "type": "number", "description": "Profile section-heading (h2) font size (default 14)." },
+        "profile_h3_px": { "type": "number", "description": "Profile sub-heading (h3) font size (default 13)." },
+        "profile_line_height": { "type": "number", "description": "Profile prose line-height multiplier (default 1.5)." },
+        "chip_font_px": { "type": "number", "description": "Relationship chip font size (default 12)." },
+        "drawer_title_px": { "type": "number", "description": "Drawer title bar font size (default 15)." },
+        "rail_width": { "type": "number", "description": "Left rail panel width px (default 280)." },
+        "drawer_width": { "type": "number", "description": "Right details drawer width px (default 340)." }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

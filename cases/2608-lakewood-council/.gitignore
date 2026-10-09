@@ -1,0 +1,12 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor/IDE
+*.swp
+*.swo
+*~
+
+# Sensitive - do not commit raw personal data if added later
+# (investigation is all public records, but keep this as a safeguard)
+private/

@@ -1,0 +1,253 @@
+{
+  "case": {
+    "id": "INV-2026-002",
+    "title": "Pierce County Power Network",
+    "appbar_label": "Pierce County Power Network",
+    "thesis": "Government creates wealth → private power converts it → policy returns it.",
+    "thesis_emphasis": "This is the structural-capture loop.",
+    "thesis_loop": {
+      "wealth": "Wealth",
+      "power": "Power",
+      "policy": "Policy"
+    },
+    "loop_explain": "Public money (levies, appropriations, tax breaks) becomes private power, which shapes policy, which returns more money.",
+    "about_body": "Maps the {node_count} most powerful actors across 6 domains and {edge_count} relationships. The core finding: Pierce County's major economic institutions derive substantial power from government-granted privileges — federal appropriations (JBLM ~$12.1B across Pierce+Thurston), tax exemptions (MultiCare ~$7.2B), land grants (Weyerhaeuser 10.4M acres), sovereignty (Puyallup Tribe), and public levies (Port of Tacoma). These institutions in turn influence the government that grants those privileges — a structural interdependence that warrants scrutiny. Node size = composite power score (area ∝ power). Shape = domain. Gold ring = receives public money. Toggle \"Follow the money\" to see money flows."
+  },
+  "paths": {
+    "graph": "evidence/29-power-graph-v2.json",
+    "profiles": "profiles",
+    "output": "evidence/11-power-network.html"
+  },
+  "domains": {
+    "government":    { "color": "#1f77b4", "shape": "square",   "label": "Government" },
+    "economic":      { "color": "#b84a00", "shape": "circle",   "label": "Economic" },
+    "institutional": { "color": "#1e7d32", "shape": "triangle", "label": "Institutional" },
+    "political":     { "color": "#b71c1c", "shape": "diamond",  "label": "Political" },
+    "legal":         { "color": "#6a1b9a", "shape": "hexagon",  "label": "Legal" },
+    "media":         { "color": "#5d4037", "shape": "pentagon", "label": "Media" }
+  },
+  "relationship_classes": {
+    "money": [
+      "federal_appropriations", "tax_exemption", "sovereignty", "federal_land_grant",
+      "property_tax_levy", "tax_exempt", "levy", "levy_funding", "taxing", "municipal",
+      "federal_funding", "state_funding", "transit_funding", "appropriates",
+      "school_bond", "ballot_measure", "donated", "ie", "lobbying", "lobbies",
+      "endorses", "trains_candidates", "wellfound_jv", "jv", "owned_by", "operates", "parent"
+    ],
+    "influence": [
+      "donated", "ie", "lobbying", "lobbies", "endorses", "trains_candidates",
+      "influence", "advocates", "oversight", "appoints", "appoints_judges",
+      "armed_services_champion"
+    ],
+    "interlock": [
+      "board", "board_chair", "chair", "ceo", "president", "exec", "director",
+      "former_board", "former", "advisor", "acting_director", "chairman",
+      "vice_chair", "commissioner", "exec_director", "ed", "council", "member",
+      "founded_by", "legacy", "honored"
+    ],
+    "structural": [
+      "aerospace_partner", "aligned", "appointed", "board_member", "board_of_health",
+      "board_president", "board_tie", "boundary_tension", "chancellor", "chairman_tie",
+      "city_council", "colleague", "commands", "conflict", "contract", "coordinates",
+      "county_partnership", "covered_by", "covers", "developer_partner", "editor",
+      "elected_by_voters", "employer", "endorsed", "enforces", "federal_cases",
+      "federal_oversight", "former_cfo", "former_commissioner", "former_exec",
+      "former_planning", "hears_appeals", "holds_accountable", "judge", "land_use",
+      "led_by", "lobbyist", "maritime", "mayor", "overlap", "oversees", "partner",
+      "partnership", "peer_district", "peer_newsroom", "peer_utility", "prosecutes",
+      "redevelopment", "religious_affiliation", "religious_sponsor", "runs", "serves",
+      "social", "ssmcp", "superintendent", "supports", "tax_exempt_status", "utility", "veto"
+    ]
+  },
+  "sections": {
+    "0": "Why this person or group is on the map",
+    "1": "Who they are",
+    "2": "Their career and offices",
+    "3": "Where their power comes from",
+    "3a": "What they actually influence",
+    "4": "Their money",
+    "5": "How they touch government",
+    "6": "Other seats they hold",
+    "7": "Controversies and questions",
+    "8": "How the press covers them",
+    "9": "Who they are connected to",
+    "10": "Sources and evidence",
+    "11": "Open questions",
+    "12": "What it all means"
+  },
+  "acronyms": [
+    ["JBLM", "Joint Base Lewis-McChord"],
+    ["GTCF", "Greater Tacoma Community Foundation"],
+    ["PLU", "Pacific Lutheran University"],
+    ["TCC", "Tacoma Community College"],
+    ["VMFH", "Virginia Mason Franciscan Health"],
+    ["UW", "University of Washington"],
+    ["TPS", "Tacoma Public Schools"],
+    ["TPU", "Tacoma Public Utilities"],
+    ["PDC", "Washington Public Disclosure Commission (the state campaign-finance agency)"],
+    ["PSRC", "Puget Sound Regional Council"],
+    ["SSMCP", "South Sound Military and Communities Partnership"],
+    ["RCW", "Revised Code of Washington (state law)"],
+    ["EIN", "Employer Identification Number (a tax ID)"],
+    ["IRS", "Internal Revenue Service (the federal tax agency)"],
+    ["PAC", "political action committee (a group that raises money for candidates)"],
+    ["LUCP", "Land Use Consultation Process"],
+    ["FMSIB", "Freight Mobility Strategic Investment Board"],
+    ["EDB", "Economic Development Board"],
+    ["TPCHD", "Tacoma-Pierce County Health Department"],
+    ["NWSA", "Northwest Seaport Alliance"],
+    ["PSE", "Puget Sound Energy"],
+    ["WSHA", "Washington State Hospital Association"],
+    ["HHFPAC", "Hospital Health Facilities Political Action Committee"],
+    ["CHI", "Catholic Health Initiatives"],
+    ["WEA", "Washington Education Association"],
+    ["PCCLC", "Pierce County Central Labor Council"],
+    ["ILWU", "International Longshore and Warehouse Union"],
+    ["UPS", "University of Puget Sound"],
+    ["GOIA", "Government Operations and Indian Affairs (tribal affairs office)"],
+    ["HCD", "Human-Centered Design"],
+    ["UDL", "Universal Design for Learning"],
+    ["AUM", "assets under management"],
+    ["FY", "fiscal year"],
+    ["BoC", "Board of Commissioners"],
+    ["CEO", "chief executive officer"],
+    ["CFO", "chief financial officer"],
+    ["COO", "chief operating officer"],
+    ["ED", "executive director"],
+    ["JD", "Juris Doctor (a law degree)"],
+    ["PhD", "doctor of philosophy (a doctorate degree)"],
+    ["BA", "bachelor of arts degree"],
+    ["BS", "bachelor of science degree"],
+    ["MA", "master of arts degree"],
+    ["MPA", "master of public administration degree"],
+    ["501(c)(3)", "a tax-exempt charity"],
+    ["501(c)(6)", "a tax-exempt business or trade group"]
+  ],
+  "power": {
+    "veto_bonus": {
+      "ryan-mello": 0.30,
+      "puyallup-tribe": 0.30,
+      "jblm": 0.28,
+      "chamber": 0.20,
+      "keith-swank": 0.16,
+      "mary-robnett": 0.14,
+      "multicare": 0.10,
+      "anders-ibsen": 0.10,
+      "nathe-lawver": 0.10,
+      "tom-pierson": 0.10,
+      "john-wiborg": 0.08,
+      "dona-ponepinto": 0.08,
+      "john-mccarthy": 0.06,
+      "news-tribune": 0.05,
+      "ltg-mcfarlane": 0.05,
+      "bill-sterud": 0.05
+    },
+    "hub_caps": [
+      { "id": "kelly-chambers", "cap": 0.06 },
+      { "id": "county-council", "below": "ryan-mello", "delta": 0.02 },
+      { "id": "chamber", "below": "ryan-mello", "delta": 0.01 },
+      { "id": "pierce-dem", "cap": 0.12 },
+      { "id": "pierce-gop", "cap": 0.12 }
+    ]
+  },
+  "extra_money_nodes": [
+    "jblm", "multicare", "puyallup-tribe", "weyerhaeuser", "port-tacoma", "chamber",
+    "gtcf", "county-council", "pierce-transit", "tacoma-schools", "puyallup-schools",
+    "bethel-schools", "clover-park-schools", "sound-transit", "metro-parks",
+    "west-pierce-fire", "central-pierce-fire", "superior-court", "district-court",
+    "uw-tacoma", "plu", "tcc", "vmfh", "catholic-archdiocese",
+    "rush-development", "miles-sand-gravel", "southport", "tucci-sons", "lincoln-park",
+    "nall-capital", "wa-realtors-pac", "tacoma-housing-auth", "saltchuk", "nwsa",
+    "pierce-county-econ-dev", "edb", "sumner-bonney-lake", "university-place-schools",
+    "east-pierce-fire", "gig-harbor-fire", "pierce-county-library", "flood-control-zone",
+    "tacoma-public-utilities", "wellfound", "commonspirit", "bates-tech", "cheney-foundation"
+  ],
+  "missions": [
+    {
+      "title": "Find the most powerful",
+      "body": "This map holds {node_count} people and organizations. The bigger a node, the more powerful it is. Find the largest node — that's the most powerful actor in Pierce County.",
+      "fact": "Key fact: The most powerful actor is {top_actor}. The {top_three} round out the top three.",
+      "target": "ryan-mello",
+      "type": "node"
+    },
+    {
+      "title": "Follow the money",
+      "body": "Click the gold 'Follow the money' switch in the top bar. Watch the gold rings and gold lines appear on the map. Gold = public money — government-created wealth.",
+      "fact": "Key fact: JBLM's economic impact is ~$12.1B across Pierce+Thurston counties (Pierce-only direct ~$3.9B). MultiCare takes in ~$7.2B, largely from government programs. The Puyallup Tribe's 1990 land-claims settlement was $162M + 900 acres.",
+      "target": null,
+      "type": "toggle"
+    },
+    {
+      "title": "Spot the funded",
+      "body": "Find an actor with a gold dashed ring — that's one that receives public money. Click it to open its details. The drawer shows who they are, their power score, and key facts.",
+      "fact": "Key fact: Weyerhaeuser owns 10.4 million acres — originally granted by the federal government in 1864. The Port of Tacoma moves $76 billion in cargo, funded by a public levy.",
+      "target": "jblm",
+      "type": "node"
+    },
+    {
+      "title": "Read the shapes",
+      "body": "Each node's SHAPE and COLOR tell you its domain. Squares are government, circles are economic, triangles are institutional, diamonds are political, hexagons are legal, pentagons are media. Click any node to see its domain in the drawer.",
+      "fact": "Key fact: The six domains are Government, Economic, Institutional, Political, Legal, and Media. Shape matters as much as color — so even color-blind users can read it.",
+      "target": null,
+      "type": "anynode"
+    },
+    {
+      "title": "Trace the loop",
+      "body": "Click the loop diagram in the left panel — Wealth → Power → Policy. This is the structural-capture loop: public money becomes private power, which shapes policy, which returns more money.",
+      "fact": "Key fact: The people who benefit most from public money are often the ones deciding how public money is spent.",
+      "target": null,
+      "type": "loop"
+    },
+    {
+      "title": "Follow a connection",
+      "body": "Open any node, then click a 'connected to' chip to jump to that actor. Use your browser's Back button to undo. This is how you explore the web of relationships.",
+      "fact": "Key fact: One striking detail: Tom Pierson is simultaneously the Chamber of Commerce's interim CEO AND the county's acting economic development director — the same person on both sides of the table.",
+      "target": null,
+      "type": "connection"
+    },
+    {
+      "title": "See the ranking",
+      "body": "Click 'Top 10 by power' in the left panel to see the full ranking of the most powerful actors. This is the investigation's bottom line.",
+      "fact": "Key fact: Pierce County is a 'growth machine' — an interlocking business-political-philanthropic elite that converts public resources into private power, then uses that power to shape public policy.",
+      "target": null,
+      "type": "top10"
+    }
+  ],
+  "render": {
+    "canvas_w": 2560,
+    "canvas_h": 1440,
+    "pad": 60,
+    "r_min": 14.0,
+    "r_max": 36.0,
+    "org_scale": 1.2,
+    "label_threshold": 0.06,
+    "top_labels_persistent": 5,
+    "layout_seed": 7,
+    "detail_fullscreen": true,
+    "detail_max_width": 960
+  },
+  "theme": {
+    "colors": {
+      "accent": "#B8860B",
+      "highlight": "#E8C547",
+      "page_bg": "#fafafa",
+      "surface": "#FAFAFA",
+      "ink": "#1B1B1B",
+      "text": "#1a1a1a",
+      "border": "#E0E0E0",
+      "money_chip_bg": "#FFF8E1",
+      "muted": "#5D4037",
+      "link": "#0B6E6E"
+    },
+    "label_font_px": 22,
+    "profile_body_px": 15,
+    "profile_table_px": 13,
+    "profile_h2_px": 19,
+    "profile_h3_px": 16,
+    "profile_line_height": 1.65,
+    "chip_font_px": 13,
+    "drawer_title_px": 17,
+    "rail_width": 280,
+    "drawer_width": 460
+  }
+}

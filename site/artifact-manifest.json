@@ -1,0 +1,12 @@
+{
+  "case_manifest": {
+    "2608-pierce-leadership": {
+      "deps_sha": "78af13575d3f4014b95abfb764f4014090b1004f4e7a9166186122d1619a4e99",
+      "engine_sha": "e6a7ff321f3aa9f2ee43b8b3d23ca0b714ffdc81cdd96c357f521e3a11c67e7f",
+      "graph_sha": "d8594f441037c2b57f416b1821eb4562a248d6386cdb523a23789ea46ee646ef",
+      "output_sha": "f63dfa40991c53c640d619c71d2d7a3e54b20f96ab2aed997af719b36a169ac2"
+    }
+  },
+  "engine_sha": "e6a7ff321f3aa9f2ee43b8b3d23ca0b714ffdc81cdd96c357f521e3a11c67e7f",
+  "hub_generator": "case2hub.py"
+}

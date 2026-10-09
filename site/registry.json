@@ -1,0 +1,41 @@
+{
+  "cases": [
+    {
+      "case_id": "INV-2026-001",
+      "title": "2026-08-16: Lakewood City Council Investigation",
+      "slug": "2608-lakewood-council",
+      "status": "active",
+      "priority": "high",
+      "type": "other",
+      "date_opened": "2026-08-16T15:15:00-07:00",
+      "last_updated": "2026-08-17T14:30:00-07:00",
+      "tags": [
+        "municipal-government",
+        "public-officials",
+        "washington",
+        "lakewood"
+      ],
+      "notion_url": "https://app.notion.com/p/3beef56cb23c81219ee7c0a6897df26b",
+      "approved": false
+    },
+    {
+      "case_id": "INV-2026-002",
+      "title": "2026-08-17: Pierce County Leadership Investigation",
+      "slug": "2608-pierce-leadership",
+      "status": "active",
+      "priority": "high",
+      "type": "corruption",
+      "date_opened": "2026-08-17",
+      "last_updated": "2026-09-20T00:10:00-07:00",
+      "tags": [
+        "county-government",
+        "public-officials",
+        "washington",
+        "pierce-county",
+        "power-mapping"
+      ],
+      "notion_url": "https://app.notion.com/p/3bfef56cb23c8103b5c8e1fb6b465cad",
+      "approved": false
+    }
+  ]
+}
