@@ -16,7 +16,7 @@
         "lakewood"
       ],
       "notion_url": "https://app.notion.com/p/3beef56cb23c81219ee7c0a6897df26b",
-      "approved": false
+      "approved": true
     },
     {
       "case_id": "INV-2026-002",
@@ -35,7 +35,7 @@
         "power-mapping"
       ],
       "notion_url": "https://app.notion.com/p/3bfef56cb23c8103b5c8e1fb6b465cad",
-      "approved": false
+      "approved": true
     }
   ]
 }

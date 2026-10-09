@@ -207,8 +207,9 @@ def harness_chrome_running() -> bool:
 def ensure_harness_chrome() -> bool:
     """Launch a headless harness Chrome for the DOM-coupled gates when none is
     up. Returns False (gates will fail with a clear reason) only if the
-    binary is missing."""
-    if harness_chrome_running():
+    binary is missing. Waits for the DevToolsActivePort file — the marker the
+    gate scripts actually read — not just the process."""
+    if HARNESS_UDD.joinpath("DevToolsActivePort").exists() and harness_chrome_running():
         return True
     chrome = Path("/Applications/Google Chrome.app/Contents/MacOS/Google Chrome")
     if not chrome.exists():
@@ -221,11 +222,12 @@ def ensure_harness_chrome() -> bool:
          "--disable-extensions", "about:blank"],
         stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
         start_new_session=True)
-    for _ in range(20):  # wait up to ~10s for CDP port to register
-        if harness_chrome_running():
-            print("harness Chrome launched for DOM-coupled gates")
+    import time
+    port_file = HARNESS_UDD / "DevToolsActivePort"
+    for _ in range(40):  # wait up to ~20s for the CDP port file
+        if port_file.exists() and harness_chrome_running():
+            print("harness Chrome ready for DOM-coupled gates")
             return True
-        import time
         time.sleep(0.5)
     print("NOTE: harness Chrome did not register in time")
     return False

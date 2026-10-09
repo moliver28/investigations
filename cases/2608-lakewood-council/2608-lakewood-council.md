@@ -11,6 +11,8 @@ last_updated: 2026-08-17T14:30:00-07:00
 notion_page_id: null
 notion_url: "https://app.notion.com/p/3beef56cb23c81219ee7c0a6897df26b"
 tags: ["municipal-government", "public-officials", "washington", "lakewood"]
+publish:
+  approved: true
 ---
 
 # Case Summary

@@ -14,6 +14,8 @@ tags:
   - washington
   - pierce-county
   - power-mapping
+publish:
+  approved: true
 ---
 
 # Pierce County Leadership Investigation
