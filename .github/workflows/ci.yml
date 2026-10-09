@@ -155,7 +155,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-artifact@v4
         with:
-          name: pages
+          name: github-pages
           path: /tmp/pages
           retention-days: 1
 
