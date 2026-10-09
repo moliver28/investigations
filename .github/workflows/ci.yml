@@ -149,13 +149,10 @@ jobs:
           touch pages_staging/.nojekyll
           echo '<!-- deployed by ci -->' > pages_staging/deploy-stamp.html
 
-      - name: Upload Pages artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload Pages artifact (official uploader — tar format the server expects)
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
           path: pages_staging
-          retention-days: 1
-          if-no-files-found: error
 
       - name: Deploy to GitHub Pages
         id: deployment
