@@ -430,10 +430,13 @@ def main(argv: list[str]) -> int:
         ok, log = run_pipeline(slug)
         tail = log.strip().splitlines()[-6:] if log.strip() else []
         print(f"[{slug}] pipeline: {'OK' if ok else 'FAIL'}")
-        for line in tail or [  ""]:
+        for line in tail or [""]:
             print("   ", line)
         if not ok:
             raise SystemExit(f"pipeline failed for {slug} — publish aborted (nothing pushed)")
+        # re-sync: gates rebuild bundles/outputs in the worktree AFTER the first
+        # sync; mirror the rebuilt artifacts so the monorepo (and site) are current
+        sync_worktree_to_cases(slug)
     build_hub(engine_dir)
     mece_readme(engine_dir)
     record_deps(engine_dir)

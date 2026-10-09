@@ -115,3 +115,62 @@ out of sync with the graph:
 `pipeline/power.py` is a config-driven port of the case's `compute_power.py` — the
 35/25/20/20 weighting is unchanged; only the veto bonuses and hub caps moved from
 Python literals into `site.json` → `power`.
+
+
+## Publishing to GitHub — the investigations monorepo
+
+The engine lives here; cases live in sibling case repos. Everything pushes to
+the public monorepo **github.com/moliver28/investigations**, laid out as:
+
+```
+investigations/            (public repo)
+├── engine/                ← this repo: pipeline/, schema/, scripts/, config/
+├── cases/<slug>/          ← mirror of each case worktree (evidence included)
+├── site/                  ← generated: index.html, cards/, style.css, registry.json,
+│                            assets/network/<slug>/ (approved bundles), artifact-manifest.json
+└── .github/workflows/ci.yml
+```
+
+Live site: **https://moliver28.github.io/investigations/** — deployed ONLY by CI
+(actions/deploy-pages) AFTER every gate passes. A red build can never publish.
+
+### The one command
+
+```bash
+# full round: sync → engine gates (--strict) → case bundle gates → hub build →
+# README regen → dep pins → fingerprints → secret scan → commit → push
+PUBLISH_DRY_RUN=1 scripts/publish.py run     # rehearse: everything except push
+scripts/publish.py run                       # real round
+publish.py selftest                          # CI parity check, local
+```
+
+This runs automatically at every session end via the `on_session_end` shell hook
+(`~/.hermes/agent-hooks/publish-round.sh` → profile config `hooks.on_session_end`),
+so **pushing changes = publishing changes**, with zero manual steps.
+
+### Enforcement (MECE, three layers)
+
+1. **Publish-time derivation** — `case2hub.py` regenerates cards, index, registry,
+   and README from case frontmatter in one pass; stale cards are deleted, so the
+   four artifacts can never disagree by construction.
+2. **Approval gate** — a case is public only with `publish:\n  approved: true`
+   frontmatter. Unapproved cases are mirrored (source public) but never rendered.
+3. **CI re-verification** — on every push: installs EXACT dep pins
+   (`engine/requirements-ci.txt`), rebuilds every `cases/*/site.json` from the
+   checked-in engine (`--strict`), re-derives the hub (`case2hub selftest`),
+   checks README↔index↔cards↔registry MECE parity, compares SHA256 fingerprints
+   (engine tree, dep pins, graphs) against `site/artifact-manifest.json`, secret-scans
+   the tree, verifies unapproved cases render nothing — then deploys.
+
+The engine build is byte-deterministic (verified: identical SHA256 across runs on
+macOS AND the CI ubuntu rebuild) — so fingerprint equality is a real guarantee,
+not an aspiration. Changing deps or engine code without a fresh publish round
+fails CI loudly.
+
+### Adding a new case (zero registration)
+
+Create the case per the case-manager skill (bare repo + worktree + `<slug>/<slug>.md`,
+symlink into the profile cases dir, Notion page). The next publish round
+discovers it automatically. For a rendered/network case, add a case-root
+`site.json` and CI will build and fingerprint it too. To publish it publicly,
+flip the frontmatter flag — the next round applies it and CI enforces the rest.
