@@ -18,9 +18,6 @@ concurrency:
 jobs:
   verify-and-publish:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -132,10 +129,10 @@ jobs:
           print('approval gate ok')
           PY
 
-      - name: Assemble Pages artifact at artifact ROOT (Pages serves artifact root)
+      - name: Stage Pages content in workspace
         run: |
-          rm -rf /tmp/pages && mkdir -p /tmp/pages
-          cp -R site/. /tmp/pages/
+          rm -rf pages_staging && mkdir -p pages_staging
+          cp -R site/. pages_staging/
           # case2hub already copied approved network bundles into site/assets/network;
           # verify they exist for approved cases so the bundle is never silently missing
           python - <<'PY'
@@ -149,14 +146,14 @@ jobs:
           assert not missing, f'approved bundles missing from site: {missing}'
           print('bundle presence ok')
           PY
-          touch /tmp/pages/.nojekyll
-          echo '<!-- deployed by ci -->' > /tmp/pages/deploy-stamp.html
+          touch pages_staging/.nojekyll
+          echo '<!-- deployed by ci -->' > pages_staging/deploy-stamp.html
 
       - name: Upload Pages artifact
         uses: actions/upload-artifact@v4
         with:
           name: github-pages
-          path: /tmp/pages/**
+          path: pages_staging
           retention-days: 1
           if-no-files-found: error
 
