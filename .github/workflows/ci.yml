@@ -132,10 +132,10 @@ jobs:
           print('approval gate ok')
           PY
 
-      - name: Assemble Pages artifact (site is self-contained; never raw graphs)
+      - name: Assemble Pages artifact at artifact ROOT (Pages serves artifact root)
         run: |
-          mkdir -p /tmp/pages
-          cp -R site /tmp/pages/site
+          rm -rf /tmp/pages && mkdir -p /tmp/pages
+          cp -R site/. /tmp/pages/
           # case2hub already copied approved network bundles into site/assets/network;
           # verify they exist for approved cases so the bundle is never silently missing
           python - <<'PY'
@@ -149,15 +149,16 @@ jobs:
           assert not missing, f'approved bundles missing from site: {missing}'
           print('bundle presence ok')
           PY
-          touch /tmp/pages/site/.nojekyll
-          echo '<!-- deployed by ci -->' > /tmp/pages/site/deploy-stamp.html
+          touch /tmp/pages/.nojekyll
+          echo '<!-- deployed by ci -->' > /tmp/pages/deploy-stamp.html
 
       - name: Upload Pages artifact
         uses: actions/upload-artifact@v4
         with:
           name: github-pages
-          path: /tmp/pages
+          path: /tmp/pages/**
           retention-days: 1
+          if-no-files-found: error
 
       - name: Deploy to GitHub Pages
         id: deployment
