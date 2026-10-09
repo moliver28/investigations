@@ -131,21 +131,22 @@ jobs:
           print('approval gate ok')
           PY
 
-      - name: Assemble Pages artifact (site + approved bundles — never raw graphs)
+      - name: Assemble Pages artifact (site is self-contained; never raw graphs)
         run: |
           mkdir -p /tmp/pages
           cp -R site /tmp/pages/site
+          # case2hub already copied approved network bundles into site/assets/network;
+          # verify they exist for approved cases so the bundle is never silently missing
           python - <<'PY'
-          import json, shutil
+          import json
           from pathlib import Path
           reg = json.loads(Path('site/registry.json').read_text())
-          for c in reg['cases']:
-              if not c['approved']: continue
-              src = Path(f'cases/{c["slug"]}/evidence/network')
-              if src.exists():
-                  shutil.copytree(src, Path('/tmp/pages/site/assets/network')/c['slug'],
-                                  ignore=shutil.ignore_patterns('.DS_Store', '__pycache__'))
-          print('bundles copied')
+          missing = [c['slug'] for c in reg['cases']
+                     if c['approved']
+                     and (Path('cases')/c['slug']/'evidence/network/index.html').exists()
+                     and not (Path('site/assets/network')/c['slug']/'index.html').exists()]
+          assert not missing, f'approved bundles missing from site: {missing}'
+          print('bundle presence ok')
           PY
           touch /tmp/pages/site/.nojekyll
           echo '<!-- deployed by ci -->' > /tmp/pages/site/deploy-stamp.html
