@@ -1,0 +1,8 @@
+from: tacoma-city-council
+to: anders-ibsen
+kind: mayor
+evidence: []
+confidence: medium
+weight: 5
+class: structural
+rel_class: governance

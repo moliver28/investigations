@@ -1,0 +1,12 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_src_path: ./templates/journalism
+analytics: none
+author: moliver28
+description: Published investigations - source documents, entity profiles, and the
+    connections between them.
+graph_height: 32rem
+owner: moliver28
+repo: investigations
+site_name: Investigations
+theme_version: 0.1.1
+vertical: journalism

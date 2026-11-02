@@ -1,0 +1,8 @@
+from: pierce-transit
+to: county-council
+kind: ballot_measure
+evidence: []
+confidence: medium
+weight: 4
+class: money
+rel_class: money

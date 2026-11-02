@@ -1,0 +1,8 @@
+from: tcc
+to: dona-ponepinto
+kind: board_chair
+evidence: []
+confidence: medium
+weight: 5
+class: interlock
+rel_class: governance

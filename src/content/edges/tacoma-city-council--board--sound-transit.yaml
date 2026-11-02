@@ -1,0 +1,8 @@
+from: tacoma-city-council
+to: sound-transit
+kind: board
+evidence: []
+confidence: medium
+weight: 3
+class: interlock
+rel_class: governance

@@ -1,0 +1,8 @@
+from: catholic-archdiocese
+to: commonspirit
+kind: religious_affiliation
+evidence: []
+confidence: medium
+weight: 2
+class: structural
+rel_class: community

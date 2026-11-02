@@ -1,0 +1,8 @@
+from: southport
+to: tacoma-housing-auth
+kind: member
+evidence: []
+confidence: medium
+weight: 2.0
+class: interlock
+rel_class: governance

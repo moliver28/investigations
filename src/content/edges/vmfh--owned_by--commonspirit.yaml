@@ -1,0 +1,8 @@
+from: vmfh
+to: commonspirit
+kind: owned_by
+evidence: []
+confidence: medium
+weight: 6
+class: money
+rel_class: business

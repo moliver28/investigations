@@ -1,0 +1,8 @@
+from: jblm
+to: county-council
+kind: ssmcp
+evidence: []
+confidence: medium
+weight: 5
+class: structural
+rel_class: community

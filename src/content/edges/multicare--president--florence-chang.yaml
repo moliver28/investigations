@@ -1,0 +1,8 @@
+from: multicare
+to: florence-chang
+kind: president
+evidence: []
+confidence: medium
+weight: 6
+class: interlock
+rel_class: governance

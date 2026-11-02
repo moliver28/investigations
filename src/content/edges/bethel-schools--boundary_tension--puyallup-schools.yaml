@@ -1,0 +1,8 @@
+from: bethel-schools
+to: puyallup-schools
+kind: boundary_tension
+evidence: []
+confidence: medium
+weight: 2
+class: structural
+rel_class: community

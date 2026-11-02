@@ -1,0 +1,8 @@
+from: multicare
+to: bill-robertson
+kind: ceo
+evidence: []
+confidence: medium
+weight: 7
+class: interlock
+rel_class: governance

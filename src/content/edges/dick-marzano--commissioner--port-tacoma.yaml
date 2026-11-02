@@ -1,0 +1,8 @@
+from: dick-marzano
+to: port-tacoma
+kind: commissioner
+evidence: []
+confidence: medium
+weight: 5
+class: interlock
+rel_class: governance

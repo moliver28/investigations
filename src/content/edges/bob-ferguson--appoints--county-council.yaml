@@ -1,0 +1,8 @@
+from: bob-ferguson
+to: county-council
+kind: appoints
+evidence: []
+confidence: medium
+weight: 4
+class: influence
+rel_class: governance

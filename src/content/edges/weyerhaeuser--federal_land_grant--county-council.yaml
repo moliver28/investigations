@@ -1,0 +1,8 @@
+from: weyerhaeuser
+to: county-council
+kind: federal_land_grant
+evidence: []
+confidence: medium
+weight: 4
+class: money
+rel_class: money

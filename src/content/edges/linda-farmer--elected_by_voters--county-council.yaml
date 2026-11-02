@@ -1,0 +1,8 @@
+from: linda-farmer
+to: county-council
+kind: elected_by_voters
+evidence: []
+confidence: medium
+weight: 4
+class: structural
+rel_class: governance

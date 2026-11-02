@@ -1,0 +1,8 @@
+from: jblm
+to: county-council
+kind: federal_appropriations
+evidence: []
+confidence: medium
+weight: 6
+class: money
+rel_class: money

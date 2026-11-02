@@ -1,0 +1,8 @@
+from: federal-district-court
+to: pa-office
+kind: federal_cases
+evidence: []
+confidence: medium
+weight: 3
+class: structural
+rel_class: legal

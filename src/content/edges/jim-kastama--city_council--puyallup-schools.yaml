@@ -1,0 +1,8 @@
+from: jim-kastama
+to: puyallup-schools
+kind: city_council
+evidence: []
+confidence: medium
+weight: 3
+class: structural
+rel_class: governance

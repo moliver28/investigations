@@ -1,0 +1,8 @@
+from: court-appeals
+to: superior-court
+kind: hears_appeals
+evidence: []
+confidence: medium
+weight: 4
+class: structural
+rel_class: legal

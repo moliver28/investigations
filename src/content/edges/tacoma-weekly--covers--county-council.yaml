@@ -1,0 +1,8 @@
+from: tacoma-weekly
+to: county-council
+kind: covers
+evidence: []
+confidence: medium
+weight: 3
+class: structural
+rel_class: media

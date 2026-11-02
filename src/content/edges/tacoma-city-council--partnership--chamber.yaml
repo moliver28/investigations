@@ -1,0 +1,8 @@
+from: tacoma-city-council
+to: chamber
+kind: partnership
+evidence: []
+confidence: medium
+weight: 3
+class: structural
+rel_class: business

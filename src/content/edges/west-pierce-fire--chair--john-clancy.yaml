@@ -1,0 +1,8 @@
+from: west-pierce-fire
+to: john-clancy
+kind: chair
+evidence: []
+confidence: medium
+weight: 4
+class: interlock
+rel_class: governance

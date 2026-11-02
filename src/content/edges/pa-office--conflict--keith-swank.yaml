@@ -1,0 +1,8 @@
+from: pa-office
+to: keith-swank
+kind: conflict
+evidence: []
+confidence: medium
+weight: 3
+class: structural
+rel_class: legal

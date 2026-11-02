@@ -1,0 +1,8 @@
+from: jason-thompson
+to: russell-invest
+kind: director
+evidence: []
+confidence: medium
+weight: 4
+class: interlock
+rel_class: governance

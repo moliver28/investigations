@@ -1,0 +1,8 @@
+from: tacoma-schools
+to: korey-strozier
+kind: board_president
+evidence: []
+confidence: medium
+weight: 4
+class: structural
+rel_class: governance

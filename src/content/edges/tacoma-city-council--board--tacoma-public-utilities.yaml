@@ -1,0 +1,8 @@
+from: tacoma-city-council
+to: tacoma-public-utilities
+kind: board
+evidence: []
+confidence: medium
+weight: 3.0
+class: interlock
+rel_class: governance

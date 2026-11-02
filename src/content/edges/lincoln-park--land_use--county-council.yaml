@@ -1,0 +1,8 @@
+from: lincoln-park
+to: county-council
+kind: land_use
+evidence: []
+confidence: medium
+weight: 3
+class: structural
+rel_class: business

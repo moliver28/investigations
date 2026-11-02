@@ -1,0 +1,8 @@
+from: mcclatchy
+to: chatham-am
+kind: owned_by
+evidence: []
+confidence: medium
+weight: 7
+class: money
+rel_class: business

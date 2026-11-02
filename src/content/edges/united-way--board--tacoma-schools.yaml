@@ -1,0 +1,8 @@
+from: united-way
+to: tacoma-schools
+kind: board
+evidence: []
+confidence: medium
+weight: 2.0
+class: interlock
+rel_class: governance

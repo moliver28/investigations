@@ -1,0 +1,8 @@
+from: wea-pac
+to: pierce-dem
+kind: aligned
+evidence: []
+confidence: medium
+weight: 3
+class: structural
+rel_class: influence

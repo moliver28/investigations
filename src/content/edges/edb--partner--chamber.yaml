@@ -1,0 +1,8 @@
+from: edb
+to: chamber
+kind: partner
+evidence: []
+confidence: medium
+weight: 4
+class: structural
+rel_class: business

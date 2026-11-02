@@ -1,0 +1,8 @@
+from: clover-park-schools
+to: jblm
+kind: serves
+evidence: []
+confidence: medium
+weight: 4
+class: structural
+rel_class: governance

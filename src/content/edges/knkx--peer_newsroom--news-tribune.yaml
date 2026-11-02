@@ -1,0 +1,8 @@
+from: knkx
+to: news-tribune
+kind: peer_newsroom
+evidence: []
+confidence: medium
+weight: 2
+class: structural
+rel_class: media

@@ -1,0 +1,8 @@
+from: metro-parks
+to: matt-mauer
+kind: president
+evidence: []
+confidence: medium
+weight: 4
+class: interlock
+rel_class: governance

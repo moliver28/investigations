@@ -1,0 +1,8 @@
+from: sumner-bonney-lake
+to: county-council
+kind: levy
+evidence: []
+confidence: medium
+weight: 3
+class: money
+rel_class: money

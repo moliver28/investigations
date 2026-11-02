@@ -1,0 +1,8 @@
+from: tacoma-schools
+to: multicare
+kind: partnership
+evidence: []
+confidence: medium
+weight: 3
+class: structural
+rel_class: business

@@ -1,0 +1,8 @@
+from: tacoma-schools
+to: county-council
+kind: school_bond
+evidence: []
+confidence: medium
+weight: 4
+class: money
+rel_class: money
