@@ -1,0 +1,8 @@
+from: master-builders
+to: paul-herrera
+kind: donated
+evidence: []
+confidence: medium
+weight: 3
+class: money
+rel_class: money

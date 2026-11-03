@@ -1,0 +1,8 @@
+from: uw-tacoma
+to: county-council
+kind: redevelopment
+evidence: []
+confidence: medium
+weight: 4
+class: structural
+rel_class: business

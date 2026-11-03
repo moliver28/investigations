@@ -1,0 +1,8 @@
+from: nathe-lawver
+to: united-way
+kind: chair
+evidence: []
+confidence: medium
+weight: 5
+class: interlock
+rel_class: governance

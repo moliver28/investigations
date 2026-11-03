@@ -1,0 +1,8 @@
+from: ryan-mello
+to: county-council
+kind: veto
+evidence: []
+confidence: medium
+weight: 7
+class: structural
+rel_class: influence

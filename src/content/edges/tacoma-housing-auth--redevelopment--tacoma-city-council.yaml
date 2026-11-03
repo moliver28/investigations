@@ -1,0 +1,8 @@
+from: tacoma-housing-auth
+to: tacoma-city-council
+kind: redevelopment
+evidence: []
+confidence: medium
+weight: 3
+class: structural
+rel_class: business

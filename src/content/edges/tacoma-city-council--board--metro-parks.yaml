@@ -1,0 +1,8 @@
+from: tacoma-city-council
+to: metro-parks
+kind: board
+evidence: []
+confidence: medium
+weight: 2.0
+class: interlock
+rel_class: governance

@@ -1,0 +1,8 @@
+from: pa-office
+to: county-council
+kind: appropriates
+evidence: []
+confidence: medium
+weight: 4
+class: money
+rel_class: money

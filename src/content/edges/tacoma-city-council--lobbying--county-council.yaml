@@ -1,0 +1,8 @@
+from: tacoma-city-council
+to: county-council
+kind: lobbying
+evidence: []
+confidence: medium
+weight: 3
+class: money
+rel_class: influence

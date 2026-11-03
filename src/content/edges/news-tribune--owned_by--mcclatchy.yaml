@@ -1,0 +1,8 @@
+from: news-tribune
+to: mcclatchy
+kind: owned_by
+evidence: []
+confidence: medium
+weight: 5
+class: money
+rel_class: business

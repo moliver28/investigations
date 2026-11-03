@@ -1,0 +1,8 @@
+from: superior-court
+to: stanley-rumbaugh
+kind: judge
+evidence: []
+confidence: medium
+weight: 4
+class: structural
+rel_class: governance

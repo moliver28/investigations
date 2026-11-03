@@ -1,0 +1,8 @@
+from: jake-fey
+to: pierce-transit
+kind: transit_funding
+evidence: []
+confidence: medium
+weight: 5
+class: money
+rel_class: money

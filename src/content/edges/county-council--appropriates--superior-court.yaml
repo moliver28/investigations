@@ -1,0 +1,8 @@
+from: county-council
+to: superior-court
+kind: appropriates
+evidence: []
+confidence: medium
+weight: 5
+class: money
+rel_class: money

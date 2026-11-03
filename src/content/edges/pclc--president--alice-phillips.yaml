@@ -1,0 +1,8 @@
+from: pclc
+to: alice-phillips
+kind: president
+evidence: []
+confidence: medium
+weight: 5
+class: interlock
+rel_class: governance

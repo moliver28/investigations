@@ -1,0 +1,8 @@
+from: twina-nobles
+to: university-place-schools
+kind: board_member
+evidence: []
+confidence: medium
+weight: 4
+class: structural
+rel_class: governance

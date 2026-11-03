@@ -1,0 +1,8 @@
+from: chamber
+to: candidate-academy
+kind: runs
+evidence: []
+confidence: medium
+weight: 6
+class: structural
+rel_class: community

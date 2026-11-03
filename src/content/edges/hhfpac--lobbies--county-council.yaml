@@ -1,0 +1,8 @@
+from: hhfpac
+to: county-council
+kind: lobbies
+evidence: []
+confidence: medium
+weight: 4
+class: money
+rel_class: influence

@@ -1,159 +1,92 @@
-name: ci
+name: CI
 
 on:
   push:
     branches: [main]
-  workflow_dispatch:
+  pull_request:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
-  actions: read
 
 concurrency:
   group: pages-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
-  verify-and-publish:
+  gates:
+    name: validate + typecheck + build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          fetch-depth: 0
+          node-version: 24
+          cache: npm
 
-      - uses: actions/setup-python@v5
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck (astro check)
+        run: npm run typecheck
+
+      # astro build runs Zod validation first — bad content fails fast here.
+      - name: Build
+        run: npm run build
+
+  deploy:
+    name: Deploy to GitHub Pages (main only)
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    needs: gates
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # pushes the gh-pages branch
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          python-version: '3.11'
+          node-version: 24
+          cache: npm
 
-      - name: Install pinned deps (exact versions from local publish environment)
-        run: |
-          python -m pip install --upgrade pip
-          if [ -f engine/requirements-ci.txt ]; then
-            python -m pip install -r engine/requirements-ci.txt
-          else
-            python -m pip install jsonschema==4.* markdown==3.* networkx==3.* numpy==2.*
-          fi
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Rebuild all rendered cases from source (validate → build → verify --strict)
-        run: |
-          set -e
-          shopt -s nullglob
-          for f in cases/*/site.json; do
-            echo "=== rebuild $f ==="
-            (cd engine && python -m pipeline.run "../$f" --strict)
-          done
-          echo "all rendered cases rebuilt green"
+      - name: Build
+        run: npm run build
 
-      - name: Re-derive hub artifacts and enforce parity
-        run: python engine/scripts/case2hub.py selftest .
-
-      - name: README ↔ index ↔ registry MECE parity
-        run: |
-          python - <<'PY'
-          import json, re
-          from pathlib import Path
-          repo = Path('.')
-          registry = json.loads((repo/'site/registry.json').read_text())
-          approved = {c['slug'] for c in registry['cases'] if c['approved']}
-          index = (repo/'site/index.html').read_text()
-          for slug in approved:
-              assert f'cards/{slug}.html' in index, f'{slug} missing from index'
-          for slug in {p.stem for p in (repo/'site/cards').glob('*.html')}:
-              assert slug in approved, f'card {slug} published but not approved'
-          assert len(registry['cases']) == len({c['case_id'] for c in registry['cases']}), 'duplicate case_id in registry'
-          readme = (repo/'README.md').read_text()
-          readme_slugs = set(re.findall(r'/cards/([\w-]+)\.html', readme))
-          assert readme_slugs == approved, f'README published-set mismatch: {readme_slugs ^ approved}'
-          print(f'MECE parity ok: {len(approved)} published / {len(registry["cases"])} registered')
-          PY
-
-      - name: Artifact parity (engine tree + graph + dep pins vs manifest)
-        run: |
-          python - <<'PY'
-          import hashlib, json
-          import importlib.metadata as im
-          from pathlib import Path
-          def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
-          eng = hashlib.sha256()
-          for p in sorted(Path('engine').rglob('*')):
-              if p.is_file() and '__pycache__' not in p.parts and p.suffix != '.pyc':
-                  eng.update(str(p.relative_to('engine')).encode()); eng.update(p.read_bytes())
-          mf = json.loads(Path('site/artifact-manifest.json').read_text())
-          assert mf['engine_sha'] == eng.hexdigest(), 'engine fingerprint drift — site was not built with the checked-in engine'
-          deps = sha('engine/dep-versions.json')
-          recorded = json.loads(Path('engine/dep-versions.json').read_text())
-          for pkg, ver in recorded.items():
-              if pkg == 'python':
-                  continue
-              assert im.version(pkg) == ver, f'dep drift: {pkg} installed {im.version(pkg)} != publish-time {ver}'
-          for slug, item in mf['case_manifest'].items():
-              cfg = json.loads((Path(f'cases/{slug}/site.json')).read_text())
-              gp = Path('cases')/slug/cfg['paths']['graph']
-              assert item['graph_sha'] == sha(gp), f'{slug}: graph changed since recorded publish'
-              assert item['deps_sha'] == deps, f'{slug}: dep versions changed since publish'
-          print('artifact parity ok:', len(mf['case_manifest']), 'rendered cases')
-          PY
-
-      - name: Secret scan published tree
-        run: |
-          python - <<'PY'
-          import re
-          from pathlib import Path
-          pats = [re.compile(p) for p in [
-              r'gh[pousr]_[A-Za-z0-9]{36,}', r'AKIA[0-9A-Z]{16}',
-              r'-----BEGIN [A-Z ]*PRIVATE KEY-----', r'sk-(proj-)?[A-Za-z0-9]{20,}',
-              r'xox[baprs]-[A-Za-z0-9-]{10,}',
-              r'(?i)(api[_-]?key|secret|password)\s*[:=]\s*["\']?[A-Za-z0-9_\-]{16,}']]
-          hits = []
-          for p in list(Path('site').rglob('*')) + list(Path('cases').rglob('*')):
-              if p.is_file() and p.stat().st_size < 20_000_000 and '__pycache__' not in p.parts:
-                  try: t = p.read_text(errors='ignore')
-                  except Exception: continue
-                  if any(rx.search(t) for rx in pats): hits.append(str(p))
-          assert not hits, f'SECRETS IN PUBLISHED FILES: {hits}'
-          print('secret scan clean')
-          PY
-
-      - name: Approval gate (no unapproved case may be published)
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          reg = json.loads(Path('site/registry.json').read_text())
-          for c in reg['cases']:
-              if not c['approved']:
-                  assert not (Path('site/cards')/f"{c['slug']}.html").exists(), \
-                      f"UNAPPROVED {c['slug']} has a published card"
-          print('approval gate ok')
-          PY
-
-      - name: Stage Pages content in workspace
-        run: |
-          rm -rf pages_staging && mkdir -p pages_staging
-          cp -R site/. pages_staging/
-          # case2hub already copied approved network bundles into site/assets/network;
-          # verify they exist for approved cases so the bundle is never silently missing
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          reg = json.loads(Path('site/registry.json').read_text())
-          missing = [c['slug'] for c in reg['cases']
-                     if c['approved']
-                     and (Path('cases')/c['slug']/'evidence/network/index.html').exists()
-                     and not (Path('site/assets/network')/c['slug']/'index.html').exists()]
-          assert not missing, f'approved bundles missing from site: {missing}'
-          print('bundle presence ok')
-          PY
-          touch pages_staging/.nojekyll
-          echo '<!-- deployed by ci -->' > pages_staging/deploy-stamp.html
-
-      - name: Upload Pages artifact (official uploader — tar format the server expects)
-        uses: actions/upload-pages-artifact@v3
+      - uses: peaceiris/actions-gh-pages@v4
         with:
-          path: pages_staging
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          keep_files: true # preserve pr-preview/ directories between releases
+          enable_jekyll: false
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+  preview:
+    name: PR preview
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # pushes preview commits to gh-pages
+      pull-requests: write # comments the preview URL on the PR
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Publish preview to /pr-preview/pr-<n>/
+        uses: rossjrw/pr-preview-action@v1
+        with:
+          source-dir: ./dist
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          action: auto

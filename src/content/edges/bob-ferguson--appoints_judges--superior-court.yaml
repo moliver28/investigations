@@ -1,0 +1,8 @@
+from: bob-ferguson
+to: superior-court
+kind: appoints_judges
+evidence: []
+confidence: medium
+weight: 5
+class: influence
+rel_class: governance

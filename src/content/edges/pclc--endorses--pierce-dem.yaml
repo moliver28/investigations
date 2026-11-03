@@ -1,0 +1,8 @@
+from: pclc
+to: pierce-dem
+kind: endorses
+evidence: []
+confidence: medium
+weight: 4.0
+class: money
+rel_class: influence

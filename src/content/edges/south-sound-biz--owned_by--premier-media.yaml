@@ -1,0 +1,8 @@
+from: south-sound-biz
+to: premier-media
+kind: owned_by
+evidence: []
+confidence: medium
+weight: 4
+class: money
+rel_class: business

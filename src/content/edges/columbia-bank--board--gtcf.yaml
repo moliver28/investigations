@@ -1,0 +1,8 @@
+from: columbia-bank
+to: gtcf
+kind: board
+evidence: []
+confidence: medium
+weight: 2
+class: interlock
+rel_class: governance

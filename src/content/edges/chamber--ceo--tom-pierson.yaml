@@ -1,0 +1,8 @@
+from: chamber
+to: tom-pierson
+kind: ceo
+evidence: []
+confidence: medium
+weight: 5
+class: interlock
+rel_class: governance

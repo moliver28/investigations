@@ -1,0 +1,8 @@
+from: columbia-bank
+to: weyerhaeuser
+kind: chairman_tie
+evidence: []
+confidence: medium
+weight: 3
+class: structural
+rel_class: governance

@@ -1,0 +1,8 @@
+from: catholic-archdiocese
+to: vmfh
+kind: religious_sponsor
+evidence: []
+confidence: medium
+weight: 3
+class: structural
+rel_class: community

@@ -1,0 +1,8 @@
+from: pierce-transit
+to: sound-transit
+kind: contract
+evidence: []
+confidence: medium
+weight: 4.0
+class: structural
+rel_class: business

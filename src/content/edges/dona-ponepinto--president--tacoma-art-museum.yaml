@@ -1,0 +1,8 @@
+from: dona-ponepinto
+to: tacoma-art-museum
+kind: president
+evidence: []
+confidence: medium
+weight: 4
+class: interlock
+rel_class: governance

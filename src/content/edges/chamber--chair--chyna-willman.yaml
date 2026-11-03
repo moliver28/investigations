@@ -1,0 +1,8 @@
+from: chamber
+to: chyna-willman
+kind: chair
+evidence: []
+confidence: medium
+weight: 4
+class: interlock
+rel_class: governance

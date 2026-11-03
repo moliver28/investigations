@@ -1,0 +1,8 @@
+from: pierce-transit
+to: tacoma-city-council
+kind: board
+evidence: []
+confidence: medium
+weight: 3.0
+class: interlock
+rel_class: governance

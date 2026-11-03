@@ -1,0 +1,8 @@
+from: rosie-ayala
+to: gtcf
+kind: board
+evidence: []
+confidence: medium
+weight: 4
+class: interlock
+rel_class: governance

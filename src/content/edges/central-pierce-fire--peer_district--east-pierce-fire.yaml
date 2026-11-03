@@ -1,0 +1,8 @@
+from: central-pierce-fire
+to: east-pierce-fire
+kind: peer_district
+evidence: []
+confidence: medium
+weight: 2
+class: structural
+rel_class: community

@@ -1,0 +1,8 @@
+from: pa-office
+to: mary-robnett
+kind: led_by
+evidence: []
+confidence: medium
+weight: 5
+class: structural
+rel_class: governance

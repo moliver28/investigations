@@ -1,0 +1,8 @@
+from: puyallup-tribe
+to: county-council
+kind: sovereignty
+evidence: []
+confidence: medium
+weight: 5
+class: money
+rel_class: money

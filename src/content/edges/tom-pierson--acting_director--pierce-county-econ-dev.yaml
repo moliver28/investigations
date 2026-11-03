@@ -1,0 +1,8 @@
+from: tom-pierson
+to: pierce-county-econ-dev
+kind: acting_director
+evidence: []
+confidence: medium
+weight: 6
+class: interlock
+rel_class: governance

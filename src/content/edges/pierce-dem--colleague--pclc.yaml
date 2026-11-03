@@ -1,0 +1,8 @@
+from: pierce-dem
+to: pclc
+kind: colleague
+evidence: []
+confidence: medium
+weight: 3.0
+class: structural
+rel_class: community

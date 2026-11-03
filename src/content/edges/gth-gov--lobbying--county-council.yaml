@@ -1,0 +1,8 @@
+from: gth-gov
+to: county-council
+kind: lobbying
+evidence: []
+confidence: medium
+weight: 4
+class: money
+rel_class: influence

@@ -1,0 +1,8 @@
+from: chatham-am
+to: news-tribune
+kind: owned_by
+evidence: []
+confidence: medium
+weight: 5.0
+class: money
+rel_class: business

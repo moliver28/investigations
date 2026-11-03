@@ -1,0 +1,8 @@
+from: nall-capital
+to: chamber
+kind: member
+evidence: []
+confidence: medium
+weight: 4
+class: interlock
+rel_class: governance

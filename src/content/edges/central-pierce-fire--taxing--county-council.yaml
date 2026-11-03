@@ -1,0 +1,8 @@
+from: central-pierce-fire
+to: county-council
+kind: taxing
+evidence: []
+confidence: medium
+weight: 3
+class: money
+rel_class: money

@@ -1,0 +1,8 @@
+from: edb
+to: county-council
+kind: influence
+evidence: []
+confidence: medium
+weight: 3
+class: influence
+rel_class: influence

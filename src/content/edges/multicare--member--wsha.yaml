@@ -1,0 +1,8 @@
+from: multicare
+to: wsha
+kind: member
+evidence: []
+confidence: medium
+weight: 4
+class: interlock
+rel_class: governance
