@@ -1,0 +1,27 @@
+{
+  "people": [
+    "Reader",
+    "county employee",
+    "reader",
+    "small business owner",
+    "teacher"
+  ],
+  "orgs": [
+    "city council",
+    "school district"
+  ],
+  "concepts": [
+    "conflicts of interest"
+  ],
+  "gpe": [
+    "Lacey",
+    "Lakewood",
+    "Pierce County",
+    "Puyallup",
+    "Richland",
+    "Seattle",
+    "Tacoma",
+    "WA",
+    "new city"
+  ]
+}
