@@ -14,12 +14,8 @@
  * Serving contract (see the CI "Stage dist" step): emitted sites build at
  * base `/<repo>/`, so LHCI's built-in static server must serve the PARENT of
  * the site directory. CI stages `dist` at `serve/<repo>/`; this config
- * points `staticDistDir` at `serve/` and autodiscovery audits
- * http://localhost:<port>/<repo>/<page>.html with every absolute asset
- * resolving. Discovery needs explicit depth/limits: LHCI defaults cap at
- * 5 URLs and 2 folder levels, which misses entity and page routes.
- * `/admin/` is the staff-only CMS shell (noindex, pinned third-party
- * script) — not a content page, so it is excluded from the audit.
+ * audits an explicit stratified URL sample (see `sample` below) so absolute
+ * assets resolve and the audit stays bounded.
  */
 const { existsSync, readFileSync } = require('node:fs');
 const path = require('node:path');
@@ -77,18 +73,36 @@ for (const [category, minScore] of Object.entries(budgets)) {
 }
 
 // deploy.base mirrors astro.config's base ("/<repo>/"); "/" covers rooted
-// sites. LHCI blocklist entries are exact-URL matched (after port
-// normalization), so name the file URL autodiscovery actually produces.
-const base = loadSiteConfig(siteRoot)?.deploy?.base ?? '/';
-const adminBlocklist = new URL(path.posix.join(String(base), 'admin/index.html'), 'http://localhost').href;
+// sites.
+const base = String(loadSiteConfig(siteRoot)?.deploy?.base ?? '/');
+
+// Stratified sample, not autodiscovery-everything: at 173 built pages the
+// full sweep is 519 Lighthouse runs (~80 min on ubuntu runners) and blew
+// the 45-min quality timeout (sitefactory#52 — template fix pending).
+// Budgets are per-URL category minimums, so a representative sample binds
+// them: home (index + island), the graph island (the only route near the
+// 0.70 floor — sigma.js force layout, sitefactory#39), entity routes with
+// each renderer shape, a case page with Shiki code blocks (the
+// sitefactory#51 contrast class), a legacy card, and the interactive
+// evidence app.
+const sample = [
+  '',
+  'graph/',
+  'entities/boeing/',
+  'entities/adam-smith/',
+  'entities/bryan-yambe/',
+  'pages/2608-lakewood-council-about/',
+  'pages/2608-pierce-leadership/',
+  'assets/network/2608-pierce-leadership/',
+  'cards/2608-lakewood-council.html',
+];
+const urls = sample.map((p) => new URL(path.posix.join(base, p), 'http://localhost').href);
 
 module.exports = {
   ci: {
     collect: {
       staticDistDir: path.join(siteRoot, 'serve'),
-      maxAutodiscoverUrls: 0, // audit every discovered page, not just the first 5
-      staticDirFileDiscoveryDepth: 5, // default 2 misses entities/<id>/ and deeper routes
-      autodiscoverUrlBlocklist: [adminBlocklist],
+      url: urls,
     },
     assert: {
       assertions,
