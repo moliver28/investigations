@@ -1,0 +1,38 @@
+[
+ {
+  "node_id": "jblm",
+  "figure": "$12.1B impact",
+  "basis": "economic impact, Pierce + Thurston counties combined",
+  "source": "evidence/28-source-of-economic-power.md L43 (UW Tacoma study); https://www.ssmcp.org/wp-content/uploads/2023/10/REIA-2023-Pierce-Thurston-as-of-09272023.pdf"
+ },
+ {
+  "node_id": "multicare",
+  "figure": "$7.2B revenue",
+  "basis": "annual revenue, FY2025",
+  "source": "evidence/28-source-of-economic-power.md L53; https://projects.propublica.org/nonprofits/organizations/911352172"
+ },
+ {
+  "node_id": "puyallup-tribe",
+  "figure": "Sovereignty + gaming",
+  "basis": "federal recognition + gaming compact + land return",
+  "source": "evidence/28-source-of-economic-power.md L149; https://www.puyalluptribe-nsn.gov/puyallup-tribe-the-story-of-our-people"
+ },
+ {
+  "node_id": "weyerhaeuser",
+  "figure": "10.4M acres",
+  "basis": "timberland holdings, traceable to the 1864 federal land grant",
+  "source": "evidence/28-source-of-economic-power.md L150; https://www.historylink.org/file/5254"
+ },
+ {
+  "node_id": "port-tacoma",
+  "figure": "$76B cargo",
+  "basis": "annual cargo value; public municipal corporation funded partly by property-tax levy",
+  "source": "evidence/28-source-of-economic-power.md L151; https://www.portoftacoma.com/about/financial-information"
+ },
+ {
+  "node_id": "chamber",
+  "figure": "$3M budget",
+  "basis": "annual budget; tax-exempt 501(c)(6)",
+  "source": "evidence/28-source-of-economic-power.md L152; https://projects.propublica.org/nonprofits/organizations/910434830"
+ }
+]
