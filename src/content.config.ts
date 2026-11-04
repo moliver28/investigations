@@ -35,19 +35,16 @@ const edges = defineCollection({
 });
 
 const pages = defineCollection({
-  // Migrated pages carry legacy `slug` frontmatter (case-level metadata,
-  // identical across all pages of one case). Astro's default entry id would
-  // take that slug and collapse every page of a case onto one route — so ids
-  // are forced to the file path instead (id = filename stem, e.g.
-  // `2608-lakewood-council-update`). Kept through the 0.5.0 recopy (issue
-  // tracking: moliver28/sitefactory#50 — the template default clobbers this).
   loader: glob({
     pattern: '**/*.md',
     base: './src/content/pages',
+    // Issue #50: the glob loader's default id slugs from frontmatter `slug`
+    // when present, so migrated pages of one case that carry a case-level
+    // `slug:` collapse into ONE route (7 files → 2 routes, silent loss).
+    // Derive the id from the filename stem instead — one route per file,
+    // matching how entities/edges/custom-entities ids work.
     generateId: ({ entry }) => entry.replace(/\.[^.]+$/, ''),
   }),
-  // .catchall keeps migrated legacy case-metadata frontmatter (case_id, slug,
-  // status, tags, ...) instead of stripping it at validation time.
   schema: z
     .object({
       title: z.string(),

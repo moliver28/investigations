@@ -7,19 +7,37 @@
  * out-of-range values fail loudly: a budget that silently doesn't bind is
  * worse than a failed run.
  *
+ * Audited pages are a deterministic stratified sample computed from a
+ * plain-fs walk of the staged dist (scripts/lighthouse-sampler.cjs, issue
+ * #52): home + graph island always, two entities, one page per
+ * kind/case-cluster, hard cap 10 URLs x 3 runs. This replaces LHCI's
+ * audit-every-page autodiscovery mode (measured 30+ min on a 173-page
+ * dist, which no quality job can fit) — the autodiscovery knobs
+ * (discovery depth/limits/blocklist) are retired with it; the contract
+ * test pins their absence. `/admin/` exclusion is now structural: the
+ * sampler never picks the staff-only CMS shell.
+ *
  * `yaml` is re-used from Astro's dependency tree — the same zero-new-deps
  * pattern as `vendor/theme/config/preset.js`. Shipped as .cjs because
  * `astro check` skips CommonJS files.
  *
  * Serving contract (see the CI "Stage dist" step): emitted sites build at
- * base `/<repo>/`, so LHCI's built-in static server must serve the PARENT of
- * the site directory. CI stages `dist` at `serve/<repo>/`; this config
- * audits an explicit stratified URL sample (see `sample` below) so absolute
- * assets resolve and the audit stays bounded.
+ * base `/<repo>/`, so LHCI's built-in static server must serve the PARENT
+ * of the site directory. CI stages `dist` at `serve/<repo>/`; this config
+ * points `staticDistDir` at `serve/`, resolves the single staged site dir,
+ * and passes explicit `http://localhost/<repo>/<page>.html` URLs — LHCI
+ * swaps in its ephemeral server port (docs: collect.url with
+ * staticDistDir).
  */
-const { existsSync, readFileSync } = require('node:fs');
+// readFileSync is required by loadSiteConfig below; the #52 sampler rewrite
+// dropped it from this destructure, crashing config load (ReferenceError) in
+// both local and CI LHCI runs — caught by the 2026-11-04 recopy drill
+// rehearsal, fixed here pending the same fix in the factory template
+// (moliver28/sitefactory template/scripts/lighthouserc.cjs).
+const { existsSync, readFileSync, readdirSync, statSync } = require('node:fs');
 const path = require('node:path');
 const { parse: parseYaml } = require('yaml');
+const { sampleServedPages, toPageUrls } = require('./lighthouse-sampler.cjs');
 
 const DEFAULT_BUDGETS = {
   performance: 0.9,
@@ -73,36 +91,31 @@ for (const [category, minScore] of Object.entries(budgets)) {
 }
 
 // deploy.base mirrors astro.config's base ("/<repo>/"); "/" covers rooted
-// sites.
-const base = String(loadSiteConfig(siteRoot)?.deploy?.base ?? '/');
-
-// Stratified sample, not autodiscovery-everything: at 173 built pages the
-// full sweep is 519 Lighthouse runs (~80 min on ubuntu runners) and blew
-// the 45-min quality timeout (sitefactory#52 — template fix pending).
-// Budgets are per-URL category minimums, so a representative sample binds
-// them: home (index + island), the graph island (the only route near the
-// 0.70 floor — sigma.js force layout, sitefactory#39), entity routes with
-// each renderer shape, a case page with Shiki code blocks (the
-// sitefactory#51 contrast class), a legacy card, and the interactive
-// evidence app.
-const sample = [
-  '',
-  'graph/',
-  'entities/boeing/',
-  'entities/adam-smith/',
-  'entities/bryan-yambe/',
-  'pages/2608-lakewood-council-about/',
-  'pages/2608-pierce-leadership/',
-  'assets/network/2608-pierce-leadership/',
-  'cards/2608-lakewood-council.html',
-];
-const urls = sample.map((p) => new URL(path.posix.join(base, p), 'http://localhost').href);
+// sites. The sampled page paths are joined onto the base — never treated
+// as path-absolute — so each audited URL is serve/<repo>/<page> mapped to
+// http://localhost/<repo>/<page> (LHCI replaces the port).
+const serveDir = path.join(siteRoot, 'serve');
+const staged = readdirSync(serveDir, { withFileTypes: true }).filter(
+  (entry) => entry.isDirectory() && !entry.name.startsWith('.'),
+);
+if (staged.length !== 1) {
+  throw new Error(
+    `lighthouserc: expected exactly one staged site dir under serve/ (CI stages dist at serve/<repo>/), found ${staged.length}`,
+  );
+}
+const siteDir = path.join(serveDir, staged[0].name);
+if (!statSync(siteDir).isDirectory()) {
+  throw new Error(`lighthouserc: staged site dir is not a directory: ${siteDir}`);
+}
+const base = loadSiteConfig(siteRoot)?.deploy?.base ?? '/';
+const pageUrls = toPageUrls(sampleServedPages(siteDir), base);
 
 module.exports = {
   ci: {
     collect: {
-      staticDistDir: path.join(siteRoot, 'serve'),
-      url: urls,
+      staticDistDir: serveDir,
+      url: pageUrls, // explicit URLs retire autodiscovery (issue #52)
+      numberOfRuns: 3,
     },
     assert: {
       assertions,
