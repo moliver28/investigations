@@ -1,0 +1,28 @@
+{
+ "case": "INV-2026-002",
+ "note": "manifest.json is exempt from the byte-identical gate; it is the audit record",
+ "generatedAtUtc": "2026-10-05T08:06:24Z",
+ "inputs": {
+  "graph": "evidence/30-power-graph-v3.json",
+  "graphSha256": "9bfdd83f800edfba4ff1c1ea5cd2b41139b6cef8826b79501149dc60877612e4",
+  "moneyMapSha256": "46b1da680bdf922b1f4072760559df3b3849f06138f6f87b0e49bea1ab531d4d"
+ },
+ "gatedAssets": {
+  "evidence/network/index.html": {
+   "bytes": 2630,
+   "sha256": "49914f763548621b23b4e05417986085db71233e46d9cdde4a771f62c148d9ca"
+  },
+  "evidence/network/assets/app.css": {
+   "bytes": 14969,
+   "sha256": "d54fac83b8f310621578509791c3cc44a8b0ce5723f614119e2ef0088f07c237"
+  },
+  "evidence/network/assets/app.js": {
+   "bytes": 30589,
+   "sha256": "acbe67791ec5947e99021641d78d3cc853adc32bf8bccca5e465645f780baf0b"
+  },
+  "evidence/network/assets/data.js": {
+   "bytes": 2604660,
+   "sha256": "5781e82b48421c420490b719f1e740a0287e822333e4d5a2cf95cb33a4cdc76b"
+  }
+ }
+}

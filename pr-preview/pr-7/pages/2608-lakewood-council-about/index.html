@@ -1,0 +1,54 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="How the Lakewood City Council investigation case folder is organized: case files, evidence, and the working git workflow."><meta name="generator" content="Astro v7.4.4"><title>About the Lakewood City Council Investigation · Investigations</title><style>:root{--sf-color-bg:#f6f7f9;--sf-color-surface:#fff;--sf-color-ink:#152430;--sf-color-muted:#5b6b76;--sf-color-accent:#0e7268;--sf-color-accent-soft:#d9ebe8;--sf-color-link:#1a56a8;--sf-color-border:#d8dee3;--sf-color-highlight:#b07a00;--sf-font-display:Georgia, "Times New Roman", serif;--sf-font-body:system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;--sf-font-mono:ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;--sf-measure:72ch;--sf-space-1:.25rem;--sf-space-2:.5rem;--sf-space-3:1rem;--sf-space-4:1.5rem;--sf-space-5:2.5rem;--sf-radius:6px;--sf-line:1px solid var(--sf-color-border);--sf-graph-h:30rem;--sf-graph-card-w:20rem}*,:before,:after{box-sizing:border-box}body{background:var(--sf-color-bg);color:var(--sf-color-ink);font-family:var(--sf-font-body);-webkit-text-size-adjust:100%;margin:0;line-height:1.6}h1,h2,h3{font-family:var(--sf-font-display);text-wrap:balance;line-height:1.15}h1{margin:var(--sf-space-4) 0 var(--sf-space-3);font-size:clamp(1.75rem,1.2rem + 2.2vw,2.75rem)}h2{margin:var(--sf-space-4) 0 var(--sf-space-2);font-size:1.375rem}p,li{max-width:var(--sf-measure)}a{color:var(--sf-color-link)}a:hover{text-decoration-thickness:2px}:focus-visible{outline:2px solid var(--sf-color-accent);outline-offset:2px}code{font-family:var(--sf-font-mono);background:var(--sf-color-surface);border:var(--sf-line);border-radius:var(--sf-radius);padding:.1em .35em;font-size:.875em}pre code,pre code[class*=language-]{background:0 0;border:0;border-radius:0;padding:0}.sf-site-header{align-items:baseline;gap:var(--sf-space-3);padding:var(--sf-space-3) var(--sf-space-4);background:var(--sf-color-surface);border-bottom:var(--sf-line);display:flex}.sf-site-home{font-family:var(--sf-font-display);color:var(--sf-color-ink);font-size:1.125rem;font-weight:700;text-decoration:none}.sf-site-home:hover{color:var(--sf-color-accent)}.sf-main{max-width:calc(var(--sf-measure) + 2 * var(--sf-space-4));padding:0 var(--sf-space-4) var(--sf-space-5);margin:0 auto}.sf-site-footer{border-top:var(--sf-line);padding:var(--sf-space-3) var(--sf-space-4);color:var(--sf-color-muted);font-size:.875rem}.sf-site-footer p{margin:0}.sf-skip-link{background:var(--sf-color-surface);color:var(--sf-color-accent);padding:var(--sf-space-2) var(--sf-space-3);z-index:10;position:absolute;top:0;left:-9999px}.sf-skip-link:focus-visible{left:0}.sf-visually-hidden{clip:rect(0 0 0 0);white-space:nowrap;width:1px;height:1px;position:absolute;overflow:hidden}@media (prefers-reduced-motion:reduce){*,:before,:after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+.sf-page[data-astro-cid-fe5fb6au]{background:var(--sf-color-surface);border:var(--sf-line);border-radius:var(--sf-radius);padding:var(--sf-space-4);margin-top:var(--sf-space-4)}
+</style></head><body><a class="sf-skip-link" href="#sf-main">Skip to content</a><header class="sf-site-header"><a class="sf-site-home" href="/">Investigations</a></header><main id="sf-main" class="sf-main"><article class="sf-page" data-astro-cid-fe5fb6au><h1 data-astro-cid-fe5fb6au>About the Lakewood City Council Investigation</h1><h1 id="2608-lakewood-council-inv-2026-001">2608-lakewood-council (INV-2026-001)</h1>
+<p><strong>Title:</strong> <code>2026-08-16: Lakewood City Council Investigation</code><br>
+<strong>Case ID:</strong> INV-2026-001<br>
+<strong>Status:</strong> Active — Phase 3 (Evidence → Conflict Analysis → Social Audit)</p>
+<hr>
+<p>Public-records investigation into potential conflicts of interest among all
+seven Lakewood City Council members.</p>
+<h2 id="repo-layout">Repo Layout</h2>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>/</span></span>
+<span class="line"><span>├── README.md</span></span>
+<span class="line"><span>├── .gitignore</span></span>
+<span class="line"><span>├── 2608-lakewood-council.md                    ← Master case file (canonical)</span></span>
+<span class="line"><span>├── 2608-lakewood-council-update.md             ← Detailed findings report</span></span>
+<span class="line"><span>├── 2608-lakewood-council-social.md             ← Social-media footprint analysis</span></span>
+<span class="line"><span>├── lakewood-council-citation-verification.md   ← Citation audit</span></span>
+<span class="line"><span>├── lakewood-council-ethics-code-review.md      ← Ethics framework review</span></span>
+<span class="line"><span>├── lakewood-council-phase2-summary.md          ← Executive summary</span></span>
+<span class="line"><span>└── evidence/</span></span>
+<span class="line"><span>    └── cityoflakewood.us-73a260312f.md         ← Raw web cache</span></span></code></pre>
+<h2 id="git-workflow">Git Workflow</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bare repo (canonical)</strong></td>
+<td><code>~/.investigations/repos/2608-lakewood-council.git</code></td>
+</tr>
+<tr>
+<td><strong>Worktree (edit here)</strong></td>
+<td><code>~/Documents/Investigations/2608-lakewood-council/</code></td>
+</tr>
+<tr>
+<td><strong>Hermes symlink</strong></td>
+<td><code>~/.hermes/profiles/investigative-journalist/cases/</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="after-every-session">After every session</h3>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> ~/Documents/Investigations/2608-lakewood-council</span></span>
+<span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> add</span><span style="color:#79B8FF"> -A</span><span style="color:#E1E4E8"> &amp;&amp; </span><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> commit</span><span style="color:#79B8FF"> -m</span><span style="color:#9ECBFF"> "&lt;summary&gt;"</span><span style="color:#E1E4E8"> &amp;&amp; </span><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> push</span><span style="color:#9ECBFF"> origin</span><span style="color:#9ECBFF"> main</span></span></code></pre>
+<h2 id="findings">Findings</h2>
+<ul>
+<li>4 of 7 council members have significant conflicts of interest</li>
+<li>Ethics code lacks explicit recusal requirements</li>
+<li>Dual-employment and real-estate conflicts persist unchecked</li>
+</ul>
+</article></main><footer class="sf-site-footer"><p>No trackers. No third-party scripts.</p></footer></body></html>
