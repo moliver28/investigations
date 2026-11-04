@@ -95,5 +95,6 @@ and CI change only through code PRs, which always require human review.
 - `npm run dev` — local dev server
 - `npm run build` — production build (Zod validation fails the build on bad data)
 - `npm run typecheck` — astro check
+- Link check: the optional `linkcheck:` block in `site.config.yaml` (`exclude_domains`, `accept`) is the client-editable, declarative, auditable flakiness policy for bot-blocked external domains; internal links are always strict.
 - Deploys: push to `main` → GitHub Pages at `https://moliver28.github.io/investigations/`;
   PRs get previews at `/pr-<n>/` (auto-cleaned on merge).
