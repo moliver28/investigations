@@ -21,7 +21,8 @@ yarn-error.log*
 .env.*
 !.env.example
 
-# agent hook scratch (never repo content)
+# agent hook scratch (never repo content; client-local, re-added after the
+# 2026-11-04 recopy — the template's .gitignore does not ship these)
 .mimosa/
 .token-optimizer/
 

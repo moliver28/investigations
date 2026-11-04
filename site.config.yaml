@@ -42,3 +42,17 @@ deploy:
   base: /investigations/
 
 analytics: none
+
+# Link-check flakiness policy (sitefactory#53) for the CI link gate
+# (scripts/linkcheck-args.cjs composes it into lychee args):
+# - procurement.opengov.com bot-walls every non-interactive client with 403
+#   (verified 2026-11-04, browser-UA local curl) — a bot wall is not link
+#   rot; 404/410/5xx still fail the gate. --accept REPLACES lychee's default
+#   accepted set, hence the full range.
+# - thenewstribune.com times out from datacenter IPs (verified 2026-11-04
+#   from runner + local, 15+ min) — excluded outright.
+# Internal links are unaffected: --root-dir serve and the dist glob are
+# never configurable, and --exclude only matches external domains.
+linkcheck:
+  exclude_domains: [thenewstribune.com]
+  accept: "200..=299,403,429"
