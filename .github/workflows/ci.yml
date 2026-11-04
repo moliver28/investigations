@@ -13,7 +13,13 @@ permissions:
   contents: read
 
 concurrency:
-  group: pages-${{ github.ref }}
+  # Event-aware group (sitefactory#66, seen live twice): a merged PR's
+  # closed event resolves github.ref to the BASE branch, so a ref-only
+  # group makes the (all-jobs-skipped) closed-event run land in the SAME
+  # group as the main push run — and with cancel-in-progress, the closed
+  # run CANCELS the push run's gates/quality/deploy. PR-scoped groups for
+  # pull_request events, ref groups otherwise: the two never collide.
+  group: ${{ github.event_name == 'pull_request' && format('pages-pr-{0}', github.event.number) || format('pages-{0}', github.ref) }}
   cancel-in-progress: true
 
 jobs:
