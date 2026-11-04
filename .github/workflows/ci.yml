@@ -110,7 +110,7 @@ jobs:
           lycheeVersion: v0.24.2
           args: >-
             --no-progress
-            --accept 403,429
+            --accept 200..=299,403,429
             --exclude thenewstribune.com
             --exclude-all-private
             --exclude-loopback
