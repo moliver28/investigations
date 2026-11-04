@@ -1,12 +1,32 @@
 {
-  "name": "@sitefactory/theme",
-  "version": "0.1.1",
+  "name": "@moliver28/theme",
+  "version": "0.5.1",
   "description": "Auto-adapting Astro theme: design tokens, generic field renderers, block registry, entity graph island. Unknown data fields render with zero component code changes.",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moliver28/sitefactory.git",
+    "directory": "packages/theme"
+  },
+  "files": [
+    "config",
+    "index.ts",
+    "blocks",
+    "graph",
+    "layouts",
+    "renderers",
+    "tokens"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "exports": {
     ".": "./index.ts",
-    "./tokens.css": "./tokens/tokens.css",
+    "./tokens.css": "./tokens/presets/journalism-default/tokens.css",
+    "./tokens/active.css": "./tokens/presets/journalism-default/tokens.css",
+    "./config/preset": "./config/preset.js",
+    "./config/match": "./config/match.js",
     "./graph/compiler": "./graph/compiler.ts",
     "./blocks/fields": "./blocks/fields.ts",
     "./blocks/registry": "./blocks/registry.ts",
@@ -22,7 +42,8 @@
   "dependencies": {
     "graphology": "^0.26.0",
     "graphology-layout-forceatlas2": "^0.10.1",
-    "sigma": "^4.0.4"
+    "sigma": "^4.0.4",
+    "yaml": "^2.9.1"
   },
   "peerDependencies": {
     "astro": "^7.0.0"

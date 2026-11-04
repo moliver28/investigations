@@ -7,14 +7,18 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "typecheck": "astro check"
+    "typecheck": "astro check",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
-    "@sitefactory/theme": "file:./vendor/theme",
+    "@moliver28/theme": "file:./vendor/theme",
     "astro": "^7.4.4"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
+    "@axe-core/playwright": "4.14.0",
+    "@playwright/test": "1.64.1",
+    "@types/node": "^24.19.2",
     "typescript": "^6.0.3"
   }
 }

@@ -4,7 +4,7 @@
  * Sites override the tokens (or this file) to re-skin; components never
  * hard-code colors or spacing.
  */
-import '../tokens/tokens.css';
+import '@moliver28/theme/tokens/active.css';
 
 interface Props {
   title: string;
@@ -100,6 +100,19 @@ const fullTitle = title === siteName ? title : `${title} · ${siteName}`;
     border: var(--sf-line);
     border-radius: var(--sf-radius);
     padding: 0.1em 0.35em;
+  }
+
+  /* Shiki (Astro's default highlighter) inline-styles each `pre` with a
+     dark theme background and light token colors. This scoped reset stops
+     the generic `code` surface background from painting a light strip
+     behind those tokens — a WCAG contrast failure on every markdown code
+     block (axe serious; found by the investigations 0.5.0 drill). */
+  pre code,
+  pre code[class*='language-'] {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
   }
 
   .sf-site-header {

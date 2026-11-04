@@ -2,6 +2,12 @@
 dist/
 .astro/
 
+# CI gate artifacts (Playwright + Lighthouse) and the LHCI staging copy
+test-results/
+playwright-report/
+.lighthouseci/
+serve/
+
 # dependencies
 node_modules/
 
@@ -15,9 +21,9 @@ yarn-error.log*
 .env.*
 !.env.example
 
-# python (legacy case working files under cases/)
-__pycache__/
-*.pyc
+# agent hook scratch (never repo content)
+.mimosa/
+.token-optimizer/
 
 # OS / editor
 .DS_Store

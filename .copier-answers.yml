@@ -1,5 +1,5 @@
 # Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
-_src_path: ./templates/journalism
+_src_path: F:/Documents/ZCode/.zcode/.zcode/workspace/9c87e746-e53a-4ad7-8757-26cd3b7e1b0b/repos/sitefactory/templates/journalism
 analytics: none
 author: moliver28
 description: Published investigations - source documents, entity profiles, and the
@@ -8,5 +8,6 @@ graph_height: 32rem
 owner: moliver28
 repo: investigations
 site_name: Investigations
-theme_version: 0.1.1
+theme_preset: journalism-default
+theme_version: 0.5.1
 vertical: journalism

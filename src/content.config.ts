@@ -35,10 +35,12 @@ const edges = defineCollection({
 });
 
 const pages = defineCollection({
-  // Migrated pages carry legacy `slug` frontmatter (case metadata, preserved
-  // verbatim). Astro's default entry id would take frontmatter `slug` and
-  // collapse all pages of a case onto one id — so ids are forced to the file
-  // path instead (id = filename slug, e.g. `2608-lakewood-council-update`).
+  // Migrated pages carry legacy `slug` frontmatter (case-level metadata,
+  // identical across all pages of one case). Astro's default entry id would
+  // take that slug and collapse every page of a case onto one route — so ids
+  // are forced to the file path instead (id = filename stem, e.g.
+  // `2608-lakewood-council-update`). Kept through the 0.5.0 recopy (issue
+  // tracking: moliver28/sitefactory#50 — the template default clobbers this).
   loader: glob({
     pattern: '**/*.md',
     base: './src/content/pages',
