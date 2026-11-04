@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseLayout from '@sitefactory/theme/layouts/BaseLayout.astro';
+import BaseLayout from '@moliver28/theme/layouts/BaseLayout.astro';
 
 const entities = (await getCollection('entities')).sort((a, b) =>
   String(a.data.name ?? a.id).localeCompare(String(b.data.name ?? b.id)),
@@ -38,6 +38,12 @@ const pages = (await getCollection('pages')).sort((a, b) => a.data.order - b.dat
       ))
     }
   </ul>
+
+  <h2>Custom entities</h2>
+  <p>
+    Newly added kinds live under{' '}
+    <a href={`${import.meta.env.BASE_URL}custom-entities/`}>custom entities</a>.
+  </p>
 </BaseLayout>
 
 <style>
