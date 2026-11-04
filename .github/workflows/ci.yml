@@ -237,14 +237,19 @@ jobs:
     # Issue sitefactory#48: pr-preview-action's action:auto never saw the
     # closed event (the pull_request trigger lacked the `closed` type), so
     # stale pr-preview/pr-<n>/ dirs accumulated on gh-pages forever. This
-    # lightweight job runs ONLY on close: no build, no gates, no artifact —
-    # it removes pr-preview/pr-<n>/ from the preview branch. GITHUB_TOKEN
-    # with contents: write suffices (same-repo PRs only today — fork PRs
-    # would need a PAT, matching the preview job's constraint).
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    # lightweight job runs ONLY on close-UNMERGED: merged PRs don't need
+    # cleanup (deploy's keep_files preserves pr-preview/), and letting it
+    # run on a merge fired a useless run that CANCELLED the main push run's
+    # deploy on its first production fire (sitefactory#66). GITHUB_TOKEN
+    # with contents: write suffices for the gh-pages removal (same-repo PRs
+    # only today — fork PRs would need a PAT, matching the preview job's
+    # constraint); pull-requests: write is required by the action's sticky
+    # preview-URL comment.
+    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged != true
     runs-on: ubuntu-latest
     permissions:
       contents: write # removes the preview commit from gh-pages
+      pull-requests: write # preview-URL comment by the action
     # Same serialization contract as deploy/preview: never race a gh-pages
     # write, never cancel one in flight.
     concurrency:
