@@ -97,16 +97,20 @@ jobs:
       # loopback bundle). Mail links are not checked: lychee only offers
       # --include-mail (default off) — mailto: never leaves the machine.
       # --root-dir maps absolute /<repo>/... links into serve/.
-      # thenewstribune.com is excluded: it bot-blocks/times out from
-      # datacenter IPs (verified 2026-11-04 from runner + local, 15+ min);
-      # the citation itself is fine for readers. Upstream policy gap:
-      # moliver28/sitefactory#53.
+      # --accept 403,429: journalism evidence cites government/news portals
+      # that bot-wall every non-interactive client (procurement.opengov.com
+      # returns 403 even to a browser-UA local curl, verified 2026-11-04) —
+      # a bot wall is not link rot; 404/410/5xx still fail the gate.
+      # thenewstribune.com is excluded outright: it times out from
+      # datacenter IPs (verified 2026-11-04 from runner + local, 15+ min).
+      # Upstream policy gap: moliver28/sitefactory#53.
       - name: Link check (Lychee, SSRF-safe)
         uses: lycheeverse/lychee-action@v2.9.0
         with:
           lycheeVersion: v0.24.2
           args: >-
             --no-progress
+            --accept 403,429
             --exclude thenewstribune.com
             --exclude-all-private
             --exclude-loopback
