@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pierce County Power Network — INV-2026-002</title>
+<link rel="stylesheet" href="assets/app.css">
+</head>
+<body>
+<a class="skip-link" href="#directory">Skip to entity list</a>
+
+<header class="appbar">
+  <span class="appbar-title">Pierce County Power Network</span>
+  <span class="appbar-thesis" id="appbar-thesis"></span>
+  <button id="method-btn" class="method-btn" aria-haspopup="dialog">Method &amp; Sources</button>
+</header>
+
+<main class="shell">
+  <section id="map-pane" aria-label="Power network map">
+    <div id="svg-host"></div>
+    <div id="map-toolbar">
+      <button id="money-toggle" class="chip" role="switch" aria-checked="false">Follow the money</button>
+    </div>
+    <div class="map-legend" id="map-legend" aria-label="Map legend"></div>
+  </section>
+
+  <aside id="directory" aria-label="Entity directory" tabindex="-1">
+    <div id="mission-strip" role="status"></div>
+    <div class="dir-controls">
+      <label for="dir-search" class="source-note">Search 163 entities</label>
+      <input id="dir-search" type="search" placeholder="Type a name…" autocomplete="off">
+      <div class="chip-row" id="domain-chips" aria-label="Filter by domain"></div>
+      <div class="chip-row" id="tier-chips" aria-label="Filter by tier band"></div>
+      <span id="sort-status" class="visually-hidden" aria-live="polite"></span>
+    </div>
+    <div class="table-scroll">
+    <table id="dir-table">
+      <thead>
+        <tr>
+          <th scope="col" id="th-rank"     aria-sort="ascending"><button class="th-btn" type="button">Rank</button></th>
+          <th scope="col" id="th-name"><button class="th-btn" type="button">Name</button></th>
+          <th scope="col" id="th-tier"><button class="th-btn" type="button">Tier</button></th>
+          <th scope="col" id="th-domain"><button class="th-btn" type="button">Domain</button></th>
+        </tr>
+      </thead>
+      <tbody id="dir-body"></tbody>
+    </table>
+    </div>
+  </aside>
+</main>
+
+<div id="entity-view" hidden>
+  <button class="back-btn" id="back-btn">← Back to map</button>
+  <div id="entity-content" aria-live="polite"></div>
+</div>
+
+<dialog id="method-modal" aria-labelledby="method-title">
+  <div class="method-wrap">
+    <button class="method-btn method-close" id="method-close">Close</button>
+    <h2 id="method-title">Method &amp; Sources</h2>
+    <div id="method-body" class="source-note"></div>
+  </div>
+</dialog>
+
+<script src="assets/data.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
