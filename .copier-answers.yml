@@ -9,5 +9,5 @@ owner: moliver28
 repo: investigations
 site_name: Investigations
 theme_preset: journalism-default
-theme_version: 0.5.1
+theme_version: 0.6.0
 vertical: journalism

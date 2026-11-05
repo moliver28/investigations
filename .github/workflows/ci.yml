@@ -244,13 +244,13 @@ jobs:
     # closed event (the pull_request trigger lacked the `closed` type), so
     # stale pr-preview/pr-<n>/ dirs accumulated on gh-pages forever. This
     # lightweight job runs ONLY on close-UNMERGED: merged PRs don't need
-    # cleanup (deploy's keep_files preserves pr-preview/), and letting it
-    # run on a merge fired a useless run that CANCELLED the main push run's
-    # deploy on its first production fire (sitefactory#66). GITHUB_TOKEN
-    # with contents: write suffices for the gh-pages removal (same-repo PRs
-    # only today — fork PRs would need a PAT, matching the preview job's
-    # constraint); pull-requests: write is required by the action's sticky
-    # preview-URL comment.
+    # cleanup (deploy's keep_files preserves pr-preview/), and letting this
+    # run on a merge fires a useless workflow alongside the main push run —
+    # that race CANCELLED the main deploy on its first production fire
+    # (sitefactory#66). GITHUB_TOKEN with contents: write suffices for the
+    # gh-pages removal (same-repo PRs only today — fork PRs would need a
+    # PAT, matching the preview job's constraint); pull-requests: write is
+    # required by the action's sticky preview-URL comment.
     if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged != true
     runs-on: ubuntu-latest
     permissions:
