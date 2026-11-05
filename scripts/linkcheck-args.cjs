@@ -49,6 +49,7 @@ const ACCEPT_PATTERN = /^[0-9,. =\-]+$/;
 
 const LINKCHECK_KEYS = new Set(['exclude_domains', 'accept']);
 
+/** Parse site.config.yaml ({} when absent). Exported for monitor-args.cjs. */
 function loadSiteConfig(siteRoot) {
   const file = path.join(siteRoot, 'site.config.yaml');
   if (!existsSync(file)) return {};
@@ -143,4 +144,4 @@ if (require.main === module) {
   process.stdout.write(composeLinkcheckArgs(readLinkcheckConfig(siteRoot)));
 }
 
-module.exports = { DEFAULT_ARGS, readLinkcheckConfig, composeLinkcheckArgs };
+module.exports = { DEFAULT_ARGS, loadSiteConfig, readLinkcheckConfig, composeLinkcheckArgs };

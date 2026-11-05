@@ -29,12 +29,7 @@
  * swaps in its ephemeral server port (docs: collect.url with
  * staticDistDir).
  */
-// readFileSync is required by loadSiteConfig below; the #52 sampler rewrite
-// dropped it from this destructure, crashing config load (ReferenceError) in
-// both local and CI LHCI runs — caught by the 2026-11-04 recopy drill
-// rehearsal, fixed here pending the same fix in the factory template
-// (moliver28/sitefactory template/scripts/lighthouserc.cjs).
-const { existsSync, readFileSync, readdirSync, statSync } = require('node:fs');
+const { existsSync, readdirSync, readFileSync, statSync } = require('node:fs');
 const path = require('node:path');
 const { parse: parseYaml } = require('yaml');
 const { sampleServedPages, toPageUrls } = require('./lighthouse-sampler.cjs');
@@ -95,9 +90,18 @@ for (const [category, minScore] of Object.entries(budgets)) {
 // as path-absolute — so each audited URL is serve/<repo>/<page> mapped to
 // http://localhost/<repo>/<page> (LHCI replaces the port).
 const serveDir = path.join(siteRoot, 'serve');
-const staged = readdirSync(serveDir, { withFileTypes: true }).filter(
-  (entry) => entry.isDirectory() && !entry.name.startsWith('.'),
-);
+let staged;
+try {
+  staged = readdirSync(serveDir, { withFileTypes: true }).filter(
+    (entry) => entry.isDirectory() && !entry.name.startsWith('.'),
+  );
+} catch {
+  // Friendly failure (mirrors lighthouse-sampler.cjs): a raw ENOENT stack
+  // here means `lhci autorun` ran before the CI staging step existed.
+  throw new Error(
+    `lighthouserc: no staged site dir at ${serveDir} — run the CI staging step (dist → serve/<repo>/) before lhci autorun`,
+  );
+}
 if (staged.length !== 1) {
   throw new Error(
     `lighthouserc: expected exactly one staged site dir under serve/ (CI stages dist at serve/<repo>/), found ${staged.length}`,
