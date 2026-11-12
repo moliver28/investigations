@@ -6,8 +6,8 @@ description: Published investigations - source documents, entity profiles, and t
     connections between them.
 graph_height: 32rem
 owner: moliver28
+pack: journalism
 repo: investigations
 site_name: Investigations
 theme_preset: journalism-default
-theme_version: 0.6.0
-vertical: journalism
+theme_version: 0.7.0
