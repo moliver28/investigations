@@ -1,0 +1,4116 @@
+{
+ "nodes": [
+  {
+   "id": "ryan-mello",
+   "label": "Ryan Mello",
+   "type": "person",
+   "domain": "government",
+   "desc": "Pierce County Executive (D, since 2025)",
+   "facts": [
+    "Elected 51.28% in 2024",
+    "Controls $3.5B biennial budget",
+    "Veto power over Council",
+    "Sound Transit Vice Chair",
+    "Former GTCF board member",
+    "First openly-gay WA county exec"
+   ]
+  },
+  {
+   "id": "county-council",
+   "label": "Pierce County Council",
+   "type": "organization",
+   "domain": "government",
+   "desc": "7-member legislative body (4D-3R)",
+   "facts": [
+    "Appropriates $3.5B budget",
+    "Controls zoning & land use",
+    "Approves contracts",
+    "Chair: Jani Hitchen (D-6)",
+    "Vice Chair: Dave Morell (R-1)"
+   ]
+  },
+  {
+   "id": "keith-swank",
+   "label": "Keith Swank",
+   "type": "person",
+   "domain": "government",
+   "desc": "Pierce County Sheriff (since 2025)",
+   "facts": [
+    "33yr Seattle PD veteran",
+    "$406M combined LE+corrections budget",
+    "Elected independent of Executive",
+    "In conflict with Mello/Robnett",
+    "'Constitutional sheriff' alignment disputed"
+   ]
+  },
+  {
+   "id": "mary-robnett",
+   "label": "Mary Robnett",
+   "type": "person",
+   "domain": "government",
+   "desc": "Pierce County Prosecuting Attorney (since 2019)",
+   "facts": [
+    "$94M budget",
+    "All felony prosecutions",
+    "Civil division advises county",
+    "Unopposed since 2018",
+    "Feuding with Sheriff Swank"
+   ]
+  },
+  {
+   "id": "jani-hitchen",
+   "label": "Jani Hitchen",
+   "type": "person",
+   "domain": "government",
+   "desc": "Council Chair, District 6 (D)",
+   "facts": [
+    "Sets legislative agenda",
+    "Represents JBLM/Lakewood district",
+    "Presides over Council",
+    "Democratic leadership"
+   ]
+  },
+  {
+   "id": "dave-morell",
+   "label": "Dave Morell",
+   "type": "person",
+   "domain": "government",
+   "desc": "Council Vice Chair, District 1 (R)",
+   "facts": [
+    "Bonney Lake, Buckley, Lake Tapps",
+    "Republican leadership",
+    "Land use authority"
+   ]
+  },
+  {
+   "id": "paul-herrera",
+   "label": "Paul Herrera",
+   "type": "person",
+   "domain": "government",
+   "desc": "Councilmember, District 2 (R)",
+   "facts": [
+    "Puyallup, Sumner, Fife, Edgewood",
+    "Won 2024 with GOP support",
+    "$37K raised"
+   ]
+  },
+  {
+   "id": "amy-cruver",
+   "label": "Amy Cruver",
+   "type": "person",
+   "domain": "government",
+   "desc": "Councilmember, District 3 (R)",
+   "facts": [
+    "Graham, Spanaway, Eatonville",
+    "Top donors: NASH Cascadia, Master Builders",
+    "$57K raised"
+   ]
+  },
+  {
+   "id": "rosie-ayala",
+   "label": "Rosie Ayala",
+   "type": "person",
+   "domain": "government",
+   "desc": "Councilmember, District 4 (D)",
+   "facts": [
+    "N/S Tacoma, Hilltop, Downtown",
+    "GTCF board member",
+    "Pierce Transit board",
+    "Succeeded Mello's seat"
+   ]
+  },
+  {
+   "id": "bryan-yambe",
+   "label": "Bryan Yambe",
+   "type": "person",
+   "domain": "government",
+   "desc": "Councilmember, District 5 (D)",
+   "facts": [
+    "Parkland, Midland, E/S Tacoma",
+    "Appointed Jan 2025"
+   ]
+  },
+  {
+   "id": "robyn-denson",
+   "label": "Robyn Denson",
+   "type": "person",
+   "domain": "government",
+   "desc": "Councilmember, District 7 (D), Exec Pro Tem",
+   "facts": [
+    "Gig Harbor, Key Peninsula",
+    "Executive Pro Tempore"
+   ]
+  },
+  {
+   "id": "anders-ibsen",
+   "label": "Anders Ibsen",
+   "type": "person",
+   "domain": "government",
+   "desc": "Tacoma Mayor (since 2026)",
+   "facts": [
+    "Former council 8yr",
+    "Beat John Hines 56-44%",
+    "Hiring city manager",
+    "Connect Tacoma levy passed"
+   ]
+  },
+  {
+   "id": "kristina-walker",
+   "label": "Kristina Walker",
+   "type": "person",
+   "domain": "government",
+   "desc": "Tacoma Council Pos 8, At-Large",
+   "facts": [
+    "Pierce Transit Board Chair",
+    "Sound Transit Board",
+    "Climate/urban forest policy"
+   ]
+  },
+  {
+   "id": "jim-kastama",
+   "label": "Jim Kastama",
+   "type": "person",
+   "domain": "government",
+   "desc": "Puyallup Council, Dist 1",
+   "facts": [
+    "Former State Senator (D-25), 4 terms",
+    "Major legislative connections"
+   ]
+  },
+  {
+   "id": "bruce-dammeier",
+   "label": "Bruce Dammeier",
+   "type": "person",
+   "domain": "government",
+   "desc": "Former County Executive (2017-2024)",
+   "facts": [
+    "Term-limited",
+    "US Naval Academy grad",
+    "GOP donor network",
+    "Printing business owner"
+   ]
+  },
+  {
+   "id": "metro-parks",
+   "label": "Metro Parks Tacoma",
+   "type": "organization",
+   "domain": "government",
+   "desc": "Independent parks district, elected commissioners",
+   "facts": [
+    "$212.8M 2025-26 budget",
+    "$17M deficit, 21% cuts",
+    "$155M bond to voters",
+    "Controls Point Defiance Zoo",
+    "Ryan Mello's 2005 launchpad"
+   ]
+  },
+  {
+   "id": "pierce-transit",
+   "label": "Pierce Transit",
+   "type": "organization",
+   "domain": "government",
+   "desc": "Regional transit authority",
+   "facts": [
+    "$345M budget",
+    "10-member board (Tacoma 3-seat bloc)",
+    "Nov 2026 sales tax ballot measure",
+    "CEO Mike Griffus"
+   ]
+  },
+  {
+   "id": "sound-transit",
+   "label": "Sound Transit",
+   "type": "organization",
+   "domain": "government",
+   "desc": "Regional transit (light rail)",
+   "facts": [
+    "$54B+ capital program",
+    "18-member board",
+    "Ryan Mello Vice Chair",
+    "Light rail to Tacoma by 2035"
+   ]
+  },
+  {
+   "id": "west-pierce-fire",
+   "label": "West Pierce Fire",
+   "type": "organization",
+   "domain": "government",
+   "desc": "Fire district (Dist 3)",
+   "facts": [
+    "$75.5M 2026 budget",
+    "5 elected commissioners",
+    "Fire Benefit Charge = 39% revenue",
+    "Chair John Clancy"
+   ]
+  },
+  {
+   "id": "central-pierce-fire",
+   "label": "Central Pierce Fire",
+   "type": "organization",
+   "domain": "government",
+   "desc": "Fire district (Dist 6) \u2014 2025 merger",
+   "facts": [
+    "2nd-largest WA fire district",
+    "$180M budget, 331K residents",
+    "Merged Dists 6/18/21",
+    "20 stations"
+   ]
+  },
+  {
+   "id": "matt-mauer",
+   "label": "Matt Mauer",
+   "type": "person",
+   "domain": "government",
+   "desc": "Metro Parks Tacoma President",
+   "facts": [
+    "Elected commissioner",
+    "Oversees $212.8M budget"
+   ]
+  },
+  {
+   "id": "mike-griffus",
+   "label": "Mike Griffus",
+   "type": "person",
+   "domain": "government",
+   "desc": "Pierce Transit CEO",
+   "facts": [
+    "Runs $345M transit agency"
+   ]
+  },
+  {
+   "id": "john-clancy",
+   "label": "John Clancy",
+   "type": "person",
+   "domain": "government",
+   "desc": "West Pierce Fire Board Chair",
+   "facts": [
+    "Elected commissioner",
+    "$75.5M budget oversight"
+   ]
+  },
+  {
+   "id": "port-tacoma",
+   "label": "Port of Tacoma",
+   "type": "organization",
+   "domain": "government",
+   "desc": "Public municipal corporation (RCW 53), 5 elected commissioners, funded partly by property tax levy",
+   "facts": [
+    "$76B cargo via NWSA (Tacoma+Seattle combined)",
+    "40,000+ jobs",
+    "5 county-wide elected commissioners",
+    "Tideflats land owner",
+    "John McCarthy 4 terms/40yr"
+   ]
+  },
+  {
+   "id": "john-mccarthy",
+   "label": "John McCarthy",
+   "type": "person",
+   "domain": "economic",
+   "desc": "Port Commissioner (4 terms, 40 yrs)",
+   "facts": [
+    "FMSIB board",
+    "PSRC Executive Board",
+    "Dean of Port governance"
+   ]
+  },
+  {
+   "id": "jt-wilcox",
+   "label": "JT Wilcox",
+   "type": "person",
+   "domain": "economic",
+   "desc": "Port Commissioner",
+   "facts": [
+    "Former State Rep (R)",
+    "Legislative pipeline"
+   ]
+  },
+  {
+   "id": "eric-johnson",
+   "label": "Eric Johnson",
+   "type": "person",
+   "domain": "economic",
+   "desc": "Port of Tacoma Executive Director",
+   "facts": [
+    "Runs port operations",
+    "$76B cargo value"
+   ]
+  },
+  {
+   "id": "chamber",
+   "label": "Chamber of Commerce",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "501(c)(6) business league; economic org whose influence is political (Candidate Academy, Voters Guide)",
+   "facts": [
+    "25-member board",
+    "$3.08M revenue (FY2024, IRS 990)",
+    "Candidate Academy (alumni secret)",
+    "'Chamber candidate' epithet",
+    "Board: Port, Boeing, MultiCare, DoorDash, PSE",
+    "501(c)(6) tax-exempt status (legal status, not a quantified money flow)"
+   ]
+  },
+  {
+   "id": "tom-pierson",
+   "label": "Tom Pierson",
+   "type": "person",
+   "domain": "economic",
+   "desc": "Chamber Interim President & CEO",
+   "facts": [
+    "Former CEO 2011-2021",
+    "Returned as interim"
+   ]
+  },
+  {
+   "id": "chyna-willman",
+   "label": "Chyna Willman",
+   "type": "person",
+   "domain": "economic",
+   "desc": "Chamber Board Chair",
+   "facts": [
+    "Grit City Wellness",
+    "Leads 25-member board"
+   ]
+  },
+  {
+   "id": "john-wiborg",
+   "label": "John Wiborg",
+   "type": "person",
+   "domain": "economic",
+   "desc": "MultiCare Board Chair / Stellar Industrial CEO",
+   "facts": [
+    "Deep Tacoma establishment ties",
+    "Chamber, GTCF, UW Tacoma boards",
+    "The interlock node"
+   ]
+  },
+  {
+   "id": "nash-cascadia",
+   "label": "NASH Cascadia",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "LLC \u2014 major campaign donor",
+   "facts": [
+    "$2,400 to Mello",
+    "$2,400 to Cruver",
+    "San Diego-based"
+   ]
+  },
+  {
+   "id": "master-builders",
+   "label": "Master Builders",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Construction industry PAC",
+   "facts": [
+    "$2,400 to Cruver",
+    "Building trades influence"
+   ]
+  },
+  {
+   "id": "foss-family",
+   "label": "Foss Family",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Maritime dynasty (Tacoma 1889)",
+   "facts": [
+    "Now Saltchuk Resources ($4.8B)",
+    "TOTE Maritime, Carlile",
+    "Foss Waterway Seaport",
+    "Largest family-owned WA company"
+   ]
+  },
+  {
+   "id": "columbia-bank",
+   "label": "Columbia Bank",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Tacoma-HQ bank",
+   "facts": [
+    "~$10B assets",
+    "Community banking power"
+   ]
+  },
+  {
+   "id": "russell-invest",
+   "label": "Russell Investments",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Investment firm (founded Tacoma 1936)",
+   "facts": [
+    "$305B AUM",
+    "Built Russell 2000 Index",
+    "HQ moved to Seattle 2010",
+    "Tacoma's biggest corporate loss"
+   ]
+  },
+  {
+   "id": "weyerhaeuser",
+   "label": "Weyerhaeuser",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Timber giant (founded Tacoma 1900)",
+   "facts": [
+    "HQ moved Seattle 2016",
+    "No family control (public)",
+    "1900: purchased 900,000 acres from Northern Pacific for $5.4M",
+    "Current: ~10.4M acres U.S. timberlands (company-wide); ~2.5M acres WA/OR",
+    "Still owns 400,000+ acres of the original 1900 purchase in WA"
+   ]
+  },
+  {
+   "id": "green-diamond",
+   "label": "Green Diamond",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Timber (formerly Simpson)",
+   "facts": [
+    "5th-largest private US landowner",
+    "1.37M acres",
+    "Douglas Reed leads"
+   ]
+  },
+  {
+   "id": "chatham-am",
+   "label": "Chatham AM",
+   "type": "organization",
+   "domain": "media",
+   "desc": "Hedge fund that owns McClatchy (News Tribune parent) \u2014 media power",
+   "facts": [
+    "Acquired McClatchy 2020 ($312M)",
+    "Owns 66% of Postmedia",
+    "Controls News Tribune"
+   ]
+  },
+  {
+   "id": "puyallup-tribe",
+   "label": "Puyallup Tribe",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "Sovereign nation; gaming (Emerald Queen Casino) is primary revenue engine \u2014 institutional + economic power",
+   "facts": [
+    "Sovereign nation",
+    "Emerald Queen Casino",
+    "Land-into-trust authority",
+    "Bill Sterud chair 46yr",
+    "UNVERIFIED: 'largest county lobbyist' claim ($1.4M 2024 self-reported, not independently confirmed)"
+   ]
+  },
+  {
+   "id": "bill-sterud",
+   "label": "Bill Sterud",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "Puyallup Tribal Council since 1978; chairmanship rotates annually (Sterud \u2194 David Z. Bean)",
+   "facts": [
+    "On council since 1978 (46 yrs)",
+    "Longest-tenured power figure in county"
+   ]
+  },
+  {
+   "id": "tim-reynon",
+   "label": "Tim Reynon",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "Puyallup Tribal Councilmember",
+   "facts": [
+    "Former WA Governor's Office of Indian Affairs Director",
+    "Direct line to Governor Ferguson"
+   ]
+  },
+  {
+   "id": "multicare",
+   "label": "MultiCare Health",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "Largest private employer; 501(c)(3) nonprofit funded heavily by Medicare/Medicaid \u2014 institutional + economic",
+   "facts": [
+    "$7.2B revenue",
+    "30,000 employees",
+    "13 hospitals",
+    ">20% WA market share",
+    "Largest private employer",
+    "$7.2B revenue is system-wide (WA/ID/OR), not Pierce-only"
+   ]
+  },
+  {
+   "id": "bill-robertson",
+   "label": "Bill Robertson",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "MultiCare CEO (retiring Dec 2026)",
+   "facts": [
+    "$2.3M+ compensation",
+    "'No confidence' votes 2023",
+    "WSHA/HHFPAC giving"
+   ]
+  },
+  {
+   "id": "florence-chang",
+   "label": "Florence Chang",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "MultiCare President \u2192 CEO Jan 2027",
+   "facts": [
+    "20-yr MultiCare veteran",
+    "Started as CIO",
+    "MBA Pepperdine"
+   ]
+  },
+  {
+   "id": "vmfh",
+   "label": "VMFH/CHI",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "Virginia Mason Franciscan Health (Catholic)",
+   "facts": [
+    "Part of CommonSpirit (Chicago)",
+    "St. Joseph, St. Anthony, St. Clare",
+    "Bans abortion/IVF/MAID",
+    "$25M charity-care settlement",
+    "Joint-owns Wellfound with MultiCare"
+   ]
+  },
+  {
+   "id": "uli-chi",
+   "label": "Uli Chi",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "VMFH Board Chair",
+   "facts": [
+    "Former CHI Franciscan chair",
+    "30+ yrs healthcare governance",
+    "Tech entrepreneur"
+   ]
+  },
+  {
+   "id": "julie-manas",
+   "label": "Julie Manas",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "VMFH NW Region President",
+   "facts": [
+    "12 hospitals, 300 care sites",
+    "Top regional executive"
+   ]
+  },
+  {
+   "id": "diann-puls",
+   "label": "Diann Puls",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "VMFH Board member",
+   "facts": [
+    "Former Weyerhaeuser pension/risk director",
+    "Wellfound + Virginia Mason Institute boards"
+   ]
+  },
+  {
+   "id": "jblm",
+   "label": "JBLM",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "Joint Base Lewis-McChord",
+   "facts": [
+    "$12.1B economic impact (Pierce+Thurston combined total; Pierce-only direct output $3.9B)",
+    "57,000+ direct jobs",
+    "Largest employer in county",
+    "I Corps HQ, 7th ID, 62nd AW",
+    "SSMCP coordination"
+   ]
+  },
+  {
+   "id": "ltg-mcfarlane",
+   "label": "LTG McFarlane",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "I Corps Commanding General",
+   "facts": [
+    "Senior Army commander at JBLM",
+    "Most powerful appointed official"
+   ]
+  },
+  {
+   "id": "dona-ponepinto",
+   "label": "Dona Ponepinto",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "United Way CEO / TCC Board Chair",
+   "facts": [
+    "7+ board positions",
+    "Tacoma Art Museum chair",
+    "Most cross-networked nonprofit leader"
+   ]
+  },
+  {
+   "id": "gtcf",
+   "label": "GTCF",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "Greater Tacoma Community Foundation",
+   "facts": [
+    "$207M assets",
+    "$19.1M 2025 grants",
+    "Rosie Ayala on board",
+    "Ryan Mello former board"
+   ]
+  },
+  {
+   "id": "kathi-littmann",
+   "label": "Kathi Littmann",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "GTCF CEO (stepping down)",
+   "facts": [
+    "Also PLU Board of Regents"
+   ]
+  },
+  {
+   "id": "united-way",
+   "label": "United Way",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "United Way of Pierce County",
+   "facts": [
+    "$17.5M assets",
+    "CEO Dona Ponepinto",
+    "Nate Lawver chairs board"
+   ]
+  },
+  {
+   "id": "russell-family",
+   "label": "Russell Family Fdn",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "Russell Investments wealth foundation",
+   "facts": [
+    "$77M assets, Gig Harbor",
+    "Climate/environment focus",
+    "Jane's Fellowship grassroots pipeline"
+   ]
+  },
+  {
+   "id": "erika-tucci",
+   "label": "Erika Tucci",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "Ben B. Cheney Foundation ED",
+   "facts": [
+    "Chairs Gov Inslee's Serve WA Commission"
+   ]
+  },
+  {
+   "id": "uw-tacoma",
+   "label": "UW Tacoma",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "University of Washington Tacoma",
+   "facts": [
+    "5,059 students",
+    "$115M housing/dining project",
+    "Plan to double to 10,000",
+    "Drives 'Tacoma Revival' narrative"
+   ]
+  },
+  {
+   "id": "sheila-lange",
+   "label": "Sheila Lange",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "UW Tacoma Chancellor",
+   "facts": [
+    "Since 2021",
+    "Former Seattle Central College president"
+   ]
+  },
+  {
+   "id": "plu",
+   "label": "PLU",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "Pacific Lutheran University",
+   "facts": [
+    "Lutheran university",
+    "PLU-MultiCare-WSU partnership",
+    "MultiCare Medical Center on campus",
+    "Serves 200K Central Pierce"
+   ]
+  },
+  {
+   "id": "allan-belton",
+   "label": "Allan Belton",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "PLU President",
+   "facts": [
+    "Since 2017",
+    "Former Bank of America MD"
+   ]
+  },
+  {
+   "id": "tcc",
+   "label": "TCC",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "Tacoma Community College",
+   "facts": [
+    "$84M operating budget",
+    "5-member board appointed by Governor",
+    "Dona Ponepinto board chair"
+   ]
+  },
+  {
+   "id": "ivan-harrell",
+   "label": "Ivan Harrell",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "TCC President",
+   "facts": [
+    "11th president"
+   ]
+  },
+  {
+   "id": "lin-zhou",
+   "label": "Lin Zhou",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "Bates Technical College President",
+   "facts": [
+    "First female, first Chinese-immigrant president of WA 2-yr college"
+   ]
+  },
+  {
+   "id": "pierce-gop",
+   "label": "Pierce GOP",
+   "type": "organization",
+   "domain": "political",
+   "desc": "Pierce County Republican Party",
+   "facts": [
+    "$175,500 to Chambers",
+    "Controls 3 council districts",
+    "State leg pipeline (Gildon, Barkis, Fortunato)"
+   ]
+  },
+  {
+   "id": "pierce-dem",
+   "label": "Pierce Dems",
+   "type": "organization",
+   "domain": "political",
+   "desc": "Pierce County Democratic Party",
+   "facts": [
+    "Controls 4 council seats + Exec",
+    "3 state Senate seats",
+    "Union coalition (HDCC, WEA, UFCW, IBEW)"
+   ]
+  },
+  {
+   "id": "kelly-chambers",
+   "label": "Kelly Chambers",
+   "type": "person",
+   "domain": "political",
+   "desc": "State Rep (R-25), lost 2024 Exec race",
+   "facts": [
+    "Raised $550K",
+    "$175K from Pierce GOP",
+    "Auto dealer/development donors",
+    "GOP rising star"
+   ]
+  },
+  {
+   "id": "hdcc",
+   "label": "HDCC",
+   "type": "organization",
+   "domain": "political",
+   "desc": "House Democratic Campaign Committee",
+   "facts": [
+    "$28,500 to Mello",
+    "Top Mello donor"
+   ]
+  },
+  {
+   "id": "wea-pac",
+   "label": "WEA PAC",
+   "type": "organization",
+   "domain": "political",
+   "desc": "WA Education Association PAC",
+   "facts": [
+    "$2,400 to Mello",
+    "$810K statewide expenditures"
+   ]
+  },
+  {
+   "id": "together-pierce",
+   "label": "Together for Pierce",
+   "type": "organization",
+   "domain": "political",
+   "desc": "Progressive PAC",
+   "facts": [
+    "$294K IE for Mello/against Chambers",
+    "Mailers"
+   ]
+  },
+  {
+   "id": "michael-shaw",
+   "label": "Michael Shaw",
+   "type": "person",
+   "domain": "political",
+   "desc": "Pierce County's contracted state lobbyist",
+   "facts": [
+    "$110K+/yr",
+    "Reports to Director of Policy"
+   ]
+  },
+  {
+   "id": "gth-gov",
+   "label": "GTH Gov Affairs",
+   "type": "organization",
+   "domain": "political",
+   "desc": "Gordon Thomas Honeywell Gov't Relations",
+   "facts": [
+    "WA's largest lobbying firm",
+    "Tacoma HQ",
+    "Deep county government ties"
+   ]
+  },
+  {
+   "id": "pclc",
+   "label": "PCCLC",
+   "type": "organization",
+   "domain": "political",
+   "desc": "Pierce County Central Labor Council",
+   "facts": [
+    "114 unions, 44,000 workers",
+    "President Alice Phillips",
+    "COPE endorsements",
+    "Backed Mello 2024, Ibsen 2025"
+   ]
+  },
+  {
+   "id": "alice-phillips",
+   "label": "Alice Phillips",
+   "type": "person",
+   "domain": "political",
+   "desc": "PCCLC President",
+   "facts": [
+    "Former IBEW 483 Business Manager (30yr)",
+    "Clover Park Board of Trustees"
+   ]
+  },
+  {
+   "id": "ilwu23",
+   "label": "ILWU Local 23",
+   "type": "organization",
+   "domain": "political",
+   "desc": "Dockworkers union at Port of Tacoma",
+   "facts": [
+    "Jared Faker, $269K/yr",
+    "2024-25 'Heat & Hammer' campaign",
+    "150 Wallenius workers organized",
+    "Port = 6th busiest container port"
+   ]
+  },
+  {
+   "id": "tacoma-pd-union",
+   "label": "Tacoma PD Union",
+   "type": "organization",
+   "domain": "political",
+   "desc": "Tacoma Police Union Local #6",
+   "facts": [
+    "$2,400 to Kelly Chambers",
+    "Police labor power"
+   ]
+  },
+  {
+   "id": "news-tribune",
+   "label": "News Tribune",
+   "type": "organization",
+   "domain": "media",
+   "desc": "Only daily newspaper in Pierce County",
+   "facts": [
+    "Owned by McClatchy (Chatham hedge fund)",
+    "Editor Stephanie Pedersen (4 papers)",
+    "Opinion Editor Laura Hautala"
+   ]
+  },
+  {
+   "id": "mcclatchy",
+   "label": "McClatchy",
+   "type": "organization",
+   "domain": "media",
+   "desc": "Newspaper chain",
+   "facts": [
+    "Owned by Chatham AM",
+    "Merged a360media tabloids 2024"
+   ]
+  },
+  {
+   "id": "stephanie-pedersen",
+   "label": "Stephanie Pedersen",
+   "type": "person",
+   "domain": "media",
+   "desc": "News Tribune Editor",
+   "facts": [
+    "Also edits 3 other McClatchy papers"
+   ]
+  },
+  {
+   "id": "south-sound-biz",
+   "label": "South Sound Biz",
+   "type": "organization",
+   "domain": "media",
+   "desc": "South Sound Business magazine",
+   "facts": [
+    "Owned by Premier Media Group",
+    "Independent",
+    "President Josh Dunn"
+   ]
+  },
+  {
+   "id": "premier-media",
+   "label": "Premier Media",
+   "type": "organization",
+   "domain": "media",
+   "desc": "Independent media company",
+   "facts": [
+    "Founded 2001 by Josh Dunn",
+    "Tacoma-based"
+   ]
+  },
+  {
+   "id": "knkx",
+   "label": "KNKX",
+   "type": "organization",
+   "domain": "media",
+   "desc": "Community-owned public radio 88.5 FM",
+   "facts": [
+    "Nonprofit",
+    "Independent"
+   ]
+  },
+  {
+   "id": "superior-court",
+   "label": "Superior Court",
+   "type": "organization",
+   "domain": "legal",
+   "desc": "Pierce County Superior Court \u2014 23 judges",
+   "facts": [
+    "23 elected judges",
+    "Felonies, civil >$100K, family, juvenile",
+    "$51.7M budget",
+    "Stanley Rumbaugh Judge of the Year 2026"
+   ]
+  },
+  {
+   "id": "district-court",
+   "label": "District Court",
+   "type": "organization",
+   "domain": "legal",
+   "desc": "Pierce County District Court \u2014 8 judges",
+   "facts": [
+    "8 elected judges",
+    "Misdemeanors, small claims",
+    "Administrator Misty Butler Robison"
+   ]
+  },
+  {
+   "id": "court-appeals",
+   "label": "Court of Appeals Div 2",
+   "type": "organization",
+   "domain": "legal",
+   "desc": "WA Court of Appeals, Division 2 (Tacoma)",
+   "facts": [
+    "Hears appeals from Pierce County",
+    "3 positions",
+    "Located in Tacoma"
+   ]
+  },
+  {
+   "id": "stanley-rumbaugh",
+   "label": "Stanley Rumbaugh",
+   "type": "person",
+   "domain": "legal",
+   "desc": "Pierce County Superior Court Judge",
+   "facts": [
+    "WSAJ Judge of the Year 2026",
+    "Presiding Judge Elect 2025-26"
+   ]
+  },
+  {
+   "id": "linda-farmer",
+   "label": "Linda Farmer",
+   "type": "person",
+   "domain": "government",
+   "desc": "Pierce County Auditor",
+   "facts": [
+    "Elected countywide",
+    "Elections administration",
+    "Financial oversight, recording",
+    "$167K salary"
+   ]
+  },
+  {
+   "id": "marty-campbell",
+   "label": "Marty Campbell",
+   "type": "person",
+   "domain": "government",
+   "desc": "Pierce County Assessor-Treasurer",
+   "facts": [
+    "Elected countywide",
+    "Property valuations, tax collection",
+    "Former Council D5",
+    "$167K salary"
+   ]
+  },
+  {
+   "id": "chris-gildon",
+   "label": "Chris Gildon (R-25)",
+   "type": "person",
+   "domain": "government",
+   "desc": "WA State Senator, District 25",
+   "facts": [
+    "Puyallup, Sumner, Fife, Edgewood",
+    "Republican",
+    "State funding for Pierce County"
+   ]
+  },
+  {
+   "id": "phil-fortunato",
+   "label": "Phil Fortunato (R-31)",
+   "type": "person",
+   "domain": "government",
+   "desc": "WA State Senator, District 31",
+   "facts": [
+    "Sumner, Bonney Lake, Buckley",
+    "Republican",
+    "State funding"
+   ]
+  },
+  {
+   "id": "yasmin-trudeau",
+   "label": "Yasmin Trudeau (D-27)",
+   "type": "person",
+   "domain": "government",
+   "desc": "WA State Senator, District 27",
+   "facts": [
+    "Tacoma central/downtown",
+    "Democrat",
+    "State funding"
+   ]
+  },
+  {
+   "id": "twina-nobles",
+   "label": "T'wina Nobles (D-28)",
+   "type": "person",
+   "domain": "government",
+   "desc": "WA State Senator, District 28",
+   "facts": [
+    "University Place, Fircrest, Lakewood",
+    "Democrat",
+    "ALSO on University Place School Board",
+    "Direct legislative-education interlock"
+   ]
+  },
+  {
+   "id": "steve-conway",
+   "label": "Steve Conway (D-29)",
+   "type": "person",
+   "domain": "government",
+   "desc": "State Sen D-29; announced Jan 2026 he will NOT seek re-election (term ends Jan 2027)",
+   "facts": [
+    "Parkland, Spanaway, S Tacoma",
+    "Democrat",
+    "Long-serving"
+   ]
+  },
+  {
+   "id": "laurie-jinkins",
+   "label": "Laurie Jinkins (D-27)",
+   "type": "person",
+   "domain": "government",
+   "desc": "WA State Rep, District 27",
+   "facts": [
+    "Tacoma",
+    "Democrat",
+    "Former House Speaker"
+   ]
+  },
+  {
+   "id": "drew-stokesbary",
+   "label": "Drew Stokesbary (R-31)",
+   "type": "person",
+   "domain": "government",
+   "desc": "WA State Rep, District 31",
+   "facts": [
+    "Sumner, Bonney Lake",
+    "Republican",
+    "House GOP leadership"
+   ]
+  },
+  {
+   "id": "melanie-morgan",
+   "label": "Melanie Morgan (D-29)",
+   "type": "person",
+   "domain": "government",
+   "desc": "WA State Rep, District 29",
+   "facts": [
+    "Parkland, Spanaway",
+    "Democrat",
+    "Incumbent"
+   ]
+  },
+  {
+   "id": "maria-cantwell",
+   "label": "Maria Cantwell",
+   "type": "person",
+   "domain": "government",
+   "desc": "US Senator (D-WA)",
+   "facts": [
+    "Federal funding for Pierce County",
+    "Commerce Committee chair"
+   ]
+  },
+  {
+   "id": "patty-murray",
+   "label": "Patty Murray",
+   "type": "person",
+   "domain": "government",
+   "desc": "US Senator (D-WA)",
+   "facts": [
+    "Federal funding",
+    "Appropriations power"
+   ]
+  },
+  {
+   "id": "emily-randall",
+   "label": "Emily Randall (D-6)",
+   "type": "person",
+   "domain": "government",
+   "desc": "US Rep, 6th District",
+   "facts": [
+    "Covers Tacoma, Pierce County",
+    "Democrat"
+   ]
+  },
+  {
+   "id": "marilyn-strickland",
+   "label": "Marilyn Strickland (D-10)",
+   "type": "person",
+   "domain": "government",
+   "desc": "US Rep, 10th District",
+   "facts": [
+    "Covers Tacoma, Pierce County",
+    "Democrat",
+    "Former Tacoma Mayor"
+   ]
+  },
+  {
+   "id": "tacoma-schools",
+   "label": "Tacoma Public Schools",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "Largest school district in Pierce County",
+   "facts": [
+    "$665M budget",
+    "5 board directors",
+    "Supt Dr. Josh Garcia",
+    "Korey Strozier board president",
+    "Controls construction contracts"
+   ]
+  },
+  {
+   "id": "puyallup-schools",
+   "label": "Puyallup School District",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "Puyallup school district",
+   "facts": [
+    "Major budget",
+    "Board elections",
+    "Construction contracts"
+   ]
+  },
+  {
+   "id": "bethel-schools",
+   "label": "Bethel School District",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "South county school district",
+   "facts": [
+    "Graham, Spanaway",
+    "Janet Caldwell board (BEA president)",
+    "Building new HS"
+   ]
+  },
+  {
+   "id": "clover-park-schools",
+   "label": "Clover Park School District",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "Serves Lakewood/JBLM",
+   "facts": [
+    "Supt Ron Banner (2025 WA Supt of Year)",
+    "JBLM-connected district"
+   ]
+  },
+  {
+   "id": "josh-garcia",
+   "label": "Josh Garcia",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "Tacoma Public Schools Superintendent",
+   "facts": [
+    "Runs $665M district",
+    "Key education power figure"
+   ]
+  },
+  {
+   "id": "korey-strozier",
+   "label": "Korey Strozier",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "Tacoma School Board President",
+   "facts": [
+    "Former TPS employee",
+    "Board president"
+   ]
+  },
+  {
+   "id": "catholic-archdiocese",
+   "label": "Catholic Archdiocese",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "Archdiocese of Seattle \u2014 Pierce Deanery",
+   "facts": [
+    "Jurisdiction over Pierce County parishes",
+    "$191K lobbying 2024 via VMFH",
+    "Catholic hospitals, schools",
+    "Moral/political influence"
+   ]
+  },
+  {
+   "id": "healthy-bay",
+   "label": "Communities for a Healthy Bay",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "Environmental justice org",
+   "facts": [
+    "Monitors Commencement Bay Superfund",
+    "Holds polluters accountable",
+    "$600M+ cleanup oversight",
+    "Counter-power to industrial actors"
+   ]
+  },
+  {
+   "id": "rush-development",
+   "label": "Rush Development",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Growth-machine developer",
+   "facts": [
+    "Division of The Rush Companies (est. 1987)",
+    "founder/CEO Gordon Rush",
+    "HQ Gig Harbor, WA",
+    "130+ team members",
+    "3,600+ multifamily units developed",
+    "645,000+ sq ft medical/office"
+   ]
+  },
+  {
+   "id": "miles-sand-gravel",
+   "label": "Miles Sand & Gravel",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Growth-machine developer",
+   "facts": [
+    "Founded early 1940s in Auburn, WA by Walter Miles",
+    "corporate office moved to Puyallup 2010",
+    "operates in 9+ western WA counties."
+   ]
+  },
+  {
+   "id": "southport",
+   "label": "Southport Real Estate",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Growth-machine developer",
+   "facts": [
+    "Legal name: Southport Financial Services, Inc.",
+    "Tacoma office at 1911 65th Ave W, Tacoma, WA 98466",
+    "founded 1995",
+    "~12,000 units in 18 states",
+    "VP of Finance: Stephane Varenne"
+   ]
+  },
+  {
+   "id": "tucci-sons",
+   "label": "Tucci & Sons",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Growth-machine developer",
+   "facts": [
+    "- Founded 1950 by Michael J. Tucci in Tacoma, WA",
+    "third-generation family-owned (source 1, 6)."
+   ]
+  },
+  {
+   "id": "lincoln-park",
+   "label": "Lincoln Park Partners",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Growth-machine developer",
+   "facts": [
+    "- Managing partner: Bill Driscoll (William Lindeke Driscoll), Tacoma, WA (source 1, 2)."
+   ]
+  },
+  {
+   "id": "nall-capital",
+   "label": "Nall Capital",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Growth-machine developer",
+   "facts": [
+    "- Nall Capital, LLC incorporated March 2, 2022 in Buckley, WA (source 5)."
+   ]
+  },
+  {
+   "id": "wa-realtors-pac",
+   "label": "WA Realtors PAC",
+   "type": "organization",
+   "domain": "political",
+   "desc": "Realtors PAC",
+   "facts": [
+    "WA Realtors PAC expenditures ~$1,005,504.24 (current PDC cycle)",
+    "parent org 20,000+ members",
+    "HQ Olympia",
+    "affiliated with NAR/RPAC nationally"
+   ]
+  },
+  {
+   "id": "tacoma-housing-auth",
+   "label": "Tacoma Housing Authority",
+   "type": "organization",
+   "domain": "government",
+   "desc": "Hilltop redevelopment",
+   "facts": [
+    "THA is a Moving to Work (MTW) demonstration PHA",
+    "governed by 5-person Board appointed by Tacoma Mayor",
+    "Executive Director April Black since 2021",
+    "FY2026 budget adopted Jan 2026."
+   ]
+  },
+  {
+   "id": "saltchuk",
+   "label": "Saltchuk",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Foss/Saltchuk parent",
+   "facts": [
+    "(from graph) \u2014"
+   ]
+  },
+  {
+   "id": "nwsa",
+   "label": "Northwest Seaport Alliance",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Port operating authority",
+   "facts": [
+    "Formed Aug 4, 2015 under RCW 53.57",
+    "FMC-approved port development authority",
+    "CEO John Wolfe (also Port of Tacoma CEO)",
+    "HQ Tacoma",
+    "co-chaired by home port commission presidents."
+   ]
+  },
+  {
+   "id": "ssmcp",
+   "label": "SSMCP",
+   "type": "organization",
+   "domain": "government",
+   "desc": "JBLM-county coordination",
+   "facts": [
+    "- Formed in 2011 by memorandum of agreement among communities and JBLM advocates (source 1, 2)."
+   ]
+  },
+  {
+   "id": "pierce-county-econ-dev",
+   "label": "Pierce County Econ Dev",
+   "type": "organization",
+   "domain": "government",
+   "desc": "County econ dev agency",
+   "facts": [
+    "Long-serving Director Betty Nokes Capestany (now Betty Baublits) led 2018\u20132026",
+    "she moved to EDB Director of Investor Relations April 2026. Tom Pierson (Tacoma-Pierce County Chamber President & CEO) was appointed Acting Director while a permanent replacement is recruited."
+   ]
+  },
+  {
+   "id": "candidate-academy",
+   "label": "Chamber Candidate Academy",
+   "type": "organization",
+   "domain": "political",
+   "desc": "Chamber candidate pipeline",
+   "facts": [
+    "Operated by Tacoma-Pierce County Chamber (EIN 91-0434830)",
+    "1-day intensive primer covering civics, campaign strategy, fundraising, media/messaging",
+    "speakers are local political leaders",
+    "listed among Chamber's core programs alongside Business Leadership Academy, MIC South Sound, Pierce County Business Accelerator, and Spaceworks Tacoma"
+   ]
+  },
+  {
+   "id": "edb",
+   "label": "Economic Development Board",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Chamber partner",
+   "facts": [
+    "Legal name \"Economic Development Board for Tacoma Pierce County\"",
+    "EIN 91-1040355",
+    "501(c)(6) business league",
+    "tax-exempt since March 1981",
+    "FY2023 revenue ~$2.9M (95% contributions)",
+    "net assets ~$2.9M",
+    "President & CEO Michael Catsi (succeeded Bruce Kendall, who served 1999\u20132024)",
+    "board includes MultiCare, Port of Tacoma, Columbia Bank, Key Bank, VMFH, Chamber, Pierce Transit, UW Tacoma, Councilmember Dave Morell",
+    "staffs Economic Development Corporation of Pierce County (EDCPC) by contract"
+   ]
+  },
+  {
+   "id": "nathe-lawver",
+   "label": "Nathe Lawver",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "GTCF + United Way + Building Trades",
+   "facts": [
+    "Secretary-Treasurer PCCLC",
+    "Board Chair United Way Pierce County",
+    "GTCF Board",
+    "EDB Board",
+    "UFCW Local 367 Communications Director",
+    "former AFL-CIO Community Services Liaison"
+   ]
+  },
+  {
+   "id": "andrew-strobel",
+   "label": "Andrew Strobel",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "TCC + Mello advisor + ex-Tribe",
+   "facts": [
+    "BA Economics & International Political Economy, University of Puget Sound",
+    "M.P.S. Natural Resource Management, Syracuse University",
+    "Puyallup Tribe Planning Director April 2010\u2013Jan 2025",
+    "joined Mello's office Jan 16, 2025",
+    "appointed to TCC Board by Gov. Ferguson, term began Jan 28, 2026",
+    "Tlingit & Haida Transportation Committee Chair"
+   ]
+  },
+  {
+   "id": "lois-bernstein",
+   "label": "Lois Bernstein",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "MultiCare exec on TCC board",
+   "facts": [
+    "BA Communications, Michigan State",
+    "MS Rehabilitation Counseling, San Diego State",
+    "MBA UC Irvine. SVP MultiCare 1998\u20132016",
+    "Chief Community Executive 2016\u2013Jul 2023. Appointed TCC trustee Jan 2017 (term begun). ULI Executive Council for a Greater Tacoma member",
+    "Alliance for South Sound Behavioral Health Coalition member",
+    "Crystal Judson Family Justice Center board",
+    "Broadway Center for the Performing Arts board."
+   ]
+  },
+  {
+   "id": "jason-thompson",
+   "label": "Jason Thompson",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "MultiCare + Russell Investments",
+   "facts": [
+    "At Russell Investments 30+ years (since 1994)",
+    "Director, Americas Institutional business",
+    "MultiCare board since Jan 2025",
+    "former Overlake Medical Center Board Chair."
+   ]
+  },
+  {
+   "id": "dale-sowell",
+   "label": "Dale Sowell",
+   "type": "person",
+   "domain": "institutional",
+   "desc": "MultiCare + ex-Green Diamond",
+   "facts": [
+    "MultiCare Health System board director since 2001",
+    "retired 2020 as VP/CFO of Green Diamond Resource Company."
+   ]
+  },
+  {
+   "id": "dick-marzano",
+   "label": "Dick Marzano",
+   "type": "person",
+   "domain": "economic",
+   "desc": "Port Commissioner, 2026 President",
+   "facts": [
+    "Elected 1995",
+    "current term Jan 1, 2026 \u2013 Dec 31, 2029",
+    "2025 commission vice-president, 2026 president",
+    "serves as co-chair of the NWSA Managing Members in his presidential year."
+   ]
+  },
+  {
+   "id": "deanna-keller",
+   "label": "Deanna Keller",
+   "type": "person",
+   "domain": "economic",
+   "desc": "Port Commissioner",
+   "facts": [
+    "B.A. Western Washington University",
+    "M.A. Northwestern University",
+    "ABD/dissertation Catholic University of America. Vice Chair of Joint Municipal Action Committee",
+    "Secretary of WPPA Executive Committee",
+    "Chair, Port of Tacoma Audit Committee."
+   ]
+  },
+  {
+   "id": "kristin-ang",
+   "label": "Kristin Ang",
+   "type": "person",
+   "domain": "economic",
+   "desc": "Port Commissioner",
+   "facts": [
+    "First elected 2019 (3% margin",
+    "defeated Don Meyer)",
+    "re-elected 2023",
+    "current term Jan. 1, 2024 \u2013 Dec. 31, 2027",
+    "Port Commission President 2024, Secretary 2026",
+    "UW-Puget Sound business degree (academic+music scholarship)",
+    "Cornell Law JD",
+    "born in Philippines",
+    "works as attorney",
+    "Emerge Washington alum",
+    "serves on Port environmental, Tribal Liaison, Local Economic Development Investment Fund, Workforce Development, Strategic Business Initiatives committees",
+    "NWSA Environmental & Trucks work groups",
+    "outside boards include Central Puget Sound EDD, Washington Council on International Trade, City Club of Tacoma (board president), Tacoma Rotary 8, GTCF ambassador."
+   ]
+  },
+  {
+   "id": "adam-smith",
+   "label": "Adam Smith",
+   "type": "person",
+   "domain": "government",
+   "desc": "US Rep WA-09, Armed Services",
+   "facts": [
+    "Born June 15, 1965 in Washington, D.C.",
+    "raised in SeaTac, WA",
+    "Fordham BA (1987), UW JD (1990)",
+    "elected to WA State Senate 1990 (age 25, youngest in country)",
+    "elected to U.S. House 1996",
+    "office: 2264 Rayburn HOB"
+   ]
+  },
+  {
+   "id": "kim-schrier",
+   "label": "Kim Schrier",
+   "type": "person",
+   "domain": "government",
+   "desc": "US Rep WA-08",
+   "facts": [
+    "Kimberly Merle Schrier, born August 23, 1968 (Los Angeles, CA). UC Berkeley BA (Phi Beta Kappa)",
+    "UC Davis School of Medicine",
+    "residency at Lucile Packard Children's Hospital at Stanford. 17 years as pediatrician in Issaquah, WA. Spouse: David Gowing. Son: Sam. Lives in Sammamish. Chair of Democratic Doctors Caucus",
+    "Chair of New Democrat Coalition's Rural Revitalization Working Group. 2024 general election: defeated Carmen Goers (R) 54.0% to 45.8% (224,607 to 190,675)."
+   ]
+  },
+  {
+   "id": "deb-krishnadasan",
+   "label": "Deb Krishnadasan",
+   "type": "person",
+   "domain": "government",
+   "desc": "26th LD State Senator",
+   "facts": [
+    "Democrat",
+    "replaced Emily Randall (resigned for U.S. House)",
+    "Western Washington University BA Communications",
+    "grew up in Puyallup",
+    "career at Burlington Resources, Visio, Microsoft",
+    "lives in Gig Harbor since 2008",
+    "husband Baiya (Sri Lankan-born cardiothoracic surgeon)",
+    "3 children (Alexander, Audrey, Gabriel)"
+   ]
+  },
+  {
+   "id": "jake-fey",
+   "label": "Jake Fey",
+   "type": "person",
+   "domain": "government",
+   "desc": "House Transportation chair",
+   "facts": [
+    "Born 1949, Port Angeles, WA",
+    "BA Political Science UW, MPA University of Puget Sound",
+    "Director WSU Energy Program 2001\u20132019",
+    "assumed WA House office Jan 14, 2013",
+    "chairs House Transportation Committee",
+    "spouse Janine Fey, 2 children"
+   ]
+  },
+  {
+   "id": "bob-ferguson",
+   "label": "Bob Ferguson",
+   "type": "person",
+   "domain": "government",
+   "desc": "Governor",
+   "facts": [
+    "- Robert Watson Ferguson, born February 23, 1965",
+    "24th Governor of Washington, assumed office January 13, 2025 (source 1, 2, 3)."
+   ]
+  },
+  {
+   "id": "commonspirit",
+   "label": "CommonSpirit Health",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "VMFH owner",
+   "facts": [
+    "Created February 2019 by CHI/Dignity merger",
+    "~150,000 employees, ~25,000 physicians/advanced-practice clinicians",
+    "operates 137 hospitals across 21 states",
+    "FY2019 revenue ~$29B",
+    "CHI Franciscan represented ~$2.45B revenue pre-2021 merger",
+    "Virginia Mason combined with CHI Franciscan to form VMFH effective January 5, 2021."
+   ]
+  },
+  {
+   "id": "wellfound",
+   "label": "Wellfound Behavioral Health",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "MultiCare-VMFH JV",
+   "facts": [
+    "501(c)(3)",
+    "EIN 47-4654897",
+    "opened 2019",
+    "$45M build",
+    "120 beds",
+    "3402 S 19th St, Tacoma",
+    "CEO Maureen Womack",
+    "sole freestanding adult psych hospital in Pierce County (16.3 beds/100K post-launch, vs 2.8 pre-launch)."
+   ]
+  },
+  {
+   "id": "wsha",
+   "label": "WSHA",
+   "type": "organization",
+   "domain": "political",
+   "desc": "WA State Hospital Association",
+   "facts": [
+    "Founded 1961",
+    "EIN 91-0584257",
+    "HQ Seattle, WA",
+    "2024 revenue $17.1M",
+    "represents 100+ hospitals",
+    "runs Hospitals for a Healthy Future PAC."
+   ]
+  },
+  {
+   "id": "hhfpac",
+   "label": "HHFPAC",
+   "type": "organization",
+   "domain": "political",
+   "desc": "WSHA healthcare PAC",
+   "facts": [
+    "UNVERIFIED: $357K 2022 spending figure not confirmed by primary source"
+   ]
+  },
+  {
+   "id": "cheney-foundation",
+   "label": "Cheney Foundation",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "Erika Tucci employer",
+   "facts": [
+    "Founded 1955 (corporate) and endowed after Ben B. Cheney's death in 1971",
+    "began active grantmaking in 1975",
+    "HQ 3110 Ruston Way Ste A, Tacoma, WA 98402-5308",
+    "current ED Erika Tucci (first female)",
+    "8 grantmaking categories",
+    "Tacoma-Pierce County Chamber member."
+   ]
+  },
+  {
+   "id": "bates-tech",
+   "label": "Bates Technical College",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "Lin Zhou employer",
+   "facts": [
+    "Founded 1940 in Hawthorne Elementary basement",
+    "renamed Tacoma Vocational-Technical Institute 1947",
+    "renamed for L.H. Bates 1969",
+    "came under State Board for Community and Technical Colleges 1991",
+    "took over KBTC-TV PBS from Tacoma School District 1992."
+   ]
+  },
+  {
+   "id": "tacoma-art-museum",
+   "label": "Tacoma Art Museum",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "Ponepinto chairs it",
+   "facts": [
+    "(from graph) \u2014"
+   ]
+  },
+  {
+   "id": "museum-of-glass",
+   "label": "Museum of Glass",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "Russell legacy",
+   "facts": [
+    "EIN 91-1669422",
+    "tax-exempt since January 1996",
+    "located at 1801 Dock St, Tacoma WA 98402",
+    "2026 capital campaign underway",
+    "receives Tacoma Creates funding."
+   ]
+  },
+  {
+   "id": "pierce-county-library",
+   "label": "Pierce County Library",
+   "type": "organization",
+   "domain": "government",
+   "desc": "$56M taxing district",
+   "facts": [
+    "20 library branches",
+    "serves 580,835 (per 2016 stats) / ~680,000 (per 2026 trustee application)",
+    "circulation 6.9\u20137.4M items/year",
+    "budget $31.9M (2016 reference)",
+    "5-member Board of Trustees (5-year terms, appointed by County Executive)",
+    "current Executive Director Gretchen Caserotti",
+    "Chair Neesha Patel, Vice-Chair Ryan Wheaton, trustees Pam Duncan, Pat Jenkins, Tono Sablan. 2018 levy (Levy Sustainability Fund) passed."
+   ]
+  },
+  {
+   "id": "flood-control-zone",
+   "label": "Flood Control Zone District",
+   "type": "organization",
+   "domain": "government",
+   "desc": "Flood taxing body",
+   "facts": [
+    "Formed under Chapter 86.15 RCW",
+    "Pierce County Council created the District via interlocal agreement (2011 per FIFE WA fact sheet)",
+    "countywide property-tax levy of ~$0.09/$1,000 AV in 2024 raising ~$18.9M",
+    "Chair (2024\u20132026) Dave Morell",
+    "2025 Comprehensive Plan of Development adopted April 23, 2025",
+    "White River Restoration in Sumner funded by District protects $1.14B in property value and 16,000 jobs."
+   ]
+  },
+  {
+   "id": "tacoma-public-utilities",
+   "label": "Tacoma Public Utilities",
+   "type": "organization",
+   "domain": "government",
+   "desc": "Municipal utility",
+   "facts": [
+    "Formed 1893 by voter purchase of privately owned Tacoma Light & Water",
+    "2025-2026 biennial budget approved Nov 2024",
+    "6.5% power / 6.3% water annual rate increase for 2025-2026",
+    "CEO/Director Jackie Flowers since 2018",
+    "governed by 5-member Public Utility Board appointed by Mayor/City Council"
+   ]
+  },
+  {
+   "id": "sumner-bonney-lake",
+   "label": "Sumner-Bonney Lake Schools",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "$114M bond",
+   "facts": [
+    "Washington public school district under Title 28A RCW",
+    "2025\u201326 general-fund budget $136.5M covers ~9,900\u201310,000 students",
+    "16% of district budget funded by local levies (per Feb 2024 EP&O/levy info)",
+    "Board of Directors is 5 elected members representing 5 director districts",
+    "Board President Kevin Lewis (District 3), Vice President Bill Gaines (District 4)",
+    "Superintendent Dr. Laurie Dent, appointed July 1, 2016."
+   ]
+  },
+  {
+   "id": "university-place-schools",
+   "label": "University Place Schools",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "$355M construction",
+   "facts": [
+    "\u2014 (none recorded)"
+   ]
+  },
+  {
+   "id": "east-pierce-fire",
+   "label": "East Pierce Fire",
+   "type": "organization",
+   "domain": "government",
+   "desc": "$80M bond",
+   "facts": [
+    "Pierce County Fire Protection District No. 22",
+    "serves Bonney Lake, Sumner, Lake Tapps, Edgewood, Milton, Tehaleh, South Prairie, Ridge Communities",
+    "9 fire stations",
+    "2024 operating budget $58M actual on $59.9M budget."
+   ]
+  },
+  {
+   "id": "gig-harbor-fire",
+   "label": "Gig Harbor Fire",
+   "type": "organization",
+   "domain": "government",
+   "desc": "Fire district",
+   "facts": [
+    "FPD No. 5 (Pierce County) \u2014 54 sq mi / 53,000 residents",
+    "123 uniformed firefighters",
+    "24/7 staffing at 5 stations",
+    "5-member Board of Fire Commissioners",
+    "Fire Chief Dennis Doan",
+    "2022 voter-approved capital bond funding Station 51 rebuild and apparatus",
+    "former Commissioner Tom Sutich served 17 years."
+   ]
+  },
+  {
+   "id": "teamsters",
+   "label": "Teamsters",
+   "type": "organization",
+   "domain": "political",
+   "desc": "Major labor union",
+   "facts": [
+    "Local 117 represents 19,500 WA workers",
+    "6,000+ DOC corrections officers",
+    "JC 28 represents 50,000+ across WA/AK/ID",
+    "Secretary-Treasurer John Scearcy",
+    "endorses Pierce County Council candidates."
+   ]
+  },
+  {
+   "id": "tacoma-weekly",
+   "label": "Tacoma Weekly",
+   "type": "organization",
+   "domain": "media",
+   "desc": "Independent media",
+   "facts": [
+    "Free weekly community newspaper",
+    "founded 1987 as Tacoma Monthly",
+    "renamed Tacoma Weekly 1994",
+    "broadsheet format since 2001",
+    "~10,000 weekly circulation",
+    "distributed Wednesdays to \"hundreds of businesses and public spaces\"",
+    "current publisher Matt Nagle",
+    "published via Pierce County Community Newspaper Group (PCCNG). Prior publisher John Weymer accumulated over $170,000 in judgments against him and his business since 1995",
+    "$9,157.06 in wage-theft claims paid over a two-year period",
+    "$5,000 judgment in 2019 to Grand Cinema",
+    "September 2021 \u2014 fined $15,000 by Washington State PDC for offering political candidates news stories/endorsements in exchange for money."
+   ]
+  },
+  {
+   "id": "pmba",
+   "label": "Pierce Military & Business Alliance",
+   "type": "organization",
+   "domain": "institutional",
+   "desc": "JBLM community nonprofit",
+   "facts": [
+    "Federal tax exemption issued Sept. 2003",
+    "EIN 38-3675245",
+    "NTEE Philanthropy/Community Foundations",
+    "Form 990-EZ filer",
+    "FY2024 revenue $28,654",
+    "FY2023 revenue $87,781",
+    "FY2019 revenue $92,114",
+    "FY2018 revenue $100,103",
+    "President George \"W. George\" Cargill (since 2004",
+    "retired airman 26 years",
+    "JBLM Civilian Hall of Fame inductee)",
+    "Vice President Cruz Arroyo",
+    "Secretary Mark Minickiello",
+    "Treasurer William Striegel",
+    "~22 directors on roster (per FY2020 990-EZ)",
+    "combines \"contributions/donations of 28 plus companies to support the JBLM military in a combined and coordinated effort.\""
+   ]
+  },
+  {
+   "id": "tacoma-city-council",
+   "label": "Tacoma City Council",
+   "type": "organization",
+   "domain": "government",
+   "desc": "9-member governing body of Tacoma (county's largest city, ~220K, ~23% of county pop); council-manager form",
+   "facts": [
+    "9 members: 5 district + 3 at-large + mayor",
+    "~$1.5B city budget",
+    "Controls land use, Connect Tacoma levy",
+    "Kristina Walker sits on Sound Transit + Pierce Transit boards",
+    "Source: https://tacoma.gov/government/departments/city-council/"
+   ]
+  },
+  {
+   "id": "tpchd",
+   "label": "Tacoma-Pierce County Health Dept",
+   "type": "organization",
+   "domain": "government",
+   "desc": "Tacoma-Pierce County Health Department \u2014 county/city public health authority",
+   "facts": [
+    "Director: Chantell Harmon Reed (first woman & first African American to lead)",
+    "~284 staff",
+    "Board of Health includes Mello, Hitchen, Herrera, Bushnell, Sadalge, Yambe",
+    "Source: https://tpchd.org/info/about-us/director-of-health"
+   ]
+  },
+  {
+   "id": "boeing",
+   "label": "Boeing (Frederickson)",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Boeing Frederickson fabrication plant \u2014 largest aerospace manufacturer in Pierce County",
+   "facts": [
+    "~1,550-1,800 FTEs",
+    "Builds 787 & 777X tails, wing structures",
+    "Rich White on Chamber board",
+    "Source: https://www.choosetacomapierce.org/locating-your-business/major-employers"
+   ]
+  },
+  {
+   "id": "amazon",
+   "label": "Amazon (distribution)",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Amazon distribution/fulfillment operations in Pierce County (Sumner fulfillment center)",
+   "facts": [
+    "~1,400-1,800 distribution jobs (ESD)",
+    "Sumner fulfillment center",
+    "Source: https://esd.wa.gov/media/pdf/919/pierce20county20profile202022pdf"
+   ]
+  },
+  {
+   "id": "pse",
+   "label": "Puget Sound Energy",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Puget Sound Energy \u2014 largest utility in Washington; serves Pierce County",
+   "facts": [
+    "~1.24M electric customers across 8 counties",
+    "Frederickson Generating Stations (147MW + 275MW) in Pierce County",
+    "Electron Hydro on Puyallup River (22MW)",
+    "Christine Nhan on Chamber board",
+    "Source: https://en.wikipedia.org/wiki/Puget_Sound_Energy"
+   ]
+  },
+  {
+   "id": "banner-bank",
+   "label": "Banner Bank",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Banner Bank \u2014 regional bank; AJ Gordon (Banner) was Chamber Board Chair",
+   "facts": [
+    "AJ Gordon served as Tacoma-Pierce County Chamber Board Chair",
+    "Source: https://www.southsoundbiz.com/news/tacoma-pierce-county-chamber-announces-new-president-ceo/article_5e7da3a2-bcf6-11ec-ba2f-a32daed8331e.html"
+   ]
+  },
+  {
+   "id": "pa-office",
+   "label": "Prosecuting Attorney's Office",
+   "type": "organization",
+   "domain": "legal",
+   "desc": "Pierce County Prosecuting Attorney's Office \u2014 institutional legal power center",
+   "facts": [
+    "$94M budget (3rd-most-expensive county dept)",
+    "Prosecutes all state felony cases in Pierce County",
+    "Civil division advises all county departments",
+    "Led by Mary Robnett",
+    "Source: https://www.piercecountywa.gov/118/Prosecuting-Attorney"
+   ]
+  },
+  {
+   "id": "federal-district-court",
+   "label": "Federal District Court (WDWA/Tacoma)",
+   "type": "organization",
+   "domain": "legal",
+   "desc": "U.S. District Court for the Western District of Washington \u2014 Tacoma courthouse",
+   "facts": [
+    "Chief Judge: David G. Estudillo (Tacoma chambers)",
+    "Handles federal gang/fentanyl indictments, tribal cases, Puyallup River litigation",
+    "Source: https://www.wawd.uscourts.gov/judges/estudillo-chambers"
+   ]
+  },
+  {
+   "id": "subaru-puyallup",
+   "label": "Subaru of Puyallup",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Auto dealership \u2014 donor to Kelly Chambers 2024",
+   "facts": [
+    "$2,400 to Kelly Chambers (2024)",
+    "Source: https://data.wa.gov/resource/kv7h-kjye.json"
+   ]
+  },
+  {
+   "id": "toyota-puyallup",
+   "label": "Toyota of Puyallup",
+   "type": "organization",
+   "domain": "economic",
+   "desc": "Auto dealership \u2014 donor to Kelly Chambers 2024",
+   "facts": [
+    "$2,400 to Kelly Chambers (2024)",
+    "Source: https://data.wa.gov/resource/kv7h-kjye.json"
+   ]
+  }
+ ],
+ "edges": [
+  {
+   "source": "ryan-mello",
+   "target": "county-council",
+   "relationship": "veto",
+   "weight": 7
+  },
+  {
+   "source": "ryan-mello",
+   "target": "pierce-dem",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "ryan-mello",
+   "target": "sound-transit",
+   "relationship": "vice_chair",
+   "weight": 6
+  },
+  {
+   "source": "ryan-mello",
+   "target": "pierce-transit",
+   "relationship": "board",
+   "weight": 5
+  },
+  {
+   "source": "ryan-mello",
+   "target": "gtcf",
+   "relationship": "former_board",
+   "weight": 3
+  },
+  {
+   "source": "ryan-mello",
+   "target": "metro-parks",
+   "relationship": "former_commissioner",
+   "weight": 3
+  },
+  {
+   "source": "jani-hitchen",
+   "target": "county-council",
+   "relationship": "chair",
+   "weight": 5
+  },
+  {
+   "source": "dave-morell",
+   "target": "county-council",
+   "relationship": "member",
+   "weight": 4
+  },
+  {
+   "source": "paul-herrera",
+   "target": "county-council",
+   "relationship": "member",
+   "weight": 4
+  },
+  {
+   "source": "amy-cruver",
+   "target": "county-council",
+   "relationship": "member",
+   "weight": 4
+  },
+  {
+   "source": "rosie-ayala",
+   "target": "county-council",
+   "relationship": "member",
+   "weight": 4
+  },
+  {
+   "source": "rosie-ayala",
+   "target": "gtcf",
+   "relationship": "board",
+   "weight": 4
+  },
+  {
+   "source": "rosie-ayala",
+   "target": "pierce-transit",
+   "relationship": "board",
+   "weight": 4
+  },
+  {
+   "source": "bryan-yambe",
+   "target": "county-council",
+   "relationship": "member",
+   "weight": 4
+  },
+  {
+   "source": "robyn-denson",
+   "target": "county-council",
+   "relationship": "member",
+   "weight": 4
+  },
+  {
+   "source": "kristina-walker",
+   "target": "pierce-transit",
+   "relationship": "chair",
+   "weight": 5
+  },
+  {
+   "source": "kristina-walker",
+   "target": "sound-transit",
+   "relationship": "board",
+   "weight": 4
+  },
+  {
+   "source": "puyallup-tribe",
+   "target": "tim-reynon",
+   "relationship": "council",
+   "weight": 5
+  },
+  {
+   "source": "puyallup-tribe",
+   "target": "ryan-mello",
+   "relationship": "donated",
+   "weight": 4
+  },
+  {
+   "source": "puyallup-tribe",
+   "target": "pierce-gop",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "puyallup-tribe",
+   "target": "pierce-dem",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "multicare",
+   "target": "bill-robertson",
+   "relationship": "ceo",
+   "weight": 7
+  },
+  {
+   "source": "multicare",
+   "target": "florence-chang",
+   "relationship": "president",
+   "weight": 6
+  },
+  {
+   "source": "multicare",
+   "target": "john-wiborg",
+   "relationship": "board_chair",
+   "weight": 6
+  },
+  {
+   "source": "multicare",
+   "target": "vmfh",
+   "relationship": "wellfound_jv",
+   "weight": 5
+  },
+  {
+   "source": "multicare",
+   "target": "plu",
+   "relationship": "partnership",
+   "weight": 5
+  },
+  {
+   "source": "multicare",
+   "target": "tcc",
+   "relationship": "board",
+   "weight": 4
+  },
+  {
+   "source": "multicare",
+   "target": "pierce-dem",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "vmfh",
+   "target": "uli-chi",
+   "relationship": "board_chair",
+   "weight": 6
+  },
+  {
+   "source": "vmfh",
+   "target": "julie-manas",
+   "relationship": "president",
+   "weight": 5
+  },
+  {
+   "source": "vmfh",
+   "target": "diann-puls",
+   "relationship": "board",
+   "weight": 4
+  },
+  {
+   "source": "vmfh",
+   "target": "weyerhaeuser",
+   "relationship": "board_tie",
+   "weight": 3
+  },
+  {
+   "source": "jblm",
+   "target": "ltg-mcfarlane",
+   "relationship": "commands",
+   "weight": 7
+  },
+  {
+   "source": "jblm",
+   "target": "county-council",
+   "relationship": "ssmcp",
+   "weight": 5
+  },
+  {
+   "source": "port-tacoma",
+   "target": "john-mccarthy",
+   "relationship": "commissioner",
+   "weight": 7
+  },
+  {
+   "source": "port-tacoma",
+   "target": "jt-wilcox",
+   "relationship": "commissioner",
+   "weight": 4
+  },
+  {
+   "source": "port-tacoma",
+   "target": "eric-johnson",
+   "relationship": "exec_director",
+   "weight": 5
+  },
+  {
+   "source": "port-tacoma",
+   "target": "ilwu23",
+   "relationship": "employer",
+   "weight": 5
+  },
+  {
+   "source": "port-tacoma",
+   "target": "county-council",
+   "relationship": "oversight",
+   "weight": 4
+  },
+  {
+   "source": "chamber",
+   "target": "tom-pierson",
+   "relationship": "ceo",
+   "weight": 5
+  },
+  {
+   "source": "chamber",
+   "target": "chyna-willman",
+   "relationship": "chair",
+   "weight": 4
+  },
+  {
+   "source": "chamber",
+   "target": "multicare",
+   "relationship": "board",
+   "weight": 4
+  },
+  {
+   "source": "chamber",
+   "target": "port-tacoma",
+   "relationship": "board",
+   "weight": 4
+  },
+  {
+   "source": "chamber",
+   "target": "john-wiborg",
+   "relationship": "board",
+   "weight": 4
+  },
+  {
+   "source": "chamber",
+   "target": "dona-ponepinto",
+   "relationship": "board",
+   "weight": 4
+  },
+  {
+   "source": "chamber",
+   "target": "county-council",
+   "relationship": "influence",
+   "weight": 5
+  },
+  {
+   "source": "news-tribune",
+   "target": "mcclatchy",
+   "relationship": "owned_by",
+   "weight": 5
+  },
+  {
+   "source": "mcclatchy",
+   "target": "chatham-am",
+   "relationship": "owned_by",
+   "weight": 7
+  },
+  {
+   "source": "news-tribune",
+   "target": "stephanie-pedersen",
+   "relationship": "editor",
+   "weight": 4
+  },
+  {
+   "source": "south-sound-biz",
+   "target": "premier-media",
+   "relationship": "owned_by",
+   "weight": 4
+  },
+  {
+   "source": "pierce-gop",
+   "target": "kelly-chambers",
+   "relationship": "donated",
+   "weight": 9
+  },
+  {
+   "source": "pierce-gop",
+   "target": "keith-swank",
+   "relationship": "donated",
+   "weight": 5
+  },
+  {
+   "source": "pierce-gop",
+   "target": "paul-herrera",
+   "relationship": "donated",
+   "weight": 4
+  },
+  {
+   "source": "pierce-dem",
+   "target": "ryan-mello",
+   "relationship": "donated",
+   "weight": 5
+  },
+  {
+   "source": "pierce-dem",
+   "target": "rosie-ayala",
+   "relationship": "donated",
+   "weight": 4
+  },
+  {
+   "source": "pierce-dem",
+   "target": "jani-hitchen",
+   "relationship": "donated",
+   "weight": 4
+  },
+  {
+   "source": "hdcc",
+   "target": "ryan-mello",
+   "relationship": "donated",
+   "weight": 6
+  },
+  {
+   "source": "wea-pac",
+   "target": "ryan-mello",
+   "relationship": "donated",
+   "weight": 4
+  },
+  {
+   "source": "wea-pac",
+   "target": "pierce-dem",
+   "relationship": "aligned",
+   "weight": 3
+  },
+  {
+   "source": "together-pierce",
+   "target": "ryan-mello",
+   "relationship": "ie",
+   "weight": 7
+  },
+  {
+   "source": "nash-cascadia",
+   "target": "ryan-mello",
+   "relationship": "donated",
+   "weight": 4
+  },
+  {
+   "source": "nash-cascadia",
+   "target": "amy-cruver",
+   "relationship": "donated",
+   "weight": 4
+  },
+  {
+   "source": "master-builders",
+   "target": "amy-cruver",
+   "relationship": "donated",
+   "weight": 4
+  },
+  {
+   "source": "michael-shaw",
+   "target": "county-council",
+   "relationship": "lobbyist",
+   "weight": 5
+  },
+  {
+   "source": "gth-gov",
+   "target": "county-council",
+   "relationship": "lobbying",
+   "weight": 4
+  },
+  {
+   "source": "gth-gov",
+   "target": "port-tacoma",
+   "relationship": "lobbying",
+   "weight": 3
+  },
+  {
+   "source": "pclc",
+   "target": "alice-phillips",
+   "relationship": "president",
+   "weight": 5
+  },
+  {
+   "source": "pclc",
+   "target": "pierce-dem",
+   "relationship": "aligned",
+   "weight": 4
+  },
+  {
+   "source": "pclc",
+   "target": "ryan-mello",
+   "relationship": "endorsed",
+   "weight": 4
+  },
+  {
+   "source": "ilwu23",
+   "target": "pclc",
+   "relationship": "member",
+   "weight": 4
+  },
+  {
+   "source": "tacoma-pd-union",
+   "target": "kelly-chambers",
+   "relationship": "donated",
+   "weight": 4
+  },
+  {
+   "source": "gtcf",
+   "target": "kathi-littmann",
+   "relationship": "ceo",
+   "weight": 5
+  },
+  {
+   "source": "gtcf",
+   "target": "united-way",
+   "relationship": "overlap",
+   "weight": 4
+  },
+  {
+   "source": "united-way",
+   "target": "dona-ponepinto",
+   "relationship": "ceo",
+   "weight": 5
+  },
+  {
+   "source": "russell-family",
+   "target": "russell-invest",
+   "relationship": "founded_by",
+   "weight": 5
+  },
+  {
+   "source": "foss-family",
+   "target": "port-tacoma",
+   "relationship": "maritime",
+   "weight": 4
+  },
+  {
+   "source": "uw-tacoma",
+   "target": "sheila-lange",
+   "relationship": "chancellor",
+   "weight": 5
+  },
+  {
+   "source": "uw-tacoma",
+   "target": "county-council",
+   "relationship": "redevelopment",
+   "weight": 4
+  },
+  {
+   "source": "plu",
+   "target": "allan-belton",
+   "relationship": "president",
+   "weight": 5
+  },
+  {
+   "source": "tcc",
+   "target": "ivan-harrell",
+   "relationship": "president",
+   "weight": 5
+  },
+  {
+   "source": "tcc",
+   "target": "dona-ponepinto",
+   "relationship": "board_chair",
+   "weight": 5
+  },
+  {
+   "source": "metro-parks",
+   "target": "matt-mauer",
+   "relationship": "president",
+   "weight": 4
+  },
+  {
+   "source": "pierce-transit",
+   "target": "mike-griffus",
+   "relationship": "ceo",
+   "weight": 4
+  },
+  {
+   "source": "west-pierce-fire",
+   "target": "john-clancy",
+   "relationship": "chair",
+   "weight": 4
+  },
+  {
+   "source": "bruce-dammeier",
+   "target": "pierce-gop",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "bruce-dammeier",
+   "target": "county-council",
+   "relationship": "former_exec",
+   "weight": 3
+  },
+  {
+   "source": "superior-court",
+   "target": "stanley-rumbaugh",
+   "relationship": "judge",
+   "weight": 4
+  },
+  {
+   "source": "court-appeals",
+   "target": "superior-court",
+   "relationship": "hears_appeals",
+   "weight": 4
+  },
+  {
+   "source": "mary-robnett",
+   "target": "superior-court",
+   "relationship": "prosecutes",
+   "weight": 5
+  },
+  {
+   "source": "keith-swank",
+   "target": "superior-court",
+   "relationship": "enforces",
+   "weight": 4
+  },
+  {
+   "source": "chris-gildon",
+   "target": "county-council",
+   "relationship": "state_funding",
+   "weight": 4
+  },
+  {
+   "source": "phil-fortunato",
+   "target": "county-council",
+   "relationship": "state_funding",
+   "weight": 4
+  },
+  {
+   "source": "yasmin-trudeau",
+   "target": "county-council",
+   "relationship": "state_funding",
+   "weight": 4
+  },
+  {
+   "source": "twina-nobles",
+   "target": "county-council",
+   "relationship": "state_funding",
+   "weight": 4
+  },
+  {
+   "source": "steve-conway",
+   "target": "county-council",
+   "relationship": "state_funding",
+   "weight": 4
+  },
+  {
+   "source": "laurie-jinkins",
+   "target": "county-council",
+   "relationship": "state_funding",
+   "weight": 4
+  },
+  {
+   "source": "drew-stokesbary",
+   "target": "county-council",
+   "relationship": "state_funding",
+   "weight": 4
+  },
+  {
+   "source": "melanie-morgan",
+   "target": "county-council",
+   "relationship": "state_funding",
+   "weight": 4
+  },
+  {
+   "source": "chris-gildon",
+   "target": "pierce-gop",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "phil-fortunato",
+   "target": "pierce-gop",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "drew-stokesbary",
+   "target": "pierce-gop",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "yasmin-trudeau",
+   "target": "pierce-dem",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "twina-nobles",
+   "target": "pierce-dem",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "steve-conway",
+   "target": "pierce-dem",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "laurie-jinkins",
+   "target": "pierce-dem",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "melanie-morgan",
+   "target": "pierce-dem",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "maria-cantwell",
+   "target": "county-council",
+   "relationship": "federal_funding",
+   "weight": 4
+  },
+  {
+   "source": "patty-murray",
+   "target": "county-council",
+   "relationship": "federal_funding",
+   "weight": 4
+  },
+  {
+   "source": "emily-randall",
+   "target": "county-council",
+   "relationship": "federal_funding",
+   "weight": 4
+  },
+  {
+   "source": "marilyn-strickland",
+   "target": "county-council",
+   "relationship": "federal_funding",
+   "weight": 4
+  },
+  {
+   "source": "maria-cantwell",
+   "target": "pierce-dem",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "patty-murray",
+   "target": "pierce-dem",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "emily-randall",
+   "target": "pierce-dem",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "marilyn-strickland",
+   "target": "pierce-dem",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "tacoma-schools",
+   "target": "josh-garcia",
+   "relationship": "superintendent",
+   "weight": 5
+  },
+  {
+   "source": "tacoma-schools",
+   "target": "korey-strozier",
+   "relationship": "board_president",
+   "weight": 4
+  },
+  {
+   "source": "clover-park-schools",
+   "target": "jblm",
+   "relationship": "serves",
+   "weight": 4
+  },
+  {
+   "source": "tacoma-schools",
+   "target": "multicare",
+   "relationship": "partnership",
+   "weight": 3
+  },
+  {
+   "source": "healthy-bay",
+   "target": "port-tacoma",
+   "relationship": "oversees",
+   "weight": 4
+  },
+  {
+   "source": "healthy-bay",
+   "target": "weyerhaeuser",
+   "relationship": "holds_accountable",
+   "weight": 3
+  },
+  {
+   "source": "tom-pierson",
+   "target": "pierce-county-econ-dev",
+   "relationship": "acting_director",
+   "weight": 6
+  },
+  {
+   "source": "jt-wilcox",
+   "target": "pierce-gop",
+   "relationship": "former",
+   "weight": 3
+  },
+  {
+   "source": "andrew-strobel",
+   "target": "ryan-mello",
+   "relationship": "advisor",
+   "weight": 5
+  },
+  {
+   "source": "andrew-strobel",
+   "target": "puyallup-tribe",
+   "relationship": "former_planning",
+   "weight": 4
+  },
+  {
+   "source": "andrew-strobel",
+   "target": "tcc",
+   "relationship": "board",
+   "weight": 4
+  },
+  {
+   "source": "lois-bernstein",
+   "target": "multicare",
+   "relationship": "exec",
+   "weight": 5
+  },
+  {
+   "source": "lois-bernstein",
+   "target": "tcc",
+   "relationship": "board",
+   "weight": 4
+  },
+  {
+   "source": "jason-thompson",
+   "target": "multicare",
+   "relationship": "board",
+   "weight": 4
+  },
+  {
+   "source": "jason-thompson",
+   "target": "russell-invest",
+   "relationship": "director",
+   "weight": 4
+  },
+  {
+   "source": "dale-sowell",
+   "target": "multicare",
+   "relationship": "board",
+   "weight": 4
+  },
+  {
+   "source": "dale-sowell",
+   "target": "green-diamond",
+   "relationship": "former_cfo",
+   "weight": 4
+  },
+  {
+   "source": "nathe-lawver",
+   "target": "gtcf",
+   "relationship": "board",
+   "weight": 5
+  },
+  {
+   "source": "nathe-lawver",
+   "target": "united-way",
+   "relationship": "chair",
+   "weight": 5
+  },
+  {
+   "source": "nathe-lawver",
+   "target": "pclc",
+   "relationship": "exec",
+   "weight": 5
+  },
+  {
+   "source": "dona-ponepinto",
+   "target": "tacoma-art-museum",
+   "relationship": "president",
+   "weight": 4
+  },
+  {
+   "source": "diann-puls",
+   "target": "weyerhaeuser",
+   "relationship": "former",
+   "weight": 3
+  },
+  {
+   "source": "multicare",
+   "target": "county-council",
+   "relationship": "tax_exempt_status",
+   "weight": 5
+  },
+  {
+   "source": "puyallup-tribe",
+   "target": "county-council",
+   "relationship": "sovereignty",
+   "weight": 5
+  },
+  {
+   "source": "weyerhaeuser",
+   "target": "county-council",
+   "relationship": "federal_land_grant",
+   "weight": 4
+  },
+  {
+   "source": "rush-development",
+   "target": "chamber",
+   "relationship": "member",
+   "weight": 4
+  },
+  {
+   "source": "rush-development",
+   "target": "county-council",
+   "relationship": "land_use",
+   "weight": 3
+  },
+  {
+   "source": "miles-sand-gravel",
+   "target": "chamber",
+   "relationship": "member",
+   "weight": 4
+  },
+  {
+   "source": "miles-sand-gravel",
+   "target": "county-council",
+   "relationship": "land_use",
+   "weight": 3
+  },
+  {
+   "source": "southport",
+   "target": "chamber",
+   "relationship": "member",
+   "weight": 4
+  },
+  {
+   "source": "southport",
+   "target": "county-council",
+   "relationship": "land_use",
+   "weight": 3
+  },
+  {
+   "source": "tucci-sons",
+   "target": "chamber",
+   "relationship": "member",
+   "weight": 4
+  },
+  {
+   "source": "tucci-sons",
+   "target": "county-council",
+   "relationship": "land_use",
+   "weight": 3
+  },
+  {
+   "source": "lincoln-park",
+   "target": "chamber",
+   "relationship": "member",
+   "weight": 4
+  },
+  {
+   "source": "lincoln-park",
+   "target": "county-council",
+   "relationship": "land_use",
+   "weight": 3
+  },
+  {
+   "source": "nall-capital",
+   "target": "chamber",
+   "relationship": "member",
+   "weight": 4
+  },
+  {
+   "source": "nall-capital",
+   "target": "county-council",
+   "relationship": "land_use",
+   "weight": 3
+  },
+  {
+   "source": "wa-realtors-pac",
+   "target": "county-council",
+   "relationship": "donated",
+   "weight": 4
+  },
+  {
+   "source": "wa-realtors-pac",
+   "target": "chamber",
+   "relationship": "aligned",
+   "weight": 3
+  },
+  {
+   "source": "chamber",
+   "target": "candidate-academy",
+   "relationship": "runs",
+   "weight": 6
+  },
+  {
+   "source": "candidate-academy",
+   "target": "county-council",
+   "relationship": "trains_candidates",
+   "weight": 5
+  },
+  {
+   "source": "edb",
+   "target": "chamber",
+   "relationship": "partner",
+   "weight": 4
+  },
+  {
+   "source": "edb",
+   "target": "county-council",
+   "relationship": "influence",
+   "weight": 3
+  },
+  {
+   "source": "vmfh",
+   "target": "commonspirit",
+   "relationship": "owned_by",
+   "weight": 6
+  },
+  {
+   "source": "multicare",
+   "target": "wellfound",
+   "relationship": "jv",
+   "weight": 5
+  },
+  {
+   "source": "vmfh",
+   "target": "wellfound",
+   "relationship": "jv",
+   "weight": 5
+  },
+  {
+   "source": "multicare",
+   "target": "wsha",
+   "relationship": "member",
+   "weight": 4
+  },
+  {
+   "source": "vmfh",
+   "target": "wsha",
+   "relationship": "member",
+   "weight": 4
+  },
+  {
+   "source": "wsha",
+   "target": "hhfpac",
+   "relationship": "runs",
+   "weight": 5
+  },
+  {
+   "source": "hhfpac",
+   "target": "county-council",
+   "relationship": "lobbies",
+   "weight": 4
+  },
+  {
+   "source": "adam-smith",
+   "target": "jblm",
+   "relationship": "armed_services_champion",
+   "weight": 6
+  },
+  {
+   "source": "adam-smith",
+   "target": "county-council",
+   "relationship": "federal_funding",
+   "weight": 4
+  },
+  {
+   "source": "kim-schrier",
+   "target": "county-council",
+   "relationship": "federal_funding",
+   "weight": 3
+  },
+  {
+   "source": "deb-krishnadasan",
+   "target": "county-council",
+   "relationship": "state_funding",
+   "weight": 4
+  },
+  {
+   "source": "jake-fey",
+   "target": "pierce-transit",
+   "relationship": "transit_funding",
+   "weight": 5
+  },
+  {
+   "source": "jake-fey",
+   "target": "county-council",
+   "relationship": "state_funding",
+   "weight": 4
+  },
+  {
+   "source": "bob-ferguson",
+   "target": "superior-court",
+   "relationship": "appoints_judges",
+   "weight": 5
+  },
+  {
+   "source": "bob-ferguson",
+   "target": "county-council",
+   "relationship": "appoints",
+   "weight": 4
+  },
+  {
+   "source": "dick-marzano",
+   "target": "port-tacoma",
+   "relationship": "commissioner",
+   "weight": 5
+  },
+  {
+   "source": "deanna-keller",
+   "target": "port-tacoma",
+   "relationship": "commissioner",
+   "weight": 4
+  },
+  {
+   "source": "kristin-ang",
+   "target": "port-tacoma",
+   "relationship": "commissioner",
+   "weight": 4
+  },
+  {
+   "source": "port-tacoma",
+   "target": "nwsa",
+   "relationship": "operates",
+   "weight": 5
+  },
+  {
+   "source": "foss-family",
+   "target": "saltchuk",
+   "relationship": "parent",
+   "weight": 5
+  },
+  {
+   "source": "erika-tucci",
+   "target": "cheney-foundation",
+   "relationship": "ed",
+   "weight": 5
+  },
+  {
+   "source": "lin-zhou",
+   "target": "bates-tech",
+   "relationship": "president",
+   "weight": 5
+  },
+  {
+   "source": "russell-family",
+   "target": "museum-of-glass",
+   "relationship": "legacy",
+   "weight": 4
+  },
+  {
+   "source": "pierce-county-library",
+   "target": "county-council",
+   "relationship": "taxing",
+   "weight": 3
+  },
+  {
+   "source": "flood-control-zone",
+   "target": "county-council",
+   "relationship": "taxing",
+   "weight": 3
+  },
+  {
+   "source": "tacoma-public-utilities",
+   "target": "county-council",
+   "relationship": "municipal",
+   "weight": 4
+  },
+  {
+   "source": "sumner-bonney-lake",
+   "target": "county-council",
+   "relationship": "levy",
+   "weight": 3
+  },
+  {
+   "source": "university-place-schools",
+   "target": "county-council",
+   "relationship": "levy",
+   "weight": 3
+  },
+  {
+   "source": "east-pierce-fire",
+   "target": "county-council",
+   "relationship": "taxing",
+   "weight": 3
+  },
+  {
+   "source": "gig-harbor-fire",
+   "target": "county-council",
+   "relationship": "taxing",
+   "weight": 3
+  },
+  {
+   "source": "teamsters",
+   "target": "pclc",
+   "relationship": "member",
+   "weight": 4
+  },
+  {
+   "source": "teamsters",
+   "target": "county-council",
+   "relationship": "endorses",
+   "weight": 3
+  },
+  {
+   "source": "jblm",
+   "target": "ssmcp",
+   "relationship": "coordinates",
+   "weight": 5
+  },
+  {
+   "source": "county-council",
+   "target": "ssmcp",
+   "relationship": "coordinates",
+   "weight": 4
+  },
+  {
+   "source": "pmba",
+   "target": "jblm",
+   "relationship": "supports",
+   "weight": 4
+  },
+  {
+   "source": "tacoma-weekly",
+   "target": "county-council",
+   "relationship": "covers",
+   "weight": 3
+  },
+  {
+   "source": "puyallup-tribe",
+   "target": "amy-cruver",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "puyallup-tribe",
+   "target": "jani-hitchen",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "puyallup-tribe",
+   "target": "rosie-ayala",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "ilwu23",
+   "target": "jani-hitchen",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "master-builders",
+   "target": "paul-herrera",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "john-wiborg",
+   "target": "gtcf",
+   "relationship": "former_board",
+   "weight": 3
+  },
+  {
+   "source": "john-wiborg",
+   "target": "uw-tacoma",
+   "relationship": "honored",
+   "weight": 3
+  },
+  {
+   "source": "county-council",
+   "target": "keith-swank",
+   "relationship": "appropriates",
+   "weight": 5
+  },
+  {
+   "source": "county-council",
+   "target": "mary-robnett",
+   "relationship": "appropriates",
+   "weight": 5
+  },
+  {
+   "source": "county-council",
+   "target": "superior-court",
+   "relationship": "appropriates",
+   "weight": 5
+  },
+  {
+   "source": "county-council",
+   "target": "district-court",
+   "relationship": "appropriates",
+   "weight": 4
+  },
+  {
+   "source": "linda-farmer",
+   "target": "county-council",
+   "relationship": "elected_by_voters",
+   "weight": 4
+  },
+  {
+   "source": "marty-campbell",
+   "target": "county-council",
+   "relationship": "elected_by_voters",
+   "weight": 4
+  },
+  {
+   "source": "bill-sterud",
+   "target": "puyallup-tribe",
+   "relationship": "chairman",
+   "weight": 8
+  },
+  {
+   "source": "twina-nobles",
+   "target": "university-place-schools",
+   "relationship": "board_member",
+   "weight": 4
+  },
+  {
+   "source": "jim-kastama",
+   "target": "puyallup-schools",
+   "relationship": "city_council",
+   "weight": 3
+  },
+  {
+   "source": "anders-ibsen",
+   "target": "metro-parks",
+   "relationship": "mayor",
+   "weight": 3
+  },
+  {
+   "source": "jblm",
+   "target": "county-council",
+   "relationship": "federal_appropriations",
+   "weight": 6
+  },
+  {
+   "source": "port-tacoma",
+   "target": "county-council",
+   "relationship": "property_tax_levy",
+   "weight": 5
+  },
+  {
+   "source": "chamber",
+   "target": "county-council",
+   "relationship": "tax_exempt_status",
+   "weight": 4
+  },
+  {
+   "source": "central-pierce-fire",
+   "target": "county-council",
+   "relationship": "taxing",
+   "weight": 3
+  },
+  {
+   "source": "central-pierce-fire",
+   "target": "east-pierce-fire",
+   "relationship": "peer_district",
+   "weight": 2
+  },
+  {
+   "source": "central-pierce-fire",
+   "target": "west-pierce-fire",
+   "relationship": "peer_district",
+   "weight": 2
+  },
+  {
+   "source": "bethel-schools",
+   "target": "county-council",
+   "relationship": "levy",
+   "weight": 3
+  },
+  {
+   "source": "bethel-schools",
+   "target": "puyallup-schools",
+   "relationship": "boundary_tension",
+   "weight": 2
+  },
+  {
+   "source": "catholic-archdiocese",
+   "target": "vmfh",
+   "relationship": "religious_sponsor",
+   "weight": 3
+  },
+  {
+   "source": "catholic-archdiocese",
+   "target": "commonspirit",
+   "relationship": "religious_affiliation",
+   "weight": 2
+  },
+  {
+   "source": "columbia-bank",
+   "target": "weyerhaeuser",
+   "relationship": "chairman_tie",
+   "weight": 3
+  },
+  {
+   "source": "columbia-bank",
+   "target": "chamber",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "columbia-bank",
+   "target": "gtcf",
+   "relationship": "board",
+   "weight": 2
+  },
+  {
+   "source": "tacoma-housing-auth",
+   "target": "tacoma-city-council",
+   "relationship": "redevelopment",
+   "weight": 3
+  },
+  {
+   "source": "tacoma-housing-auth",
+   "target": "county-council",
+   "relationship": "redevelopment",
+   "weight": 3
+  },
+  {
+   "source": "tacoma-housing-auth",
+   "target": "rush-development",
+   "relationship": "developer_partner",
+   "weight": 2
+  },
+  {
+   "source": "knkx",
+   "target": "news-tribune",
+   "relationship": "peer_newsroom",
+   "weight": 2
+  },
+  {
+   "source": "knkx",
+   "target": "chamber",
+   "relationship": "covers",
+   "weight": 2
+  },
+  {
+   "source": "knkx",
+   "target": "county-council",
+   "relationship": "covers",
+   "weight": 2
+  },
+  {
+   "source": "knkx",
+   "target": "tpchd",
+   "relationship": "covers",
+   "weight": 2
+  },
+  {
+   "source": "weyerhaeuser",
+   "target": "mary-robnett",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "weyerhaeuser",
+   "target": "chamber",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "puyallup-tribe",
+   "target": "county-council",
+   "relationship": "lobbying",
+   "weight": 5
+  },
+  {
+   "source": "multicare",
+   "target": "county-council",
+   "relationship": "lobbying",
+   "weight": 4
+  },
+  {
+   "source": "vmfh",
+   "target": "county-council",
+   "relationship": "lobbying",
+   "weight": 4
+  },
+  {
+   "source": "tacoma-city-council",
+   "target": "county-council",
+   "relationship": "lobbying",
+   "weight": 3
+  },
+  {
+   "source": "miles-sand-gravel",
+   "target": "kelly-chambers",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "miles-sand-gravel",
+   "target": "paul-herrera",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "miles-sand-gravel",
+   "target": "amy-cruver",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "subaru-puyallup",
+   "target": "kelly-chambers",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "toyota-puyallup",
+   "target": "kelly-chambers",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "rush-development",
+   "target": "kelly-chambers",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "southport",
+   "target": "kelly-chambers",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "tucci-sons",
+   "target": "kelly-chambers",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "lincoln-park",
+   "target": "kelly-chambers",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "nall-capital",
+   "target": "kelly-chambers",
+   "relationship": "donated",
+   "weight": 3
+  },
+  {
+   "source": "tacoma-schools",
+   "target": "county-council",
+   "relationship": "school_bond",
+   "weight": 4
+  },
+  {
+   "source": "pierce-transit",
+   "target": "county-council",
+   "relationship": "ballot_measure",
+   "weight": 4
+  },
+  {
+   "source": "tacoma-city-council",
+   "target": "anders-ibsen",
+   "relationship": "mayor",
+   "weight": 5
+  },
+  {
+   "source": "tacoma-city-council",
+   "target": "ryan-mello",
+   "relationship": "county_partnership",
+   "weight": 3
+  },
+  {
+   "source": "tacoma-city-council",
+   "target": "sound-transit",
+   "relationship": "board",
+   "weight": 3
+  },
+  {
+   "source": "tacoma-city-council",
+   "target": "chamber",
+   "relationship": "partnership",
+   "weight": 3
+  },
+  {
+   "source": "tpchd",
+   "target": "ryan-mello",
+   "relationship": "board_of_health",
+   "weight": 3
+  },
+  {
+   "source": "tpchd",
+   "target": "county-council",
+   "relationship": "board_of_health",
+   "weight": 3
+  },
+  {
+   "source": "tpchd",
+   "target": "tacoma-city-council",
+   "relationship": "board_of_health",
+   "weight": 3
+  },
+  {
+   "source": "tpchd",
+   "target": "knkx",
+   "relationship": "covered_by",
+   "weight": 2
+  },
+  {
+   "source": "boeing",
+   "target": "jblm",
+   "relationship": "aerospace_partner",
+   "weight": 3
+  },
+  {
+   "source": "boeing",
+   "target": "chamber",
+   "relationship": "board",
+   "weight": 3
+  },
+  {
+   "source": "boeing",
+   "target": "edb",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "amazon",
+   "target": "chamber",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "amazon",
+   "target": "edb",
+   "relationship": "member",
+   "weight": 3
+  },
+  {
+   "source": "pse",
+   "target": "county-council",
+   "relationship": "utility",
+   "weight": 3
+  },
+  {
+   "source": "pse",
+   "target": "tacoma-public-utilities",
+   "relationship": "peer_utility",
+   "weight": 2
+  },
+  {
+   "source": "pse",
+   "target": "chamber",
+   "relationship": "board",
+   "weight": 3
+  },
+  {
+   "source": "banner-bank",
+   "target": "chamber",
+   "relationship": "board_chair",
+   "weight": 3
+  },
+  {
+   "source": "pa-office",
+   "target": "mary-robnett",
+   "relationship": "led_by",
+   "weight": 5
+  },
+  {
+   "source": "pa-office",
+   "target": "superior-court",
+   "relationship": "prosecutes",
+   "weight": 4
+  },
+  {
+   "source": "pa-office",
+   "target": "keith-swank",
+   "relationship": "conflict",
+   "weight": 3
+  },
+  {
+   "source": "pa-office",
+   "target": "county-council",
+   "relationship": "appropriates",
+   "weight": 4
+  },
+  {
+   "source": "federal-district-court",
+   "target": "superior-court",
+   "relationship": "federal_oversight",
+   "weight": 3
+  },
+  {
+   "source": "federal-district-court",
+   "target": "keith-swank",
+   "relationship": "federal_cases",
+   "weight": 3
+  },
+  {
+   "source": "federal-district-court",
+   "target": "pa-office",
+   "relationship": "federal_cases",
+   "weight": 3
+  },
+  {
+   "source": "adam-smith",
+   "target": "multicare",
+   "relationship": "federal_funding",
+   "weight": 2.0
+  },
+  {
+   "source": "anders-ibsen",
+   "target": "tpchd",
+   "relationship": "board",
+   "weight": 2.0
+  },
+  {
+   "source": "anders-ibsen",
+   "target": "pierce-transit",
+   "relationship": "social",
+   "weight": 2.0
+  },
+  {
+   "source": "florence-chang",
+   "target": "bates-tech",
+   "relationship": "appointed",
+   "weight": 1.0
+  },
+  {
+   "source": "chamber",
+   "target": "ssmcp",
+   "relationship": "member",
+   "weight": 3.0
+  },
+  {
+   "source": "chatham-am",
+   "target": "news-tribune",
+   "relationship": "owned_by",
+   "weight": 5.0
+  },
+  {
+   "source": "dona-ponepinto",
+   "target": "nathe-lawver",
+   "relationship": "colleague",
+   "weight": 3.0
+  },
+  {
+   "source": "dona-ponepinto",
+   "target": "tcc",
+   "relationship": "appointed",
+   "weight": 4.0
+  },
+  {
+   "source": "gth-gov",
+   "target": "chamber",
+   "relationship": "member",
+   "weight": 2.0
+  },
+  {
+   "source": "gth-gov",
+   "target": "jblm",
+   "relationship": "lobbying",
+   "weight": 2.0
+  },
+  {
+   "source": "jblm",
+   "target": "chamber",
+   "relationship": "social",
+   "weight": 2.0
+  },
+  {
+   "source": "jblm",
+   "target": "port-tacoma",
+   "relationship": "contract",
+   "weight": 3.0
+  },
+  {
+   "source": "john-wiborg",
+   "target": "dona-ponepinto",
+   "relationship": "colleague",
+   "weight": 2.0
+  },
+  {
+   "source": "john-wiborg",
+   "target": "tom-pierson",
+   "relationship": "colleague",
+   "weight": 2.0
+  },
+  {
+   "source": "nathe-lawver",
+   "target": "dona-ponepinto",
+   "relationship": "colleague",
+   "weight": 3.0
+  },
+  {
+   "source": "pclc",
+   "target": "pierce-dem",
+   "relationship": "endorses",
+   "weight": 4.0
+  },
+  {
+   "source": "pierce-dem",
+   "target": "pclc",
+   "relationship": "colleague",
+   "weight": 3.0
+  },
+  {
+   "source": "pierce-gop",
+   "target": "amy-cruver",
+   "relationship": "endorses",
+   "weight": 3.0
+  },
+  {
+   "source": "pierce-gop",
+   "target": "dave-morell",
+   "relationship": "endorses",
+   "weight": 3.0
+  },
+  {
+   "source": "pierce-transit",
+   "target": "tacoma-city-council",
+   "relationship": "board",
+   "weight": 3.0
+  },
+  {
+   "source": "pierce-transit",
+   "target": "sound-transit",
+   "relationship": "contract",
+   "weight": 4.0
+  },
+  {
+   "source": "pse",
+   "target": "gth-gov",
+   "relationship": "lobbying",
+   "weight": 2.0
+  },
+  {
+   "source": "puyallup-tribe",
+   "target": "ssmcp",
+   "relationship": "member",
+   "weight": 3.0
+  },
+  {
+   "source": "puyallup-tribe",
+   "target": "bob-ferguson",
+   "relationship": "lobbying",
+   "weight": 4.0
+  },
+  {
+   "source": "rosie-ayala",
+   "target": "metro-parks",
+   "relationship": "board",
+   "weight": 2.0
+  },
+  {
+   "source": "rosie-ayala",
+   "target": "flood-control-zone",
+   "relationship": "board",
+   "weight": 2.0
+  },
+  {
+   "source": "rush-development",
+   "target": "multicare",
+   "relationship": "jv",
+   "weight": 3.0
+  },
+  {
+   "source": "rush-development",
+   "target": "gig-harbor-fire",
+   "relationship": "land_use",
+   "weight": 2.0
+  },
+  {
+   "source": "ryan-mello",
+   "target": "united-way",
+   "relationship": "social",
+   "weight": 2.0
+  },
+  {
+   "source": "ryan-mello",
+   "target": "tacoma-city-council",
+   "relationship": "member",
+   "weight": 5.0
+  },
+  {
+   "source": "southport",
+   "target": "tacoma-housing-auth",
+   "relationship": "member",
+   "weight": 2.0
+  },
+  {
+   "source": "steve-conway",
+   "target": "yasmin-trudeau",
+   "relationship": "colleague",
+   "weight": 3.0
+  },
+  {
+   "source": "tacoma-city-council",
+   "target": "pierce-transit",
+   "relationship": "board",
+   "weight": 3.0
+  },
+  {
+   "source": "tacoma-city-council",
+   "target": "tacoma-public-utilities",
+   "relationship": "board",
+   "weight": 3.0
+  },
+  {
+   "source": "tacoma-city-council",
+   "target": "metro-parks",
+   "relationship": "board",
+   "weight": 2.0
+  },
+  {
+   "source": "tom-pierson",
+   "target": "pierce-county-econ-dev",
+   "relationship": "appointed",
+   "weight": 4.0
+  },
+  {
+   "source": "tpchd",
+   "target": "commonspirit",
+   "relationship": "member",
+   "weight": 2.0
+  },
+  {
+   "source": "tpchd",
+   "target": "multicare",
+   "relationship": "member",
+   "weight": 2.0
+  },
+  {
+   "source": "twina-nobles",
+   "target": "jblm",
+   "relationship": "colleague",
+   "weight": 3.0
+  },
+  {
+   "source": "twina-nobles",
+   "target": "multicare",
+   "relationship": "board",
+   "weight": 2.0
+  },
+  {
+   "source": "wa-realtors-pac",
+   "target": "steve-conway",
+   "relationship": "donated",
+   "weight": 2.0
+  },
+  {
+   "source": "yasmin-trudeau",
+   "target": "steve-conway",
+   "relationship": "colleague",
+   "weight": 3.0
+  },
+  {
+   "source": "bryan-yambe",
+   "target": "jani-hitchen",
+   "relationship": "endorses",
+   "weight": 1.0
+  },
+  {
+   "source": "dave-morell",
+   "target": "edb",
+   "relationship": "board",
+   "weight": 2.0
+  },
+  {
+   "source": "emily-randall",
+   "target": "maria-cantwell",
+   "relationship": "colleague",
+   "weight": 2.0
+  },
+  {
+   "source": "emily-randall",
+   "target": "patty-murray",
+   "relationship": "colleague",
+   "weight": 2.0
+  },
+  {
+   "source": "sheila-lange",
+   "target": "gtcf",
+   "relationship": "board_chair",
+   "weight": 4.0
+  },
+  {
+   "source": "hdcc",
+   "target": "pierce-dem",
+   "relationship": "member",
+   "weight": 3.0
+  },
+  {
+   "source": "jake-fey",
+   "target": "laurie-jinkins",
+   "relationship": "colleague",
+   "weight": 2.0
+  },
+  {
+   "source": "john-clancy",
+   "target": "clover-park-schools",
+   "relationship": "member",
+   "weight": 1.0
+  },
+  {
+   "source": "kathi-littmann",
+   "target": "plu",
+   "relationship": "board",
+   "weight": 3.0
+  },
+  {
+   "source": "kim-schrier",
+   "target": "marilyn-strickland",
+   "relationship": "colleague",
+   "weight": 2.0
+  },
+  {
+   "source": "korey-strozier",
+   "target": "tacoma-schools",
+   "relationship": "board_chair",
+   "weight": 4.0
+  },
+  {
+   "source": "laurie-jinkins",
+   "target": "jake-fey",
+   "relationship": "colleague",
+   "weight": 3.0
+  },
+  {
+   "source": "laurie-jinkins",
+   "target": "patty-murray",
+   "relationship": "colleague",
+   "weight": 2.0
+  },
+  {
+   "source": "maria-cantwell",
+   "target": "patty-murray",
+   "relationship": "colleague",
+   "weight": 4.0
+  },
+  {
+   "source": "maria-cantwell",
+   "target": "emily-randall",
+   "relationship": "colleague",
+   "weight": 2.0
+  },
+  {
+   "source": "melanie-morgan",
+   "target": "laurie-jinkins",
+   "relationship": "colleague",
+   "weight": 3.0
+  },
+  {
+   "source": "museum-of-glass",
+   "target": "uw-tacoma",
+   "relationship": "board",
+   "weight": 2.0
+  },
+  {
+   "source": "patty-murray",
+   "target": "maria-cantwell",
+   "relationship": "colleague",
+   "weight": 4.0
+  },
+  {
+   "source": "patty-murray",
+   "target": "emily-randall",
+   "relationship": "colleague",
+   "weight": 3.0
+  },
+  {
+   "source": "pclc",
+   "target": "gtcf",
+   "relationship": "board",
+   "weight": 3.0
+  },
+  {
+   "source": "ryan-mello",
+   "target": "tcc",
+   "relationship": "board",
+   "weight": 3.0
+  },
+  {
+   "source": "tcc",
+   "target": "puyallup-tribe",
+   "relationship": "board",
+   "weight": 3.0
+  },
+  {
+   "source": "tcc",
+   "target": "tacoma-public-utilities",
+   "relationship": "board",
+   "weight": 3.0
+  },
+  {
+   "source": "tim-reynon",
+   "target": "bob-ferguson",
+   "relationship": "appointed",
+   "weight": 3.0
+  },
+  {
+   "source": "united-way",
+   "target": "tacoma-public-utilities",
+   "relationship": "board",
+   "weight": 3.0
+  },
+  {
+   "source": "united-way",
+   "target": "pierce-transit",
+   "relationship": "board",
+   "weight": 3.0
+  },
+  {
+   "source": "united-way",
+   "target": "columbia-bank",
+   "relationship": "board",
+   "weight": 2.0
+  },
+  {
+   "source": "united-way",
+   "target": "tacoma-schools",
+   "relationship": "board",
+   "weight": 2.0
+  }
+ ]
+}
