@@ -1,0 +1,200 @@
+{
+ "_purpose": "Rendering rules for UI v3 ego-spoke labels + connections digest. Raw edge direction is NOT safe to gloss with a verb for all relationship types. Read the three rule blocks before wiring labels.",
+ "_measured": "342 edges, 109 distinct relationship values, all edges carry exactly {source,target,relationship,rel_class,weight} (no notes; provenance lives in profiles/*.md edge lines).",
+ "rule_1_money_is_directional_safe": {
+  "rels": [
+   "donated",
+   "ie"
+  ],
+  "verdict": "Directional gloss OK. Source=donor/spender, target=recipient/beneficiary, consistent across all 34 donated edges (30 org->person, 4 org->org) and the single ie edge; cross-checked against 12 profile fact lines (hdcc->mello w6, puyallup-tribe->mello w4, wea-pac->mello w4, nash-cascadia->mello w4, miles-sand-gravel->kelly-chambers w3, pierce-gop->chambers w9, etc).",
+  "render": "center is source -> '<verb> <neighbor>' ('donated to X', 'independent spending for X'); center is target -> '<verb> from X' ('donated by X', 'independent spending for X' [recipient-side]).",
+  "gloss": {
+   "donated": "donated to / donated by",
+   "ie": "independent spending for"
+  }
+ },
+ "rule_2_role_family_needs_role_noun_not_verb": {
+  "why": "Direction is mixed WITHIN these types, measured this pass. A raw-direction verb gloss produces wrong sentences for roughly half.",
+  "rels_with_mixed_or_inconsistent_direction": {
+   "commissioner": "2 org->person (port-tacoma->mccarthy, port-tacoma->jt-wilcox) + 3 person->org (marzano, keller, ang -> port-tacoma)",
+   "chair": "3 person->org (hitchen->council, walker->transit, lawver->united-way) + 2 org->person (chamber->willman, west-pierce-fire->clancy)",
+   "president": "6 org->person (multicare->chang etc) + 2 person->org (ponepinto->tacoma-art-museum, lin-zhou->bates-tech)",
+   "board_chair": "3 org->person + 2 person->org + 1 org->org (banner-bank->chamber)",
+   "mayor": "1 person->org (ibsen->metro-parks) + 1 org->person (tacoma-city-council->ibsen)",
+   "board": "16 person->org + 3 org->person + 19 org->org",
+   "prosecutes": "1 person->org (robnett->superior-court) + 1 org->org (pa-office->superior-court)"
+  },
+  "render": "Do NOT say who acts when the rel is a role seat. Render the ROLE NOUN anchored to the organization, which reads correctly from either side: 'Commissioner at Port of Tacoma', 'Chair of Pierce Transit', 'CEO of MultiCare', 'Vice chair of Sound Transit', 'Board seat at TCC'. On the organization's page the same spoke reads 'Commissioner: John McCarthy' (role label + holder), never 'commissioner of John McCarthy'.",
+  "role_rels": [
+   "ceo",
+   "president",
+   "chair",
+   "board_chair",
+   "board_president",
+   "chairman",
+   "chancellor",
+   "superintendent",
+   "judge",
+   "exec_director",
+   "commissioner",
+   "mayor",
+   "cfo",
+   "ed",
+   "exec",
+   "acting_director",
+   "lobbyist",
+   "editor",
+   "director",
+   "vice_chair",
+   "board",
+   "board_member",
+   "council",
+   "board_of_health",
+   "appointed"
+  ]
+ },
+ "rule_3_special_cases": [
+  {
+   "edge": "jblm --commands--> ltg-mcfarlane (w7)",
+   "problem": "Raw reading 'JBLM commands LTG McFarlane' is backwards. Provenance (profiles/ltg-mcfarlane.md edge line: 'ltg-mcfarlane, target=jblm, relationship=commands, weight=7') confirms the correct fact: LTG McFarlane commands JBLM.",
+   "render": "On McFarlane page: 'Commanding general of JBLM'. On JBLM page: 'Commanded by LTG McFarlane'."
+  },
+  {
+   "edge": "chatham-am --owned_by--> news-tribune (w5)",
+   "problem": "Ownership chain on the graph is newspaper --owned_by--> mcclatchy --> chatham-am, so this third edge duplicates the chain with an inverted reading. Also note news-tribune's own page: 'news-tribune --owned_by--> mcclatchy' is correct; 'chatham-am --owned_by--> news-tribune' is not.",
+   "render": "Skip the direct Chatham->Tribune edge when both chain edges are present in the same ego; or gloss the chain for readers: 'Owned by McClatchy (owned by Chatham Asset Management)'."
+  },
+  {
+   "edge": "ryan-mello --member--> tacoma-city-council (w5)",
+   "problem": "'member' gloss would claim Mello is a current member; fact line says 'Tacoma City Council Position 7, 2010-2019 (term-limited 2019)'. He is a FORMER member; the current tie is the separate county_partnership edge (tacoma-city-council -> ryan-mello w3).",
+   "render": "'Former member (2010-2019)' + separate 'County partnership' spoke."
+  },
+  {
+   "edge": "tpchd --member--> multicare / commonspirit (w2 each)",
+   "problem": "org->org 'member' via the Perinatal Collaborative board (shared board seats), not membership. Reading 'MultiCare is a member of TPCHD' is wrong.",
+   "render": "'Shares perinatal board' / 'Board tie (PCPC)'."
+  },
+  {
+   "edge": "kristina-walker --chair--> pierce-transit (w5) and dona-ponepinto --appointed--> tcc (w4)",
+   "note": "These are correct as-is; listed so the role-noun rule isn't over-applied. Walker chairs the transit commission; Ponepinto was appointed to the TCC board."
+  }
+ ],
+ "multi_edge_pairs": {
+  "_note": "19 node pairs carry 2+ edges. 12 are legitimately multi-relational - do NOT merge; render multiple labels (or keep the strongest + a count). 7 are same-rel mirrors - collapse before drawing (designer already claimed this fix; list here as the authoritative set).",
+  "mirrors_collapse": [
+   [
+    "dona-ponepinto",
+    "nathe-lawver",
+    "colleague",
+    "w3 both directions"
+   ],
+   [
+    "pierce-transit",
+    "tacoma-city-council",
+    "board",
+    "w3 both directions"
+   ],
+   [
+    "steve-conway",
+    "yasmin-trudeau",
+    "colleague",
+    "w3 both directions"
+   ],
+   [
+    "emily-randall",
+    "maria-cantwell",
+    "colleague",
+    "w2 both directions"
+   ],
+   [
+    "emily-randall",
+    "patty-murray",
+    "colleague",
+    "w2 + w3 (also weight mismatch)"
+   ],
+   [
+    "jake-fey",
+    "laurie-jinkins",
+    "colleague",
+    "w2 + w3 (also weight mismatch)"
+   ],
+   [
+    "maria-cantwell",
+    "patty-murray",
+    "colleague",
+    "w4 both directions"
+   ]
+  ],
+  "multi_rel_keep": [
+   [
+    "chamber",
+    "county-council",
+    "influence w5 + tax_exempt_status w4"
+   ],
+   [
+    "county-council",
+    "jblm",
+    "ssmcp w5 + federal_appropriations w6"
+   ],
+   [
+    "county-council",
+    "multicare",
+    "tax_exempt_status w5 + lobbying w4"
+   ],
+   [
+    "county-council",
+    "port-tacoma",
+    "oversight w4 + property_tax_levy w5"
+   ],
+   [
+    "county-council",
+    "puyallup-tribe",
+    "sovereignty w5 + lobbying w5"
+   ],
+   [
+    "dona-ponepinto",
+    "tcc",
+    "board_chair w5 + appointed w4"
+   ],
+   [
+    "knkx",
+    "tpchd",
+    "covers w2 + covered_by w2 (mirror pair of DIFFERENT rels - render once)"
+   ],
+   [
+    "korey-strozier",
+    "tacoma-schools",
+    "board_president w4 + board_chair w4 (near-duplicate; consider consolidating to one)"
+   ],
+   [
+    "pclc",
+    "pierce-dem",
+    "aligned w4 + endorses w4 + colleague w3"
+   ],
+   [
+    "pierce-county-econ-dev",
+    "tom-pierson",
+    "acting_director w6 + appointed w4"
+   ],
+   [
+    "pierce-dem",
+    "ryan-mello",
+    "member w3 + donated w5"
+   ],
+   [
+    "ryan-mello",
+    "tacoma-city-council",
+    "county_partnership w3 + member w5"
+   ]
+  ]
+ },
+ "mello_page_gloss_targets": {
+  "_note": "Rank-1 demo page; 19 edges. The only gloss traps on it are the former-member edge and the board_of_health/ie phrasings.",
+  "incoming_donated": "donated by: Puyallup Tribe (w4), Pierce Dems (w5), HDCC (w6), WEA PAC (w4), NASH Cascadia (w4)",
+  "ie": "independent spending for Mello: Together for Pierce (w7)",
+  "endorsed": "endorsed by: PCCLC (w4)",
+  "advisor": "advised by: Andrew Strobel (w5)",
+  "member": "FORMER member, Tacoma City Council 2010-2019 (w5) | member of Pierce Dems (w3)",
+  "veto": "can veto Pierce County Council (w7)"
+ }
+}
