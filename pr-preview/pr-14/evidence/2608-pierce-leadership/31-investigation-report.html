@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who Holds Power in Pierce County — INV-2026-002</title>
+<style>
+  /* Theme tokens adopted from the case's site.json theme block (config-driven, not copied off a screenshot).
+     Money text uses #8A6A0A (4.85:1 on paper) — #B8860B is reserved for non-text graphics (3.12:1 as text fails AA). */
+  :root {
+    --paper: #FAFAFA;
+    --ink: #1B1B1B;
+    --ink-soft: #444444;
+    --muted: #5D4037;
+    --border: #E0E0E0;
+    --hairline: #DDDDDD;
+    --accent: #B8860B;        /* graphics only */
+    --accent-text: #8A6A0A;   /* AA-compliant gold for text */
+    --gold-bright: #E8C547;
+    --money-chip-bg: #FFF8E1;
+    --link: #0B6E6E;
+    --d-government: #1f77b4;
+    --d-economic: #b84a00;
+    --d-institutional: #1e7d32;
+    --d-political: #b71c1c;
+    --d-legal: #6a1b9a;
+    --d-media: #5d4037;
+    --serif: "Iowan Old Style", "Palatino", Georgia, "Times New Roman", serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --measure: 68ch;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--sans); font-size: 16px; line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--link); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+  a:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .skip-link { position: absolute; left: -9999px; }
+  .skip-link:focus { left: 16px; top: 8px; z-index: 50; background: var(--ink); color: var(--paper); padding: 8px 14px; }
+
+  /* ── Masthead ── */
+  .kicker-row { border-bottom: 2px solid var(--ink); }
+  .kicker-row, .report, .colophon-inner { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+  .kicker {
+    display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline;
+    padding: 14px 0 10px; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft);
+  }
+  .kicker .case-id { font-family: var(--sans); font-variant-numeric: tabular-nums; }
+  header.masthead { padding: 40px 0 8px; }
+  .masthead-inner { max-width: 980px; margin: 0 auto; padding: 0 24px; }
+  h1 {
+    font-family: var(--serif); font-weight: 700; font-size: clamp(34px, 5.2vw, 54px);
+    line-height: 1.08; letter-spacing: -0.015em; margin: 0 0 18px; max-width: 20ch;
+  }
+  .dek {
+    font-family: var(--serif); font-style: italic; font-size: clamp(18px, 2.4vw, 21px);
+    line-height: 1.5; color: var(--ink-soft); max-width: 52ch; margin: 0 0 22px;
+  }
+  .byline { font-size: 13.5px; color: var(--ink-soft); padding-bottom: 26px; border-bottom: 1px solid var(--hairline); }
+  .byline strong { color: var(--ink); }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .badge {
+    border: 1px solid var(--border); background: #fff; border-radius: 999px;
+    font-size: 12px; padding: 3px 11px; color: var(--ink-soft); font-variant-numeric: tabular-nums;
+  }
+
+  /* ── Report body ── */
+  .report { padding-top: 34px; }
+  section { margin: 0 0 56px; }
+  .sec-kicker {
+    font-size: 12px; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--accent-text); font-weight: 700; margin: 0 0 6px;
+  }
+  h2 {
+    font-family: var(--serif); font-size: clamp(24px, 3.2vw, 30px); line-height: 1.2;
+    margin: 0 0 14px; letter-spacing: -0.01em;
+  }
+  h3 { font-family: var(--serif); font-size: 19px; margin: 26px 0 8px; }
+  p { max-width: var(--measure); margin: 0 0 16px; }
+  .narrow { max-width: var(--measure); }
+  .lede::first-letter {
+    font-family: var(--serif); font-size: 3.3em; font-weight: 700; float: left;
+    line-height: .82; padding: 6px 10px 0 0; color: var(--ink);
+  }
+  main { display: block; }
+
+  /* ── Context box ── */
+  .context-box {
+    max-width: 980px; margin: 34px auto 0; padding: 0 24px;
+  }
+  .context-card {
+    background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--accent);
+    padding: 22px 26px; max-width: 72ch;
+  }
+  .context-card h2 { font-size: 17px; font-family: var(--sans); text-transform: none; letter-spacing: 0; margin-bottom: 10px; }
+  .context-card p { font-size: 15px; margin-bottom: 10px; }
+  .context-card p:last-child { margin-bottom: 0; }
+
+  /* ── Stat spine ── */
+  .stat-strip { border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); padding: 22px 0; }
+  .stats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 18px 24px; max-width: 980px; }
+  .stat .num { font-family: var(--serif); font-size: 30px; font-weight: 700; line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .stat .lbl { font-size: 12.5px; color: var(--ink-soft); line-height: 1.42; margin-top: 5px; }
+  .stat .src { font-size: 11px; }
+  .stat sup a { text-decoration: none; }
+  sup a { color: var(--accent-text); font-size: 11px; text-decoration: none; }
+
+  /* ── Core finding ── */
+  .finding-hero { background: var(--money-chip-bg); border: 1px solid var(--border); padding: 26px 28px; max-width: 780px; }
+  .finding-hero p { font-family: var(--serif); font-size: 19px; line-height: 1.55; max-width: 62ch; }
+  .finding-hero .interpretation-tag {
+    display: inline-block; font-family: var(--sans); font-size: 11.5px; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--accent-text); border: 1px solid var(--accent);
+    padding: 2px 10px; border-radius: 999px; margin-bottom: 12px;
+  }
+  .loop-figure { margin: 22px 0 6px; }
+  .loop-caption { font-size: 12.5px; color: var(--ink-soft); margin-top: 8px; max-width: 60ch; }
+
+  /* ── Tables ── */
+  .tbl-wrap { max-width: 980px; overflow-x: auto; }
+  table.data { width: 100%; border-collapse: collapse; font-size: 14px; }
+  table.data th {
+    text-align: left; font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--ink-soft); border-bottom: 2px solid var(--ink); padding: 8px 12px 7px;
+  }
+  table.data td { border-bottom: 1px solid var(--hairline); padding: 11px 12px; vertical-align: top; }
+  table.data td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; font-weight: 600; }
+  table.data .basis { display: block; font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+
+  /* ── Ranking list ── */
+  ol.rank-list { list-style: none; margin: 0; padding: 0; counter-reset: rk; max-width: 76ch; }
+  ol.rank-list > li {
+    position: relative; padding: 16px 0 15px 64px; border-bottom: 1px solid var(--hairline); counter-increment: rk;
+  }
+  ol.rank-list > li::before {
+    content: counter(rk);
+    position: absolute; left: 8px; top: 16px; width: 40px; text-align: right;
+    font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--accent-text);
+    font-variant-numeric: tabular-nums;
+  }
+  .rank-name { font-family: var(--serif); font-size: 18px; font-weight: 700; margin: 0 0 3px; }
+  .rank-role { font-size: 13px; color: var(--ink-soft); margin: 0 0 7px; }
+  .rank-why { font-size: 14.5px; margin: 0 0 8px; max-width: 66ch; }
+  .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: 1px; }
+  .chip {
+    display: inline-block; font-size: 11px; letter-spacing: .06em; text-transform: uppercase;
+    border: 1px solid var(--border); border-radius: 3px; padding: 1px 7px; color: var(--ink-soft); background: #fff;
+  }
+  .chip.verified { border-color: var(--d-institutional); color: #1e5c28; }
+  .chip.corrected { border-color: var(--accent); color: var(--accent-text); background: var(--money-chip-bg); }
+
+  /* ── Findings ── */
+  .finding { border-left: 3px solid var(--ink); padding: 2px 0 2px 20px; margin: 0 0 30px; max-width: 74ch; }
+  .finding h3 { margin: 0 0 7px; font-size: 20px; }
+  .finding p:last-child { margin-bottom: 0; }
+
+  /* ── Interlock cards (editorial rows, not a feature grid) ── */
+  .interlock { margin: 0 0 22px; padding-bottom: 20px; border-bottom: 1px solid var(--hairline); max-width: 74ch; }
+  .interlock:last-of-type { border-bottom: 0; }
+  .interlock h3 { margin: 0 0 4px; }
+  .interlock .role { font-size: 13px; color: var(--ink-soft); margin: 0 0 8px; }
+  .interlock p { margin-bottom: 8px; font-size: 15px; }
+
+  /* ── Limitations / RoR boxes ── */
+  .limits-card { background: #fff; border: 1px solid var(--border); padding: 22px 26px; max-width: 76ch; }
+  .limits-card ul { margin: 0 0 0 18px; padding: 0; }
+  .limits-card li { margin-bottom: 9px; font-size: 14.5px; max-width: 66ch; }
+  .ror-card { background: var(--money-chip-bg); border: 1px solid var(--border); padding: 22px 26px; max-width: 76ch; }
+  .ror-card p { margin-bottom: 10px; font-size: 15px; }
+  .ror-card p:last-child { margin-bottom: 0; }
+
+  /* ── Sources ── */
+  ol.src-list { font-size: 13px; color: var(--ink-soft); max-width: 76ch; padding-left: 22px; }
+  ol.src-list li { margin-bottom: 7px; }
+  ol.src-list .eid { font-weight: 700; color: var(--ink); }
+  .url-note { word-break: break-all; }
+
+  /* ── Colophon ── */
+  .colophon { margin-top: 60px; background: var(--ink); color: #D8D8D8; padding: 34px 0 40px; font-size: 13.5px; }
+  .colophon a { color: var(--gold-bright); }
+  .colophon strong { color: #fff; }
+  .colophon p { max-width: none; margin-bottom: 10px; }
+
+  @media (max-width: 640px) {
+    .finding { padding-left: 14px; }
+    ol.rank-list > li { padding-left: 52px; }
+    ol.rank-list > li::before { width: 34px; font-size: 22px; left: 2px; }
+  }
+  @media print {
+    .colophon { background: #fff; color: #333; border-top: 2px solid #000; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to report</a>
+
+<div class="kicker-row">
+  <div class="kicker">
+    <span>Pierce County Leadership Investigation</span>
+    <span class="case-id">Case INV-2026-002 · Compiled from public records</span>
+  </div>
+</div>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <h1>Who Holds Power in Pierce&nbsp;County</h1>
+    <p class="dek">163 people and organizations, mapped and adversarially fact-checked: an elected executive with a $3.5&nbsp;billion budget, six economic anchors built on government-granted advantages, and a small set of people who sit on both sides of the table.</p>
+    <p class="byline"><strong>Research window:</strong> August&nbsp;17 – September&nbsp;20, 2026 · <strong>Method:</strong> public-records mapping (WA PDC, IRS 990s, .gov filings, court and corporate registries) followed by a hostile red-team review in which every claim was treated as wrong until a primary source confirmed it. <strong>~80% of core factual claims survived.</strong> Only surviving claims appear here.</p>
+    <div class="badge-row">
+      <span class="badge">163 entities mapped</span>
+      <span class="badge">342 documented relationships</span>
+      <span class="badge">6 power domains</span>
+      <span class="badge">Red-team verified 2026-09-09</span>
+    </div>
+  </div>
+</header>
+
+<div class="context-box" aria-label="How to read this report">
+  <div class="context-card">
+    <h2>Before you read: three plain-language rules</h2>
+    <p>The county has an elected <strong>Executive</strong> who runs the government, a seven-member <strong>Council</strong> that controls the budget and land use, and separately elected <strong>Sheriff</strong> and <strong>Prosecuting Attorney</strong> who answer only to voters. The Port of Tacoma is its own government with five countywide-elected commissioners. The Puyallup Tribe is a sovereign nation the county cannot tax on trust land.</p>
+    <p><strong>Dollar figures</strong> come from public filings, and the basis is stated next to each one — a regional multiplier is labeled as regional, a settlement is labeled as a settlement, not as current wealth.</p>
+    <p><strong>Overlaps are rendered as overlaps.</strong> Where someone donates to a candidate, sits on a board, or holds two jobs, the report states the documented fact. It does not assert a motive. One reviewer-grade tag is used throughout: <span class="chip verified">verified</span> means a primary source survived adversarial review; <span class="chip corrected">corrected</span> marks the reviewed form of a claim that originally shipped wrong.</p>
+  </div>
+</div>
+
+<main id="main" class="report">
+
+  <!-- ── Stat spine ── -->
+  <section aria-labelledby="spine-h" class="stat-strip-wrap">
+    <div class="stat-strip">
+      <h2 id="spine-h" class="sec-kicker">The county in six numbers</h2>
+      <ul class="stats">
+        <li class="stat"><div class="num">$3.5B</div><div class="lbl">Biennial budget, 2026–27. Adopted Nov 25, 2025; signed Dec 16. <sup><a href="#src-05" title="Source: evidence/05">[E004]</a></sup></div></li>
+        <li class="stat"><div class="num">~77%</div><div class="lbl">Share of the General Fund spent on law enforcement and the courts. <sup><a href="#src-05" title="Source: evidence/05">[E004]</a></sup></div></li>
+        <li class="stat"><div class="num">$12.1B</div><div class="lbl">JBLM economic impact — a <em>combined</em> Pierce + Thurston multiplier figure (Pierce-only direct output ≈ $3.9B). <sup><a href="#src-jblm" title="Source: SSMCP REIA 2023">[E009]</a></sup> <span class="chip corrected">corrected</span></div></li>
+        <li class="stat"><div class="num">$7.2B</div><div class="lbl">MultiCare annual revenue, FY2025 (Fitch-confirmed). <sup><a href="#src-multicare" title="Source: Fitch Ratings">[E009]</a></sup></div></li>
+        <li class="stat"><div class="num">$76B</div><div class="lbl">Waterborne trade moved through the Northwest Seaport Alliance in 2024 (~$68B in 2025). <sup><a href="#src-nwsa" title="Source: NWSA cargo statistics">[E009]</a></sup></div></li>
+        <li class="stat"><div class="num">10.4M</div><div class="lbl">Acres of U.S. timberland held by Weyerhaeuser — traceable to an 1864 federal land grant. <sup><a href="#src-weyer" title="Source: Weyerhaeuser IR">[E007]</a></sup></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Core finding ── -->
+  <section aria-labelledby="core-h">
+    <p class="sec-kicker">Core finding</p>
+    <div class="finding-hero">
+      <span class="interpretation-tag">Interpretation — labeled as such</span>
+      <p id="core-h">Pierce County&rsquo;s major economic institutions derive substantial power from <strong style="font-weight:700;">government-granted privileges</strong> — federal appropriations, tax exemption, tribal sovereignty, land grants, and public levies — and these institutions in turn influence the government that grants those privileges. This creates a structural interdependence that warrants scrutiny.</p>
+      <p style="font-size:15px; color:#444;">That sentence is the thesis in the only form it survived hostile review. The sharper versions considered earlier — that the county&rsquo;s private sector is &ldquo;a government-created rentier class,&rdquo; or that a &ldquo;growth machine&rdquo; is a coordinated operation — were <strong>rejected</strong> in red-team review as editorializing beyond the evidence. What the records do show is the direction of the flows below, entity by entity, with sources.</p>
+      <div class="loop-figure">
+        <svg viewBox="0 0 560 118" width="560" height="118" role="img" aria-label="Loop diagram: Government creates wealth; private actors convert it to power; that power shapes policy; which returns more money.">
+          <g font-family="-apple-system, sans-serif" font-size="14" font-weight="700">
+            <rect x="8" y="18" width="120" height="40" rx="3" fill="#B8860B"/>
+            <text x="68" y="42" text-anchor="middle" fill="#FFF8E1">Government</text>
+            <rect x="180" y="18" width="110" height="40" rx="3" fill="#1B1B1B"/>
+            <text x="235" y="42" text-anchor="middle" fill="#FAFAFA">Wealth</text>
+            <rect x="342" y="18" width="110" height="40" rx="3" fill="#1B1B1B"/>
+            <text x="397" y="42" text-anchor="middle" fill="#FAFAFA">Power</text>
+          </g>
+          <g stroke="#8A6A0A" stroke-width="2" fill="none" marker-end="url(#arr)">
+            <path d="M128 38 L172 38"/>
+            <path d="M290 38 L334 38"/>
+            <path d="M397 60 C 397 102, 235 102, 235 60"/>
+          </g>
+          <g font-family="-apple-system, sans-serif" font-size="11" fill="#5D4037">
+            <text x="150" y="54" text-anchor="middle">grants</text>
+            <text x="312" y="54" text-anchor="middle">converts</text>
+            <text x="316" y="112" text-anchor="middle">shapes policy — more money returns</text>
+          </g>
+          <defs>
+            <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="#8A6A0A"/>
+            </marker>
+          </defs>
+        </svg>
+        <p class="loop-caption">The loop as a frame, not a finding: each arrow above is documented for the six institutions below; the loop <em>as a system</em> is the investigation&rsquo;s interpretation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Money table ── -->
+  <section aria-labelledby="money-h">
+    <p class="sec-kicker">Where the economic power comes from</p>
+    <h2 id="money-h">Six anchors, one shared pattern</h2>
+    <p>For each of the county&rsquo;s six major economic institutions, researchers traced the origin of the economic base. Every anchor draws on a government-granted advantage; the pattern held in all six cases and is the most heavily verified part of this investigation.</p>
+    <div class="tbl-wrap">
+      <table class="data">
+        <thead>
+          <tr><th scope="col">Institution</th><th scope="col">What it holds</th><th scope="col">Government-granted basis</th><th scope="col">Verified figure</th><th scope="col">Grade</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>JBLM</strong> (Joint Base Lewis-McChord)</td>
+            <td>Largest employer; I Corps HQ; ~90,000-acre federal installation</td>
+            <td>100% federal appropriations, payroll, and contracts</td>
+            <td class="num">$12.1B impact<span class="basis">Pierce + Thurston combined multiplier; Pierce-only direct output ≈ $3.9B</span></td>
+            <td><span class="chip verified">verified</span></td>
+          </tr>
+          <tr>
+            <td><strong>MultiCare</strong> Health System</td>
+            <td>Nonprofit hospital system; largest private employer (widely stated; no single authoritative Pierce-only headcount is published)</td>
+            <td>501(c)(3) tax exemption since 1991; Medicare/Medicaid are the largest payers; government-regulated insurance market</td>
+            <td class="num">$7.2B revenue<span class="basis">FY2025, per Fitch; 22,789 employees per IRS 990 FY2024</span></td>
+            <td><span class="chip verified">verified</span></td>
+          </tr>
+          <tr>
+            <td><strong>Puyallup Tribe of Indians</strong></td>
+            <td>Sovereign nation; Emerald Queen Casino; land into trust</td>
+            <td>Federal recognition; 1854 Treaty of Medicine Creek; gaming compact with the state; 1990 settlement returned land</td>
+            <td class="num">$162M settlement<span class="basis">1990 land-claims settlement ($162M + 900 acres) — a settlement figure, not current assets</span></td>
+            <td><span class="chip verified">verified</span> <span class="chip corrected">corrected</span></td>
+          </tr>
+          <tr>
+            <td><strong>Weyerhaeuser</strong></td>
+            <td>Largest private U.S. timberland owner</td>
+            <td>Fortune traceable to the 1864 Northern Pacific land grant; bought 900,000 acres from the railroad in 1900 at $6/acre ($5.4M)</td>
+            <td class="num">10.4M acres<span class="basis">U.S. holdings today (company report, Oct 2025)</span></td>
+            <td><span class="chip verified">verified</span></td>
+          </tr>
+          <tr>
+            <td><strong>Port of Tacoma</strong></td>
+            <td>Container terminals; Tideflats land; NWSA co-owner</td>
+            <td>Public municipal corporation under RCW Title 53, partly funded by a property-tax levy ($25.3M in 2023, rising to $28.5M by 2027)</td>
+            <td class="num">$76B cargo<span class="basis">NWSA waterborne trade, 2024 (~$68B in 2025)</span></td>
+            <td><span class="chip verified">verified</span></td>
+          </tr>
+          <tr>
+            <td><strong>Tacoma-Pierce County Chamber</strong></td>
+            <td>Business league, founded 1884; ~1,400 members; 25-member board</td>
+            <td>Tax-exempt 501(c)(6)</td>
+            <td class="num">$3.08M revenue<span class="basis">FY2024, IRS 990 via ProPublica</span></td>
+            <td><span class="chip verified">verified</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:13px; color:var(--ink-soft); max-width:76ch;">Figures, bases, and sources as recorded in the case&rsquo;s money map (<em>evidence/28-source-of-economic-power.md</em>), each tied to a primary document. <a href="#sources">Full source list.</a></p>
+  </section>
+
+  <!-- ── Ranking ── -->
+  <section aria-labelledby="rank-h">
+    <p class="sec-kicker">The top of the map</p>
+    <h2 id="rank-h">The ten most powerful actors</h2>
+    <p>The ranking below is the investigation&rsquo;s <strong>qualitative matrix</strong> — scored across six domains (government, economic, institutional, political, legal, media) by the evidence. The interactive graph (<a href="#method">Method</a>) computes its own network ranking separately; a network-centrality score is not treated here as a settled measure of power.</p>
+    <ol class="rank-list">
+      <li>
+        <p class="rank-name"><span class="dot" style="background:var(--d-government)"></span>Ryan Mello</p>
+        <p class="rank-role">Pierce County Executive (D, since Jan 2025)</p>
+        <p class="rank-why">Runs the county&rsquo;s departments and holds veto power over the Council. Controls the $3.5B biennial budget. Elected 51.28%–48.58% (209,918 to 198,886 votes) — a narrow mandate. Former GTCF board member; Sound Transit board vice chair. <sup><a href="#src-01">[E001]</a></sup> In active conflict with Sheriff Swank over authority.</p>
+        <span class="chip verified">verified</span>
+      </li>
+      <li>
+        <p class="rank-name"><span class="dot" style="background:var(--d-government)"></span>Pierce County Council</p>
+        <p class="rank-role">7 members, 4 D – 3 R · Chair Jani Hitchen (D-6), Vice Chair Dave Morell (R-1)</p>
+        <p class="rank-why">Final say over the budget, zoning and land use, contracts, and appointments — the body every county actor must come to. The most connected node in the network graph. <sup><a href="#src-01">[E001]</a></sup></p>
+        <span class="chip verified">verified</span>
+      </li>
+      <li>
+        <p class="rank-name"><span class="dot" style="background:var(--d-institutional)"></span>Puyallup Tribe of Indians</p>
+        <p class="rank-role">Federally recognized sovereign nation · ~4,000 enrolled members</p>
+        <p class="rank-why">The only actor that can opt out of county jurisdiction. Gaming, land-into-trust authority, and a binding land-use consultation process (LUCP) with local governments. Bill Sterud has served on tribal council since 1978 — the chairmanship <em>rotates annually</em> (Sterud and David Z. Bean have alternated; the map&rsquo;s static &ldquo;chairman&rdquo; label was corrected in review). Donates to candidates of both parties. <sup><a href="#src-tribe">[E003, E009]</a></sup></p>
+        <span class="chip verified">verified</span> <span class="chip corrected">corrected</span>
+      </li>
+      <li>
+        <p class="rank-name"><span class="dot" style="background:var(--d-institutional)"></span>MultiCare Health System</p>
+        <p class="rank-role">Nonprofit hospital system, headquartered in Tacoma</p>
+        <p class="rank-why">$7.2B revenue (FY2025); 22,789 employees per its latest IRS 990; largest private employer (widely stated — no authoritative Pierce-only headcount exists). Board chair John Wiborg links it to the Chamber, GTCF, and UW Tacoma. CEO Bill Robertson retires Dec 2026; Florence Chang takes over Jan 2027. <sup><a href="#src-multicare">[E008, E009]</a></sup></p>
+        <span class="chip verified">verified</span>
+      </li>
+      <li>
+        <p class="rank-name"><span class="dot" style="background:var(--d-institutional)"></span>Joint Base Lewis-McChord</p>
+        <p class="rank-role">U.S. Army/Air Force installation · I Corps HQ</p>
+        <p class="rank-why">57,000+ direct jobs; the county&rsquo;s largest employer. Its influence is structural: federal land outside local control, coordinated with local governments through SSMCP, and economic impact (Pierce + Thurston combined ≈ $12.1B, Pierce-only direct ≈ $3.9B) that could be cut or moved by Congress. <sup><a href="#src-jblm">[E009]</a></sup></p>
+        <span class="chip verified">verified</span> <span class="chip corrected">corrected</span>
+      </li>
+      <li>
+        <p class="rank-name"><span class="dot" style="background:var(--d-government)"></span>Port of Tacoma</p>
+        <p class="rank-role">Independent municipal corporation · 5 countywide-elected commissioners</p>
+        <p class="rank-why">A public agency, not private capital: property-tax levy funding, $353.7M capital budget, and shared control (with the Port of Seattle) of the Northwest Seaport Alliance&rsquo;s $76B annual cargo. Commissioner John McCarthy has served 40 years across 4 terms. <sup><a href="#src-port">[E001, E009]</a></sup></p>
+        <span class="chip verified">verified</span>
+      </li>
+      <li>
+        <p class="rank-name"><span class="dot" style="background:var(--d-government)"></span>Keith Swank</p>
+        <p class="rank-role">Pierce County Sheriff (since Jan 2025) · 33-year Seattle PD veteran</p>
+        <p class="rank-why">Elected independently of the Executive — cannot be fired by them. Controls $406M across law enforcement ($242.2M) and the jail ($164.3M), 42% of the county&rsquo;s General Fund. His power is concentrated in one domain, and he is in open conflict with both the Executive and the Prosecuting Attorney. <sup><a href="#src-01">[E001, E004]</a></sup></p>
+        <span class="chip verified">verified</span>
+      </li>
+      <li>
+        <p class="rank-name"><span class="dot" style="background:var(--d-government)"></span>Mary Robnett</p>
+        <p class="rank-role">Pierce County Prosecuting Attorney (since 2019) · first woman in the office</p>
+        <p class="rank-why">Charges every felony in a county of ~900,000; her civil division advises all county departments. Unopposed since 2018; not seeking re-election in 2026. Feuding with the Sheriff&rsquo;s office over representation. <sup><a href="#src-01">[E001]</a></sup></p>
+        <span class="chip verified">verified</span>
+      </li>
+      <li>
+        <p class="rank-name"><span class="dot" style="background:var(--d-government)"></span>Jani Hitchen</p>
+        <p class="rank-role">Council Chair, District 6 (Steilacoom, DuPont, JBLM, Lakewood)</p>
+        <p class="rank-why">Sets the Council&rsquo;s legislative agenda and appoints committee chairs. Her district makes her the council&rsquo;s direct interface with JBLM. <sup><a href="#src-01">[E001]</a></sup></p>
+        <span class="chip verified">verified</span>
+      </li>
+      <li>
+        <p class="rank-name"><span class="dot" style="background:var(--d-political)"></span>Kelly Chambers</p>
+        <p class="rank-role">State Representative (R-25) · 2024 county executive candidate</p>
+        <p class="rank-why">The GOP&rsquo;s best-funded candidate: $549,574 raised for the executive race, including a single $175,500 transfer from the Pierce County Republican Party — the largest check documented in the 2024 cycle. Her donor list is heavily auto-dealer, developer, and real-estate money (documented donations; no motive asserted). Holds no county office. <sup><a href="#src-pdc">[E004]</a></sup></p>
+        <span class="chip verified">verified</span>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ── Findings ── -->
+  <section aria-labelledby="find-h">
+    <p class="sec-kicker">Findings</p>
+    <h2 id="find-h">Five findings, strongest first</h2>
+
+    <div class="finding">
+      <h3>1. One office controls the county&rsquo;s money — and holds a veto over its legislature.</h3>
+      <p>The Executive proposes and signs the $3.5B biennial budget and can veto Council legislation; the Council appropriates it. Roughly 77% of the General Fund goes to law enforcement and the courts, so the elected Sheriff ($406M) and Prosecuting Attorney ($94.1M) sit at the center of county spending even as they answer to voters, not the Executive. County power concentrates in offices that cannot easily be overridden. <sup><a href="#src-05">[E001, E004]</a></sup></p>
+    </div>
+
+    <div class="finding">
+      <h3>2. All six major economic anchors rest on government-granted advantages.</h3>
+      <p>Federal appropriations fund JBLM outright; tax exemption (plus Medicare/Medicaid reimbursement) underlies MultiCare&rsquo;s $7.2B; federal recognition and a state gaming compact underlie the Tribe&rsquo;s casino economy; Weyerhaeuser&rsquo;s acreage traces to an 1864 land grant sold once, cheaply, to a railroad; the Port is a public taxing entity; the Chamber is tax-exempt. This is the finding that survived every hostile check, entity by entity, with primary documents. <sup><a href="#src-jblm">[E007, E009]</a></sup></p>
+    </div>
+
+    <div class="finding">
+      <h3>3. The same few people sit on both sides of the table.</h3>
+      <p>Three documented dual roles anchor the interlock pattern: the Chamber&rsquo;s CEO, Tom Pierson, was also appointed the county&rsquo;s acting economic-development director; MultiCare&rsquo;s board chair, John Wiborg, sits on the Chamber board and is a former GTCF board member; labor&rsquo;s Nathe Lawver chairs United Way of Pierce County while sitting on both the GTCF and Economic Development Board. Ryan Mello himself is a former GTCF board member now holding the executive&rsquo;s office. These are documented overlaps — the records show who shares tables, not what happens at them. <sup><a href="#src-interlock">[E008, E010]</a></sup></p>
+    </div>
+
+    <div class="finding">
+      <h3>4. Party money is lopsided; tribal money is bipartisan.</h3>
+      <p>In the 2024 executive race, both finalists raised over half a million dollars ($509,801 for Mello; $549,574 for Chambers). The Republican money was concentrated — one $175,500 check from the county party plus $28,500-class transfers from caucus committees; the Democratic money was broader — unions (UFCW, IBEW 483, IAFF 726, WEA PAC), the HDCC ($28,500), and individual donors. The Puyallup Tribe gave to both parties ($2,400 to Mello among others) — documented donations from a sovereign actor with land-use business before the same governments. The report asserts the flows, not any exchange. <sup><a href="#src-pdc">[E004]</a></sup></p>
+    </div>
+
+    <div class="finding">
+      <h3>5. The county&rsquo;s only daily newspaper is owned by an out-of-state hedge fund.</h3>
+      <p>The News Tribune&rsquo;s parent, McClatchy, is owned by Chatham Asset Management (NJ) — acquired in bankruptcy in 2020 through a ~$312M credit bid plus $49M cash. Its editor, Stephanie Pedersen, edits four McClatchy papers at once; the AP wire was dropped in 2024; the county has no locally owned TV station. Narrative capacity is real but <em>extracted</em>: what gets covered locally is decided two time zones away. <sup><a href="#src-media">[E006]</a></sup></p>
+    </div>
+  </section>
+
+  <!-- ── Interlocks ── -->
+  <section aria-labelledby="il-h">
+    <p class="sec-kicker">The interlock economy</p>
+    <h2 id="il-h">Who sits on both sides</h2>
+    <p>The map&rsquo;s densest short paths run through a handful of people who bridge government, business, philanthropy, and labor. Each role below is independently sourced.</p>
+
+    <div class="interlock">
+      <h3>Tom Pierson</h3>
+      <p class="role">Interim CEO, Tacoma-Pierce County Chamber · Acting Director of Economic Development, Pierce County</p>
+      <p>Confirmed in red-team review as a live revolving door: the same person leads the business lobby and the county office that hands out economic-development support. Sourced to chamber and county records plus his professional profile. <sup><a href="#src-interlock">[E009]</a></sup></p>
+    </div>
+
+    <div class="interlock">
+      <h3>John Wiborg</h3>
+      <p class="role">Board Chair, MultiCare · CEO, Stellar Industrial Supply · Chamber board · former GTCF board · UW Tacoma honorand</p>
+      <p>Connects the hospital system to the business lobby and community philanthropy. He is the node that ties health money to the establishment network. <sup><a href="#src-interlock">[E008]</a></sup></p>
+    </div>
+
+    <div class="interlock">
+      <h3>Nathe Lawver</h3>
+      <p class="role">Board Chair, United Way of Pierce County · GTCF board · Executive Secretary, Pierce County Building &amp; Construction Trades Council · EDB board · UFCW Local 367</p>
+      <p>Verified as the true GTCF–United Way interlock (an earlier profile attributed that tie to Dona Ponepinto; review corrected it). He bridges labor, philanthropy, and economic development at once. <sup><a href="#src-interlock">[E009]</a></sup> <span class="chip corrected">corrected</span></p>
+    </div>
+
+    <div class="interlock">
+      <h3>Ryan Mello</h3>
+      <p class="role">County Executive · former GTCF board · Sound Transit board vice chair · Pierce Transit board</p>
+      <p>The highest-arc bridge in the map: philanthropy to regional transit to the executive&rsquo;s office. Listed here as documented former and current roles. <sup><a href="#src-interlock">[E013]</a></sup></p>
+    </div>
+  </section>
+
+  <!-- ── Media ── -->
+  <section aria-labelledby="media-h">
+    <p class="sec-kicker">Narrative power</p>
+    <h2 id="media-h">One daily paper, owned elsewhere</h2>
+    <p>Ownership chain of the only daily: <strong>Chatham Asset Management (NJ)</strong> → <strong>McClatchy Media Company</strong> → <strong>The News Tribune</strong> (Tacoma; founded 1880; locally owned by the Baker family for 73 years until McClatchy bought it in 1986 for ~$112M). Around it: three radio groups, one business weekly, a weekly paper — and zero locally owned TV. The editor edits four papers at once; the opinion editor was appointed in 2025. In a county where the Port, the Tribe, MultiCare, and the Council all generate daily coverage decisions, the outlet that frames them is not locally owned. <sup><a href="#src-media">[E006]</a></sup></p>
+  </section>
+
+  <!-- ── Limits ── -->
+  <section aria-labelledby="lim-h">
+    <p class="sec-kicker">What this map cannot say</p>
+    <h2 id="lim-h">Limits, open to the reader</h2>
+    <div class="limits-card">
+      <ul>
+        <li><strong>The computed power score is a network measure, not a power measure.</strong> Graph centrality over-counts connected hubs (parties, the Council, courts) and under-counts isolated veto-holders (the Tribe, JBLM, the Sheriff). That is why this report uses the qualitative matrix and tier bands instead of raw scores.</li>
+        <li><strong>&ldquo;Shadow political party&rdquo; is a characterization, not a finding.</strong> The Chamber&rsquo;s Candidate Academy, Voters Guide, and Candidates Forum are documented; it officially does not endorse candidates. This report describes the programs and stops there.</li>
+        <li><strong>The &ldquo;growth machine&rdquo; is an academic lens, not a proven organization.</strong> Donor flows between developers, realtors, banks, and the Chamber are documented; coordinated direction is not.</li>
+        <li><strong>Two numbers failed verification and appear nowhere above:</strong> the MultiCare-linked &ldquo;$357K against Democrats in 2022&rdquo; figure (actually attributed to the hospital association&rsquo;s PAC, unconfirmed against PDC C4 reports) and the claim that the Tribe is the county&rsquo;s <em>largest</em> lobbying spender (federal lobbying of $270K in 2024 is verified; the superlative is not).</li>
+        <li><strong>Corrections carried into this report:</strong> JBLM&rsquo;s $12.1B is a two-county multiplier; the Tribe&rsquo;s $162M is a 1990 settlement, not current assets; the tribal chairmanship rotates annually; the council appropriates <em>to</em> the sheriff, courts, and prosecutor (edge directions were reversed in an earlier draft); Kastama sits on Puyallup&rsquo;s city council, not the county council; T&rsquo;wina Nobles sits on the University Place school board.</li>
+        <li><strong>Not yet checked:</strong> current council committee chairs for the 2026 session; Swank&rsquo;s early biography details; a Pierce-only authoritative MultiCare headcount.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Right of reply ── -->
+  <section aria-labelledby="ror-h">
+    <p class="sec-kicker">Right of reply</p>
+    <h2 id="ror-h">Comment status</h2>
+    <div class="ror-card">
+      <p><strong>No formal right-of-reply requests have been sent as of this report.</strong> Every figure here comes from public records — election filings, IRS 990s, .gov budget documents, court and corporate registries — and describes offices, grants, donations, and board seats rather than private conduct.</p>
+      <p>Before any public-facing edition, the investigation intends to request comment from the named subjects: the County Executive, Sheriff, Prosecuting Attorney, Council members, the Port, the Tribe&rsquo;s information office, MultiCare, VMFH, the Chamber, Weyerhaeuser, McClatchy, and the individuals named in the interlock section. This section will record each request and response — or a plain &ldquo;did not respond&rdquo; — when publication nears.</p>
+    </div>
+  </section>
+
+  <!-- ── Methodology ── -->
+  <section id="method" aria-labelledby="method-h">
+    <p class="sec-kicker">Methodology</p>
+    <h2 id="method-h">How this was built, and verified</h2>
+    <p class="narrow">Researchers mapped 163 entities across six domains — government (53), institutional (47), economic (32), political (17), media (8), legal (6) — and recorded 342 relationships, each with a typed label (board seats, funding, donations, lobbying, ownership) and a weight. Then the work was attacked:</p>
+    <ol class="narrow" style="max-width:76ch;">
+      <li><strong>Hypercritical audit</strong> (E008) — every node, edge, and ranking checked against the evidence files; 12 wrong edges, 12 filler edges, and 45 missing entities found and fixed.</li>
+      <li><strong>Red-team review</strong> (E009) — every claim assumed wrong until a primary source (.gov, WA PDC, IRS 990s, Fitch, court records) confirmed it; ~80% survived, and every mischaracterized figure was corrected.</li>
+      <li><strong>Three skeptic subagents</strong> (E010) — ranked the ranking, the omissions, and the money separately, catching the Council over-rank, Kelly Chambers&rsquo; inflated score, the buried Tacoma mayor, and the wrong Chamber budget ($4.5M → $3.08M).</li>
+      <li><strong>Deep profiles</strong> (E013–E014) — all 163 entities researched against primary sources, 43 new edges, deterministic consistency sync (272 → 342 edge count), with per-entity confidence ratings.</li>
+    </ol>
+    <p class="narrow" style="font-size:14px; color:var(--ink-soft);">Composite scores blend six domains; the interactive graph adds a veto-power bonus for actors whose influence is concentrated and non-negotiable (the Tribe, JBLM, the Sheriff, the Chamber) rather than distributed. Full method: <em>evidence/26-power-methodology.md</em>.</p>
+  </section>
+
+  <!-- ── Explore ── -->
+  <section aria-labelledby="explore-h">
+    <p class="sec-kicker">Explore the full map</p>
+    <h2 id="explore-h">The interactive network</h2>
+    <p>This report is the read-mode summary. The full artifact — all 163 entities with 14-section deep profiles, ego-networks, the &ldquo;Follow the money&rdquo; toggle that isolates the government-granted wealth edges, and the tier-band directory — ships as the case&rsquo;s interactive power network:</p>
+    <p class="narrow"><strong><a href="network/index.html">→ Open the Pierce County Power Network (interactive, offline-capable)</a></strong> · Raw data: <em>evidence/29-power-graph-v2.json</em> &amp; <em>evidence/30-power-graph-v3.json</em></p>
+  </section>
+</main>
+
+<!-- ── Sources ── -->
+<div class="report" id="sources">
+  <section aria-labelledby="src-h">
+    <p class="sec-kicker">Sources</p>
+    <h2 id="src-h">Evidence used in this report</h2>
+    <p style="font-size:13.5px; color:var(--ink-soft); max-width:76ch;">Case INV-2026-002 · Full citation trail lives in the case files under Documents/Investigations/2608-pierce-leadership/ · Every claim above carries an inline evidence anchor.</p>
+    <ol class="src-list">
+      <li id="src-01"><span class="eid">E001 / E002</span> — Formal power structure, verified &amp; annotated: county Executive, Council, Sheriff, PA, Port, courts, with inline primary URLs. <em>evidence/01-formal-power-structure-VERIFIED.md</em> (piercecountywa.gov; Ballotpedia; Wikipedia; leg.wa.gov)</li>
+      <li id="src-03"><span class="eid">E003</span> — Puyallup Tribe: council, enterprises, sovereignty. <em>evidence/03-puyallup-tribe.md</em>; <span id="src-tribe" style="display:inline;">tribal council records</span> (puyalluptribe-nsn.gov; HistoryLink File 7969; LA Times archive on the 1990 settlement)</li>
+      <li id="src-04"><span class="eid">E004</span> — Campaign finance from WA PDC Socrata data (kv7h-kjye): Mello $509,801.30 / Chambers $549,574.02; Pierce GOP → Chambers $175,500; HDCC → Mello $28,500. <em>evidence/04-campaign-finance.md</em> · <span id="src-pdc">pdc.wa.gov</span></li>
+      <li id="src-05"><span class="eid">E004/E005</span> — Budget &amp; procurement: $3.5B biennial adopted Nov 25, 2025; GF department table from <span class="url-note">piercecountywa.gov/8875</span>; procurement via OpenGov portal. <em>evidence/05-budget-contracts.md</em></li>
+      <li id="src-06"><span class="eid">E006</span> — Media ownership: McClatchy under Chatham Asset Management ($312M credit bid + $49M cash, 2020); editor coverage; circulation history. <em>evidence/06-media-ownership.md</em> (Wikipedia: McClatchy; The News Tribune; Editor &amp; Publisher) · <span id="src-media">Media ownership chain</span></li>
+      <li id="src-07"><span class="eid">E007</span> — <span id="src-weyer">Source of economic power</span>: the six government-granted wealth bases with primary documents. <em>evidence/28-source-of-economic-power.md</em></li>
+      <li id="src-08"><span class="eid">E008</span> — Hypercritical audit of the graph: 12 wrong edges, 12 filler edges, 45 missing nodes, veto-power correction. <em>audit-pierce-graph.md</em> · <span id="src-interlock">Interlock roles as re-verified in E009–E014</span></li>
+      <li id="src-09"><span class="eid">E009</span> — Red-team report, 2026-09-09: ~80% of claims confirmed against primary sources; corrections list. <em>red-team-report.md</em>. Key primaries: SSMCP REIA 2023 <span class="url-note">(ssmcp.org/…/REIA-2023-Pierce-Thurston.pdf)</span> <span id="src-jblm"></span>; Fitch on MultiCare <span id="src-multicare"></span>(FY2025 $7.2B) <span class="url-note">(fitchratings.com)</span>; NWSA cargo statistics <span id="src-nwsa"></span><span class="url-note">(nwseaportalliance.com/about-us/cargo-statistics)</span>; ProPublica 990s (MultiCare EIN 91-1352172; Chamber EIN 91-0434830; GTCF); Weyerhaeuser IR <span class="url-note">(investor.weyerhaeuser.com, 2025-10-30)</span>; HistoryLink Files 5241 &amp; 22983 (Weyerhaeuser history, 1900 purchase); Port financials <span id="src-port"></span><span class="url-note">(portoftacoma.com/about/financial-information)</span>; UWPC/GTCF board pages (Lawver interlock); VMFH ownership (CommonSpirit) <span class="url-note">(vmfh.org/about-vmfh)</span></li>
+      <li><span class="eid">E010</span> — Three skeptic reviews (ranking / omissions / money): Council #1 exposure, Chambers over-rank, Ibsen burial, Chamber figure fix, loop-edge correction. <em>skeptic-ranking.md · skeptic-omissions.md · skeptic-money.md</em></li>
+      <li><span class="eid">E012 / E013 / E014</span> — HCD/UDL verification of the interactive artifact; 163 deep profiles with per-entity confidence; deterministic consistency sync. <em>hcd-udl-verification.md · profiles/*.md · scripts/sync_profiles_to_graph.py</em></li>
+      <li><span class="eid">E011–E014</span> — Interactive artifact &amp; data: <em>evidence/network/index.html</em> bundle; <em>evidence/29-power-graph-v2.json</em>; <em>evidence/30-power-graph-v3.json</em>; <em>site.json</em> (theme tokens used in this report).</li>
+      <li><span class="eid">Supporting</span> — Power theory grounding (Lukes; Mills; Logan &amp; Molotch; Domhoff; Wasserman &amp; Faust; Bonacich): <em>evidence/26-power-methodology.md · evidence/27-power-theory-review.md</em>; labor (PCCLC 114 unions / 44,000 workers): <em>evidence/16-labor-power.md</em>; foundations (GTCF $207.1M assets Dec 2025, $19.1M 2025 philanthropy): <em>evidence/18-foundation-power.md</em></li>
+    </ol>
+  </section>
+</div>
+
+<!-- ── Colophon ── -->
+<footer class="colophon">
+  <div class="colophon-inner">
+    <p><strong>Pierce County Leadership Investigation</strong> · Case INV-2026-002 · Report artifact <em>evidence/31-investigation-report.html</em></p>
+    <p>163 entities · 342 relationships · 14 case evidence entries · 30+ evidence files · 40 red-team-confirmed primary claims · Verification chain E001–E014 (Aug 17 – Sep 20, 2026)</p>
+    <p>Companion artifact: <strong>Power Network (interactive)</strong> — <em>evidence/network/index.html</em> · Graph data — <em>evidence/30-power-graph-v3.json</em></p>
+    <p>Claims discipline: only red-team-surviving claims appear here; interpretive framing is labeled; unverifiable figures are excluded and listed as open items. Right-of-reply status above reflects live case state.</p>
+  </div>
+</footer>
+
+</body>
+</html>
